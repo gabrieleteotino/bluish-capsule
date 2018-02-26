@@ -8,6 +8,29 @@ draft: true
 ---
 
 # Structure
+We are going to create the following folders one for each area of the site.
+
+- ```/content/page``` - static pages like About and so on
+- ```/content/post``` - a section with articles and turorials
+- ```/content/project``` - will contain a subfolder for each project
+- ```/content/review``` - review of products bough online from amazon, aliexpress, ...
+- ```/content/note``` - small snippets of stuff like links to a nice library or an interesting article
+
+Create an index page for each section of the site.
+```shell
+hugo new post/_index.md
+hugo new project/_index.md
+hugo new review/_index.md
+hugo new note/_index.md
+```
+
+In the *page* section we will not create an index file but just the pages.
+```shell
+hugo new page/about.md
+```
+
+Insert a brief description of each section in the index pages.
+Change the draft status to false.
 
 ## Archetipes
 Open archetypes/default.md
@@ -24,7 +47,11 @@ draft: true
 ```
 
 ## Theme customization
-### pygment
+
+### Pygment
+
+Add to ```config.toml``` just below the global parameters
+
 ```toml
 metaDataFormat = "yaml"
 pygmentsStyle = "trac"
@@ -33,35 +60,44 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 ```
 
-### Add some buttons to the top banner
+### Add navigation to the top banner
+
+In ```config.toml``` after the _[author]_ section
 
 ```toml
 [[menu.main]]
   name = "Blog"
-  url = ""
+  url = "/post"
   weight = 1
 
 [[menu.main]]
-  name = "About"
-  url = "page/about/"
-  weight = 3
-
-[[menu.main]]
-  identifier = "samples"
-  name = "Samples"
+  name = "Notes"
+  url = "/note"
   weight = 2
 
 [[menu.main]]
-  parent = "samples"
-  name = "Big Image Sample"
-  url = "post/2017-03-07-bigimg-sample"
+  identifier = "projects"
+  name = "Projects"
+  weight = 3
+[[menu.main]]
+  parent = "projects"
+  name = "Projects home"
+  url = "project"
   weight = 1
+[[menu.main]]
+  parent = "projects"
+  name = "Meccanici"
+  url = "project/meccanici"
+  weight = 2
 
 [[menu.main]]
-  name = "Tags"
-  url = "tags"
-  weight = 3
+  name = "Reviews"
+  url = "/review"
+  weight = 4
 ```
 
+## custom domain
+## google analytics
+## gcse google custom search
 -fix logo
 ## Add some content
