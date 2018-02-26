@@ -37,7 +37,19 @@ If dig is not istalled
 sudo apt install dnsutils
 ```
 
+## Hugo configuration
+Change in config.toml
+```toml
+baseURL = "https://www.teosoft.it/"
+```
+
 # Google Analytics
+Open [Google Analytics]() and find your id.
+
+Change in config.toml in the global parameter section, just below the pygment.
+```toml
+googleAnalytics = "UA-24994854-1"
+```
 
 # gcse google custom search
 ## Some content

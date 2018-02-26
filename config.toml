@@ -1,4 +1,4 @@
-baseURL = "https://gabrieleteotino.github.io/"
+baseURL = "https://www.teosoft.it/"
 languageCode = "en-us"
 title = "Bluish capsule"
 theme = "beautifulhugo"
@@ -8,6 +8,8 @@ pygmentsStyle = "trac"
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
+
+googleAnalytics = "UA-24994854-1"
 
 [params]
   subtitle = "Some inspirational quote here"
