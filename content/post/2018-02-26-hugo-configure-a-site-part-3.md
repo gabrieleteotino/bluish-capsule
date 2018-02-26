@@ -44,7 +44,7 @@ baseURL = "https://www.teosoft.it/"
 ```
 
 # Google Analytics
-Open [Google Analytics]() and find your id.
+Open [Google Analytics](https://analytics.google.com) and find your id.
 
 Change in config.toml in the global parameter section, just below the pygment.
 ```toml
