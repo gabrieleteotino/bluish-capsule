@@ -4,6 +4,10 @@ title = "Bluish capsule"
 theme = "beautifulhugo"
 
 metaDataFormat = "yaml"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
 
 [params]
   subtitle = "Some inspirational quote here"
@@ -22,3 +26,33 @@ metaDataFormat = "yaml"
   website = "http://www.teosoft.it"
   github = "gabrieleteotino"
   stackoverflow = "users/2085504/deramko"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/post"
+  weight = 1
+
+[[menu.main]]
+  name = "Notes"
+  url = "/note"
+  weight = 2
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  weight = 3
+[[menu.main]]
+  parent = "projects"
+  name = "Projects home"
+  url = "project"
+  weight = 1
+[[menu.main]]
+  parent = "projects"
+  name = "Meccanici"
+  url = "project/meccanici"
+  weight = 2
+
+[[menu.main]]
+  name = "Reviews"
+  url = "/review"
+  weight = 4
