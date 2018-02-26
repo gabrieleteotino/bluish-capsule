@@ -42,9 +42,8 @@ date: {{ .Date }}
 subtitle: ""
 tags: []
 categories: []
-draft: true
+draft: false
 ---
-```
 
 ## Theme customization
 
@@ -95,9 +94,3 @@ In ```config.toml``` after the _[author]_ section
   url = "/review"
   weight = 4
 ```
-
-## custom domain
-## google analytics
-## gcse google custom search
--fix logo
-## Add some content
