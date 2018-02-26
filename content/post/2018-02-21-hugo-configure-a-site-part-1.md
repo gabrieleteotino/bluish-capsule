@@ -4,7 +4,7 @@ date: 2018-02-21T18:15:33+01:00
 subtitle: "Creating the bluish capsule using Hugo, Atom and Github"
 tags: ["hugo", "atom", "github"]
 categories: ["development"]
-draft: true
+draft: false
 ---
 
 # Using Hugo for this website

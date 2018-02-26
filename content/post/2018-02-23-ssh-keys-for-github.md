@@ -4,7 +4,7 @@ date: 2018-02-23T11:13:18+01:00
 subtitle: "How to authenticate to github using SSH keys"
 tags: ["github"]
 categories: ["development"]
-draft: true
+draft: false
 ---
 
 The complete instruction on [Github](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
