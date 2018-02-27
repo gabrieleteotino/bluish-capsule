@@ -45,7 +45,7 @@ baseURL = "http://www.teosoft.it/"
 
 Note: we will change to https in the future.
 
-# Google Analytics
+## Google Analytics
 Open [Google Analytics](https://analytics.google.com) and find your id.
 
 Change in config.toml in the global parameter section, just below the pygment.
@@ -53,7 +53,7 @@ Change in config.toml in the global parameter section, just below the pygment.
 googleAnalytics = "UA-24994854-1"
 ```
 
-# Google custom search engine
+## Google custom search engine
 Create a new custom search using [Google Custom Search](https://cse.google.com/).
 Add as **Site to search** *www.teosoft.it/** and click *Create*.
 From the setup page get the *Search engine ID*
@@ -65,6 +65,18 @@ gcse = "005185449088889757369:5o44h-2knna"
 
 In the Custom Search select **Look and feel** and switch to *Full width*, save.
 In **Themes** select *classic*
+
+## SSL on Cloudflare
+Signup to [Cloudflare](https://www.cloudflare.com/a/sign-up-n)
+Add www.teosoft.it
+Select the free plan and follow the instructions.
+
+When we reach the following screen
+
+**TODO image**
+
+Change the nameservers from *ns2.th.seeweb.it*, *ns1.th.seeweb.it* to *brett.ns.cloudflare.com*, *kiki.ns.cloudflare.com*.
+Damn, tophost does not allow me to change the nameservers.
 
 ## Some content
 -fix logo
