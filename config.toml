@@ -21,6 +21,7 @@ googleAnalytics = "UA-24994854-1"
   comments = false
   readingTime = true
   useHLJS = true
+  gcse = "005185449088889757369:5o44h-2knna"
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [author]

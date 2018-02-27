@@ -40,8 +40,10 @@ sudo apt install dnsutils
 ## Hugo configuration
 Change in config.toml
 ```toml
-baseURL = "https://www.teosoft.it/"
+baseURL = "http://www.teosoft.it/"
 ```
+
+Note: we will change to https in the future.
 
 # Google Analytics
 Open [Google Analytics](https://analytics.google.com) and find your id.
@@ -51,6 +53,18 @@ Change in config.toml in the global parameter section, just below the pygment.
 googleAnalytics = "UA-24994854-1"
 ```
 
-# gcse google custom search
+# Google custom search engine
+Create a new custom search using [Google Custom Search](https://cse.google.com/).
+Add as **Site to search** *www.teosoft.it/** and click *Create*.
+From the setup page get the *Search engine ID*
+
+Add the ID to the following line in config.toml, in the params section.
+```toml
+gcse = "005185449088889757369:5o44h-2knna"
+```
+
+In the Custom Search select **Look and feel** and switch to *Full width*, save.
+In **Themes** select *classic*
+
 ## Some content
 -fix logo
