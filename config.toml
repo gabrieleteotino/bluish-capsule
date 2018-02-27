@@ -1,4 +1,4 @@
-baseURL = "https://www.teosoft.it/"
+baseURL = "http://www.teosoft.it/"
 languageCode = "en-us"
 title = "Bluish capsule"
 theme = "beautifulhugo"
