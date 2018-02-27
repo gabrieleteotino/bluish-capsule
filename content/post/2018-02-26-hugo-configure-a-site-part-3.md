@@ -78,5 +78,4 @@ When we reach the following screen
 Change the nameservers from *ns2.th.seeweb.it*, *ns1.th.seeweb.it* to *brett.ns.cloudflare.com*, *kiki.ns.cloudflare.com*.
 Damn, tophost does not allow me to change the nameservers.
 
-## Some content
--fix logo
+My next article will be on the new domain registar and new hosting.
