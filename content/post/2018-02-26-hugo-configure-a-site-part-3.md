@@ -11,14 +11,13 @@ draft: true
 ## Github custom domain
 [Offical instructions](https://help.github.com/articles/adding-or-removing-a-custom-domain-for-your-github-pages-site/)
 
-Go to the repository containing the site and move to the *Settings* panel.
-[gabrieleteotino settings](https://github.com/gabrieleteotino/gabrieleteotino.github.io/settings)
+Go to the repository containing the site and move to the *Settings* panel. [gabrieleteotino settings](https://github.com/gabrieleteotino/gabrieleteotino.github.io/settings)
 
-**TODO image of setting panel**
+{{< figure src="/img/github_settings_tab.png" title="Github settings tab" >}}
 
-Scroll down to *Custom Domain* and insert or modify the domain "www.teosoft.it" and click *Save*
+Scroll down to *GitHub Pages* section find *Custom Domain* and insert or modify the domain "www.teosoft.it" and click *Save*
 
-**TODO image of custom domain**
+{{< figure src="/img/github_settings_custom_domain.png" title="Github custom domain" >}}
 
 ## Tophost DNS configuration
 Open the Tophost [control panel](https://cp.tophost.it/)
