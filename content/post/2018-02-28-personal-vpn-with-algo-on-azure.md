@@ -4,16 +4,16 @@ date: 2018-02-28T11:51:41+01:00
 subtitle: "Deploy a personal VPN. Because VPN providers are expensive crap."
 tags: ["vpn", "azure", "python", "github"]
 categories: ["networking", "cloud"]
-draft: true
+draft: false
 ---
 
 Let's create a VPN server on Azure (other cloud providers are supported).
 
 <!--more-->
 
-# Algo
+# Algo setup
 [Algo](https://github.com/trailofbits/algo) github repository.
-[Algo](https://blog.trailofbits.com/2016/12/12/meet-algo-the-vpn-that-works/) official tutorial.
+[Algo](https://blog.trailofbits.com/2016/12/12/meet-algo-the-vpn-that-works/) product description.
 
 Clone the repository
 ```shell
@@ -48,24 +48,31 @@ Run algo and follow the instructions on screen.
 ```
 
 # Azure setup
-(Official guide)[https://github.com/trailofbits/algo/blob/master/docs/cloud-azure.md]
+
+[Official guide](https://github.com/trailofbits/algo/blob/master/docs/cloud-azure.md)
 
 From the [Azure Portal]( https://portal.azure.com/) go to **Azure Active Directory**.
 Select **App registrations** and click **New Application Registration**.
+
 Fill the form
+
 - Name: algo-personal-vpn *(it can be any name)*
 - Application type: Web app / API
 - Sign-on URL: https://www.teosoft.it *(it can be any URL)*
 
-Copy and save somewhere the *Application ID*. Click on **Settings**, **Keys**, add a *Key description* like *algo* (it will be the name of the virtual machine) with *Never expires*. Click save and the copy and save somewhere the *Value* (this is the *Secret ID*).
+Copy and save somewhere the *Application ID*.
 
-Go to the Main menu, **Azure Active Directory** and click on Properties. Copy and save somewhere the *Directory ID* (in the script it will be referred as *tenant*).
+Click on **Settings**, **Keys**, add a *Key description* like *algo* (it will be the name of the virtual machine) with *Never expires*. Click save. Copy and save somewhere the *Value* (this is the *Secret ID*).
 
-Go to the Main menu, **Subscriptions** and click on the subscription you want you use in Algo. Copy and save the *Subscription ID*. Inside the **Subscription** go to **Acces Control** add a new item, select "Contributor". Search for *algo-personal-vpn*, add it as a member and **Save**.
+Go to the Main menu, **Azure Active Directory** and click on **Properties**. Copy and save somewhere the *Directory ID* (in the script it will be referred as *tenant*).
+
+Go to the Main menu, **Subscriptions** and click on the subscription you want you use in Algo. Copy and save the *Subscription ID*.
+
+Inside the **Subscription** go to **Acces Control** add a new item, select "Contributor". Search for *algo-personal-vpn*, add it as a member and **Save**.
 
 Now insert the values inside the script to continue with the wizard.
 
-Optionally create the credentials file ```~/.azure/credentials```:
+Optionally create a credentials file ```~/.azure/credentials```:
 ```
 [default]
 client_id=
@@ -660,23 +667,38 @@ localhost                  : ok=21   changed=12   unreachable=0    failed=0
 ```
 
 ## Client configuration
-### Debian with xfce
-Install the default strongswan plugin (the offical instrusctions says that there is a problem but)
+
+*Currently using Debian stretch with xfce*
+
+In case it is necessary to reactivate the virtual environment:
 
 ```shell
-sudo apt install network-manager-strongswan
+cd ~/algo
+source env/bin/activate
 ```
 
-Right click on the network manager icon, disable and then enable the networking.
-Click on the netowrk manager, select *VPN connections* -> *Add a VPN connection*. Choose the strongswan plugin.
-Fill in the options
-- Name: vpn-algo (or anything else)
-- Certificate: browse to ~/algo/configs/ipoftheserver/cacert.pem
-- Client
-  - Authentication: Certificate/Private key
-  - Certificate: ~/algo/configs/ipoftheserver/pki/certs/user-name.crt
-  - Private key: ~/algo/configs/ipoftheserver/pki/private/user-name.key
-- Options
-  - Check Request an inner IP address
-  - Optionally check Enforce UDP encapsulation
-  - Optionally check Use IP compression
+Use the playbook to configure the client
+```shell
+ansible-playbook deploy_client.yml -e 'client_ip=localhost vpn_user=gabriele server_ip=13.80.20.110 ssh_user=root' --ask-become-pass
+```
+
+Start the conncetion
+```shell
+#pick up config changes
+sudo ipsec restart
+#start the ipsec tunnel
+sudo ipsec up ikev2-13.80.20.110
+#shutdown the ipsec tunnel
+sudo ipsec down ikev2-13.80.20.110
+```
+
+## Troubleshooting
+With Connection Manager edit the current network connection and set an MTU of 1438.
+Restart the connection and reconnect.
+
+## Testing
+https://whoer.net/
+
+http://whatismyipaddress.com/
+
+https://diafygi.github.io/webrtc-ips/
