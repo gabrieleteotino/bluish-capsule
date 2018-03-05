@@ -3,7 +3,7 @@ title: Big Stopwatch
 date: 2014-07-10T02:54:05+00:00
 author: Gabriele Teotino
 layout: page
-draft: true
+draft: false
 ---
 
 *This project is discontinued and not available on the play store*
