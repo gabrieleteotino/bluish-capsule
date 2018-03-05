@@ -4,7 +4,7 @@ date: 2018-03-02T13:13:49+01:00
 subtitle: ""
 tags: ["hugo"]
 categories: ["webdev"]
-draft: true
+draft: false
 ---
 
 ## Hello Page Bundle
