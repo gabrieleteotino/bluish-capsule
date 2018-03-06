@@ -65,16 +65,20 @@ gcse = "005185449088889757369:5o44h-2knna"
 In the Custom Search select **Look and feel** and switch to *Full width*, save.
 In **Themes** select *classic*
 
-## SSL on Cloudflare
+## SSL and CDN on Cloudflare
 Signup to [Cloudflare](https://www.cloudflare.com/a/sign-up-n)
 Add www.teosoft.it
 Select the free plan and follow the instructions.
 
-When we reach the following screen
+Change the nameservers from *ns10.ovh.net*, *dns10.ovh.net* to *brett.ns.cloudflare.com*, *kiki.ns.cloudflare.com*.
 
-**TODO image**
+In the OVH control panale go to Domains -> teosoft.it, select **DNS servers** click **Modify DNS servers** and change the nameservers.
 
-Change the nameservers from *ns2.th.seeweb.it*, *ns1.th.seeweb.it* to *brett.ns.cloudflare.com*, *kiki.ns.cloudflare.com*.
-Damn, tophost does not allow me to change the nameservers.
+Note: changes submitted at 13:05 and Cloudflare detected the changes at
 
-My next article will be on the new domain registar and new hosting.
+https://www.zonemaster.net/
+
+While we wait it is a good chance to launch a [performance test](https://www.webpagetest.org) before Cloudflare start to serve our site.
+Load Time| First Byte| Start Render| Speed Index
+---|---|---|---
+2.780s| 0.299s| 1.400s| 1405
