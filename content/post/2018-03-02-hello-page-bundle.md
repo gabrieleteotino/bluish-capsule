@@ -1,13 +1,11 @@
 ---
 title: "Hello Page Bundle"
 date: 2018-03-02T13:13:49+01:00
-subtitle: ""
+subtitle: "Keeping content organized in Hugo"
 tags: ["hugo"]
 categories: ["webdev"]
 draft: false
 ---
-
-## Hello Page Bundle
 
 The [Hugo documentation](https://gohugo.io/content-management/organization/#page-bundles) have a nice example on how to structure images and other resources in a page bundle.
 
