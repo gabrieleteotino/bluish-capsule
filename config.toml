@@ -1,4 +1,4 @@
-baseURL = "http://www.teosoft.it/"
+baseURL = "https://www.teosoft.it/"
 languageCode = "en-us"
 title = "Bluish capsule"
 theme = "beautifulhugo"
@@ -26,7 +26,7 @@ googleAnalytics = "UA-24994854-1"
 
 [author]
   name = "Gabriele Teotino"
-  website = "http://www.teosoft.it"
+  website = "https://www.teosoft.it"
   github = "gabrieleteotino"
   stackoverflow = "users/2085504/deramko"
 
