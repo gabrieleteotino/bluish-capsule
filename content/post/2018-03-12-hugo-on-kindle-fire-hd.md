@@ -52,7 +52,7 @@ We see that the command have setup for us a few links to the most used folders: 
 
 ## Github ssh keys
 
-Similar to the process specified in this [article]({{< relref "post/2018-02-23-ssh-keys-for-github.md" "ssh keys for Github" >}})
+Similar to the process specified in this [article]({{< relref "post/2018-02-23-ssh-keys-for-github.md" >}})
 
 ```shell
 ssh-keygen -t rsa -b 4096 -C "gabriele@teosoft.it"
