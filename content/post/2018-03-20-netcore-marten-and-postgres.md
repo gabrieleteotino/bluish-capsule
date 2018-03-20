@@ -74,3 +74,59 @@ dotnet add package Marten
 # test
 dotnet run
 ```
+
+Create a folder 'Models' and add a class `User.cs`
+```c#
+using System;
+
+namespace Models
+{
+    public class User
+    {
+        public Guid Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool Internal { get; set; }
+        public string UserName { get; set; }
+    }
+}
+```
+
+Modify the `Main` method of `Program.cs`
+
+```c#
+static void Main(string[] args)
+{
+    var store = DocumentStore
+        .For("host=localhost;database=marten_db;password=marten_password;username=marten_user");
+
+    using (var session = store.LightweightSession())
+    {
+        var user = new User { FirstName = "Han", LastName = "Solo" };
+        session.Store(user);
+
+        session.SaveChanges();
+        Console.WriteLine("User saved");
+    }
+
+    using (var session = store.OpenSession())
+    {
+        var existingUser = session
+            .Query<User>()
+            .Where(x => x.FirstName == "Han" && x.LastName == "Solo")
+            .Single();
+        Console.WriteLine($"Found {existingUser.FirstName} {existingUser.LastName}");
+    }
+
+    Console.WriteLine("Done!");
+}
+```
+
+Running the application this program will create a table and some functions for the *User* class, add a row a load it back.
+```shell
+dotnet run
+```
+
+Note the four functions and the table *mt_doc_user*
+
+![Marten generated tables](screenshot-marten-tables-pgadmin3.png)
