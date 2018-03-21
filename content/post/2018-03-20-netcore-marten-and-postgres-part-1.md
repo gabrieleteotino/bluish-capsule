@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["postgresql", "c#", "netcore"]
 categories: ["development"]
-draft: true
+draft: false
 ---
 
 
@@ -13,17 +13,14 @@ draft: true
 
 ```shell
 sudo apt install postgresql-9.6
-```
-
-Results
-
-```
-Creating new cluster 9.6/main ...
-  config /etc/postgresql/9.6/main
-  data   /var/lib/postgresql/9.6/main
-  locale en_US.UTF-8
-  socket /var/run/postgresql
-  port   5432
+  ...
+  Creating new cluster 9.6/main ...
+    config /etc/postgresql/9.6/main
+    data   /var/lib/postgresql/9.6/main
+    locale en_US.UTF-8
+    socket /var/run/postgresql
+    port   5432
+  ...
 ```
 
 Test if the database is working
@@ -37,11 +34,11 @@ postgres=# \q
 exit
 ```
 
-Create two users in postgresql, one equal to the current user name for pgAdmin3 the other for marten.
+Create two users in postgresql: one equal to the current interactive user for pgAdmin3 the other for marten.
 
 ```shell
 sudo -u postgres -i
-# this must be same as the current user
+# this must be same as the current interactive user
 createuser --interactive zap
   Shall the new role be a superuser? (y/n) y
 # for this user we set a password
@@ -75,7 +72,7 @@ dotnet add package Marten
 dotnet run
 ```
 
-Create a folder 'Models' and add a class `User.cs`
+Create a folder `Models` and add a class `User.cs`
 ```c#
 using System;
 
@@ -122,7 +119,7 @@ static void Main(string[] args)
 }
 ```
 
-Running the application this program will create a table and some functions for the *User* class, add a row a load it back.
+Running the application this program will create a table and some functions for the *User* class, add a row and load it back.
 ```shell
 dotnet run
 ```
