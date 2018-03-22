@@ -7,4 +7,4 @@ categories: []
 draft: false
 ---
 
-Miscellaneous posts, articles and tutorials.
+A collection of concise how-i-did documents over my technological adventures.
