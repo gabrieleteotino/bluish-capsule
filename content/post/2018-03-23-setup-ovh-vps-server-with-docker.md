@@ -104,16 +104,21 @@ su -c nano /etc/ssh/sshd_config
 PasswordAuthentication no
 ```
 
-Managing multiple keys
-It is possible —although not considered best practice— to use the same SSH key pair for multiple hosts.
+## Managing multiple ssh keys
+I use a new SSH key pair for each client/server.
 
-On the other hand, it is rather easy to maintain distinct keys for multiple hosts by using the IdentityFile directive in your openSSH config file:
-
-~/.ssh/config
-Host SERVER1
+To manage distinct keys for multiple hosts modify openSSH config file
+```shell
+nano ~/.ssh/config
+#
+Host servername1
    IdentitiesOnly yes
    IdentityFile ~/.ssh/id_rsa_SERVER1
 
-Host SERVER2
+Host servername2
    IdentitiesOnly yes
    IdentityFile ~/.ssh/id_ed25519_SERVER2
+   HostName devel.example.com
+   Port 2222
+   User gabriele
+```
