@@ -3,7 +3,7 @@ title: "Setup Ovh Vps server with Docker"
 date: 2018-03-23T11:20:51+01:00
 subtitle: "Basic setup of a vps server from OVH to be used as a development machine with Docker"
 author: Gabriele Teotino
-tags: ["cloud", "linux" "debian", "security", "docker"]
+tags: ["cloud", "linux", "debian", "security", "docker"]
 categories: ["devops"]
 draft: true
 ---
