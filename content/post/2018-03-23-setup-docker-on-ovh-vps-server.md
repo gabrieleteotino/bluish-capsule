@@ -1,5 +1,5 @@
 ---
-title: "Setup Ovh Vps server with Docker"
+title: "Setup Docker on a OVH Vps server"
 date: 2018-03-23T11:20:51+01:00
 subtitle: "Basic setup of a vps server from OVH to be used as a development machine with Docker"
 author: Gabriele Teotino
@@ -104,21 +104,22 @@ su -c nano /etc/ssh/sshd_config
 PasswordAuthentication no
 ```
 
-## Managing multiple ssh keys
-I use a new SSH key pair for each client/server.
+## Add the key to ssh-agent
 
-To manage distinct keys for multiple hosts modify openSSH config file
+Optional
+
+On a secure machine it is possible to add the key to the agent
+
 ```shell
-nano ~/.ssh/config
-#
-Host servername1
-   IdentitiesOnly yes
-   IdentityFile ~/.ssh/id_rsa_SERVER1
-
-Host servername2
-   IdentitiesOnly yes
-   IdentityFile ~/.ssh/id_ed25519_SERVER2
-   HostName devel.example.com
-   Port 2222
-   User gabriele
+ssh-add ~/.ssh/id_ed25519_servername
+  Enter passphrase for /home/zap/.ssh/id_ed25519_servername:
+  Identity added: /home/zap/.ssh/id_ed25519_servername (comment)
 ```
+
+Now to connect no password or passphrase is required
+```shell
+ssh gabriele@54.37.1.1 -p 2222
+```
+
+# Setup docker
+[Offical instruction](https://docs.docker.com/install/linux/docker-ce/debian/)
