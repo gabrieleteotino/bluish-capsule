@@ -123,3 +123,62 @@ ssh gabriele@54.37.1.1 -p 2222
 
 # Setup docker
 [Offical instruction](https://docs.docker.com/install/linux/docker-ce/debian/)
+
+Login as root
+
+Add backport repository
+
+```shell
+vim /etc/apt/sources.list
+# uncomment or add the following lines
+# deb http://deb.debian.org/debian stretch-backports main contrib non-free
+# deb-src http://deb.debian.org/debian stretch-backports main contrib non-free
+wq
+apt update
+```
+
+Add support for https repository
+
+```shell
+apt-get install \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg2 \
+  software-properties-common
+```
+
+Add docker GPG key
+```shell
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+```
+
+Verify that the key fingerprint is `9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88`
+
+```shell
+apt-key fingerprint 0EBFCD88
+
+pub   rsa4096 2017-02-22 [SCEA]
+      9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+sub   rsa4096 2017-02-22 [S]
+```
+
+Add the stable docker repository
+```shell
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+```
+
+Update and install docker-ce
+```shell
+apt update
+apt install docker-ce
+```
+
+Test that docker is working
+```shell
+docker run hello-world
+```
