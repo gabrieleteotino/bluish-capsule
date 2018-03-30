@@ -182,3 +182,11 @@ Test that docker is working
 ```shell
 docker run hello-world
 ```
+
+Enable at startup
+```shell
+# check if it is not enabled
+systemctl is-enabled docker.service
+# eventually enable it
+systemctl enable docker.service
+```
