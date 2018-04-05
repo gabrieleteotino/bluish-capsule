@@ -23,8 +23,31 @@ docker volume create portainer_data
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
 
+Test portainer on port 9000.
+Eventually open the port on the [Firewall](firewall)
+
+## SSL
+
+Generate certificates
+
+```shell
+# create a folder to put the keys
+mkdir portainer
+cd portainer
+# make the key
+openssl genrsa -out portainer.key 2048
+openssl ecparam -genkey -name secp384r1 -out portainer.key
+openssl req -new -x509 -sha256 -key portainer.key -out portainer.crt -days 3650
+```
+
+Rerun the container. It is possible to use the standard 443 port so the browser automatically uses https. I choose to leave the 443 free for other services.
+
+```shell
+docker run -p 9000:9000 -v ~/portainer:/certs portainer/portainer --ssl --sslcert /certs/portainer.crt --sslkey /certs/portainer.key
+```
+
 ## Firewall
-Now we need to open the port 9000. Let's check my external ip address and add a rule.
+Open the port 9000 on the firewall. Let's check my external ip address and add a rule.
 
 ```shell
 ufw allow from 94.81.51.199 port 9000
@@ -33,7 +56,10 @@ ufw status
 
 ## Run
 
-Connect to the host with the browser, ti will ask for a new admin password.
+Connect to the host with the browser. Use https if certificates are installed.
+
+On the first run it will ask for a new admin password.
+
 
 Enjoy.
 
