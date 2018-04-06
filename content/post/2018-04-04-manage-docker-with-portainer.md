@@ -43,7 +43,7 @@ openssl req -new -x509 -sha256 -key portainer.key -out portainer.crt -days 3650
 Rerun the container. It is possible to use the standard 443 port so the browser automatically uses https. I choose to leave the 443 free for other services.
 
 ```shell
-docker run -p 9000:9000 -v ~/portainer:/certs portainer/portainer --ssl --sslcert /certs/portainer.crt --sslkey /certs/portainer.key
+docker run -d -p 9000:9000 -v ~/portainer:/certs -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer --ssl --sslcert /certs/portainer.crt --sslkey /certs/portainer.key
 ```
 
 ## Firewall
