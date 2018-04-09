@@ -1,11 +1,11 @@
 ---
 title: "Linux tmux"
 date: 2018-03-29T15:34:35+02:00
-subtitle: ""
+subtitle: "Using tmux command to mantain a remote session open between ssh sessions for long running tasks with multiple shell windows"
 author: Gabriele Teotino
 tags: ["debian", "tools"]
 categories: ["linux"]
-draft: true
+draft: false
 ---
 
 Install and run
@@ -14,28 +14,33 @@ Install and run
 sudo apt install tmux
 ```
 
+<!--more-->
+To send a command press **Ctrl+b** then the command character. Use **?** for help.
+
 Ctrl+b ? show help
 
 ## Panels
 
-Ctrl+b % vertical split
+**Ctrl+b %** vertical split
 
-Ctrl+b " Horizontal split
+**Ctrl+b "** horizontal split
 
-Ctrl-b <arrow key> change panel
+**Ctrl-b &lt;arrow key&gt;** change panel
 
-Ctrl-d or exit close a panel
+**Ctrl-b Ctrl-&lt;arrow key&gt;** resize the panel in the specified direction
+
+**Ctrl-d** or exit close a panel
 
 ## Windows
 
-Ctrl-b c create a window
+**Ctrl-b c** create a window
 
-Ctrl-b n next window
+**Ctrl-b n** next window
 
-Ctrl-b p previous window
+**Ctrl-b p** previous window
 
 ## Detach and reattach
-Ctrl-b d detach the current session
+**Ctrl-b d** detach the current session
 
 Reattach
 
@@ -59,8 +64,6 @@ tmux attach -t database
 
 ## Other nice commands
 
-Ctrl-b z make a panel go full screen and back to normal size
+**Ctrl-b z** make a panel go full screen and back to normal size
 
-Ctrl-b , rename the current window
-
-Ctrl-b Ctrl-<arrow key> resize the panel in the specified direction
+**Ctrl-b ,** rename the current window

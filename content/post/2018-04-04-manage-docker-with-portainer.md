@@ -5,7 +5,7 @@ subtitle: "Portainer is a platform that really simplify management of docker env
 author: Gabriele Teotino
 tags: ["cloud", "linux", "debian", "docker", "portainer"]
 categories: ["devops"]
-draft: true
+draft: false
 ---
 
 Portainer runs as a light (4Mb) container on Docker.
@@ -47,12 +47,8 @@ docker run -d -p 9000:9000 -v ~/portainer:/certs -v /var/run/docker.sock:/var/ru
 ```
 
 ## Firewall
-Open the port 9000 on the firewall. Let's check my external ip address and add a rule.
 
-```shell
-ufw allow from 94.81.51.199 port 9000
-ufw status
-```
+Docker automatically opens al the ports mapped for the machine. No ufw rule is necessary.
 
 ## Run
 

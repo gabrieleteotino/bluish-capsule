@@ -5,21 +5,22 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["cloud", "linux", "debian", "security", "ufw"]
 categories: ["devops"]
-draft: true
+draft: false
 ---
 
-Installing and configuring the (Uncomplicated Firewall)[https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29]
+Installing and configuring the [Uncomplicated Firewall](https://wiki.debian.org/Uncomplicated%20Firewall%20%28ufw%29)
 
 <!--more-->
 
 All the commands are executed by the root user.
 
-Install
+## Installation
 ```shell
 apt install ufw
 ```
 
-Before starting the firewall we *have* to allow ssh traffic or we will closed out.
+## Configuration
+Before starting the firewall we *have* to allow ssh traffic or we will closed ourself out.
 
 ```shell
 # if ssh is still on port 22
@@ -46,6 +47,27 @@ ufw status verbose
 
 Done. It was uncomplicated.
 
+# Remove a rule
+
+View a numbered list of rules and remove the rule using the index
+```shell
+ufw status numbered
+  Status: active
+
+     To                         Action      From
+     --                         ------      ----
+  [ 1] 2222/tcp                   ALLOW IN    Anywhere
+  [ 2] 80                         ALLOW IN    Anywhere
+  [ 3] 443                        ALLOW IN    Anywhere
+  [ 4] Anywhere                   ALLOW IN    94.81.51.199 9000
+  [ 5] 2222/tcp (v6)              ALLOW IN    Anywhere (v6)
+  [ 6] 80 (v6)                    ALLOW IN    Anywhere (v6)
+  [ 7] 443 (v6)                   ALLOW IN    Anywhere (v6)
+
+ufw delete 4
+```
+
+## More
 A few other commands that can be useful
 
 ```shell

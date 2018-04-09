@@ -5,21 +5,16 @@ subtitle: "Basic setup of a vps server from OVH to be used as a development mach
 author: Gabriele Teotino
 tags: ["cloud", "linux", "debian", "security", "docker"]
 categories: ["devops"]
-draft: true
+draft: false
 ---
 
 I have a brand new VPS server from OVH with Debian Stretch. Let's configure it with some basic security and Docker. The server will be used as a test machine for my experiments. This machine is **not** for production.
 
 <!--more-->
 
-# Summary
-- Update
-- Secure root
-- Secure ssh
-
 ## Update
 
-Always check if new packages are available
+Check if new packages are available
 ```shell
 ssh root@54.37.1.1 -p 22
 apt update && apt upgrade -y
@@ -64,7 +59,7 @@ su - root
 
 ## Secure ssh
 
-Change ssh port
+### Change ssh port
 ```shell
 nano /etc/ssh/sshd_config
 # change the line Port 22 to something else
@@ -73,9 +68,8 @@ Port 2222
 ssh gabriele@54.37.1.1 -p 2222
 ```
 
-Generate keys for ssh connection
-
-[Arch linux reference](https://wiki.archlinux.org/index.php/SSH_keys)
+### Generate keys for ssh connection
+([Arch linux reference](https://wiki.archlinux.org/index.php/SSH_keys))
 
 On the local client machine
 ```shell
@@ -97,7 +91,7 @@ Try a connection using the key
 ssh gabriele@54.37.1.1 -p 2222 -i ~/.ssh/id_ed25519_servername
 ```
 
-Now that the key works disable password login
+### Disable password login
 ```shell
 su -c nano /etc/ssh/sshd_config
 # Change

@@ -5,7 +5,7 @@ subtitle: "Using screen command to mantain a remote session open between ssh ses
 author: Gabriele Teotino
 tags: ["debian", "tools"]
 categories: ["linux"]
-draft: true
+draft: false
 ---
 
 Install and run
@@ -16,7 +16,6 @@ screen
 ```
 <!--more-->
 To send a command press **Ctrl+A** then the command character. Use **?** for help.
-
 
 ## Multiple windows, detaching and reattaching
 
@@ -59,14 +58,14 @@ Lock the screen **Ctrl+a x**
 
 ## Windows and panels
 
-Ctrl+a S Horizontal split
+**Ctrl+a S** Horizontal split
 
-Ctrl+a | Vertical split
+**Ctrl+a |** Vertical split
 
-Ctrl+a tab Cycle panels
+**Ctrl+a tab** Cycle panels
 
-Ctrl+a c Create a window in the current panel
+**Ctrl+a c** Create a window in the current panel
 
-Ctrl+a n Select the next window in the current panel
+**Ctrl+a n** Select the next window in the current panel
 
-Ctrl+a " List windows
+**Ctrl+a "** List windows
