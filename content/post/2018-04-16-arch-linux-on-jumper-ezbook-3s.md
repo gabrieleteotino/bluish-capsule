@@ -118,7 +118,7 @@ mount /dev/sdc2 /mnt
 mount /dev/sdc1 /mnt/boot
 ```
 
-## mirror list
+## Mirror list
 Use Alt+arrow to switch to a new console
 ```shell
 elinks https://www.archlinux.org/mirrorlist/
@@ -137,39 +137,55 @@ mv ./mirrorlist /etc/pacman.d/mirrorlist
 nano /etc/pacman.d/mirrorlist
 ```
 
-## setup base packages
+## Setup base packages
 This is a bit long, about 20 minutes
+```shell
 pacstrap /mnt base
+```
 
 # Configure the system
 Generate a new fstab
+```shell
 genfstab -U /mnt >> /mnt/etc/fstab
+```
 
 Chroot in the new environment
+```shell
 arch-chroot /mnt
+```
 
 Change timezione
+```shell
 ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 hwclock --systohc
+```
 
 Uncomment en_US.UTF-8 UTF-8
+```shell
 nano /etc/locale.gen
 locale-gen
+```
 
 Create a new configuration file and set the LANG variable
+```shell
 nano /etc/locale.conf
 LANG=en_US.UTF-8
+```
 
 The keyboard layout is ok with the default.
 
 Create a hostname file
+```shell
 echo sunzi > /etc/hostname
+```
 
-Add the hostname "sunzi" to
+Add the hostname "sunzi" to hosts
+```shell
 nano /etc/hosts
 127.0.0.1	localhost
 ::1		localhost
 127.0.1.1	sunzi.localdomain	sunzi
+```
 
 ## Network configuration
 Install the packages for wireless configuration
@@ -183,7 +199,9 @@ pacman -S dialog
 # Final steps
 
 ## Set the root password
+```shell
 passwd
+```
 
 ## Boot loader
 We install GRUB on the Usb drive instead of the SSD. rEFInd will automatically add GRUB to the boot menu.
@@ -196,9 +214,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Reboot
+```shell
 umount /dev/sdc1
 umount /dev/sdc2
 reboot
+```
 
 ## Say thanks
 Make a donation to rodsmith for the work done on rEFInd.
