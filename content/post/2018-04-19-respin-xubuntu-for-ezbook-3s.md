@@ -1,16 +1,16 @@
 ---
-title: "Respin Lubuntu for Ezbook 3s"
+title: "Respin Xubuntu for Ezbook 3s"
 date: 2018-04-19T16:50:37+02:00
 subtitle: "Isorepin is a script that can customize an ISO to be able to boot on apollo lake systems."
 author: Gabriele Teotino
-tags: ["arch", "archlinux", "ezbook", "jumper", "rEFInd", "banggood"]
+tags: ["xubuntu", "ubuntu", "ezbook", "jumper", "rEFInd", "banggood"]
 categories: ["linux"]
 draft: false
 ---
 
 I bought a cheap laptop from china: [Ezbook 3S](https://www.banggood.com/Jumper-EZBOOK-3S-14_1-Inch-Laptop-Windows-10-Intel-Apollo-Lake-N3450-6GB-RAM-256GB-SSD-Storage-1080P-p-1184739.html?p=8V05105282880201607F).
 
-To boot Lubuntu a bit of trickery has to be done on the iso image.
+To boot Xubuntu a bit of trickery has to be done on the iso image.
 
 <!--more-->
 
