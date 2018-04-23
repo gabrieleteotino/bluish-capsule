@@ -69,7 +69,6 @@ netctl start profilename
 ```
 
 ### Connection with `wpa_supplicant`
-
 Find an access point
 ```shell
 ip link set wlp0s21f0u7i2 up
