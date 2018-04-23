@@ -1,7 +1,7 @@
 ---
-title: "Installing Lubuntu on Ezbook S3"
+title: "Installing Xubuntu on Ezbook S3"
 date: 2018-04-23T11:24:30+02:00
-subtitle: "After a few experiments I decided to make full disk lubuntu installation."
+subtitle: "After a few experiments I decided to make full disk xubuntu installation."
 author: Gabriele Teotino
 tags: ["xubuntu", "ubuntu", "ezbook", "jumper", "banggood"]
 categories: ["linux"]
