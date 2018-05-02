@@ -2,7 +2,7 @@
 title: "SSH Keys for Github"
 date: 2018-02-23T11:13:18+01:00
 subtitle: "How to authenticate to github using SSH keys"
-tags: ["github"]
+tags: ["ssh", "github"]
 categories: ["development"]
 draft: false
 ---
