@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["visualstudio", "dev"]
 categories: ["tools"]
-draft: true
+draft: false
 ---
 
 [Web Essentials for Visual Studio](http://vswebessentials.com/) is fantastic collection of plugins for visual studio. The name is right: it is essential to have.
