@@ -1,9 +1,9 @@
 ---
-title: "2018 05 17 Specflow for Bdd in Visual Studio 2017"
+title: "Specflow for Bdd in Visual Studio 2017"
 date: 2018-05-17T13:10:03+02:00
 subtitle: "Specflow let you write gerkin specs in visual studio."
 author: Gabriele Teotino
-tags: ["bdd", "specflow", "visualstudio", "gerkin", ]
+tags: ["bdd", "specflow", "visualstudio", "gerkin"]
 categories: ["dev"]
 draft: true
 ---
