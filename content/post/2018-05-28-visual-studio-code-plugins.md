@@ -5,13 +5,14 @@ subtitle: "A small selection of useful plugins for visual studio code."
 author: "Gabriele Teotino"
 tags: ["visualstudiocode", "plugin"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Various plugins for visual studio code, useful for developing in c# and Angular.
 
-<!-- more -->
-# C#
+<!--more-->
+
+# C\#
 
 ## C# for Visual Studio Code
 
@@ -121,3 +122,23 @@ Linting for typescript.
 Remember to install the dependencies ```npm install -g tslint typescript```.
 
 Not essential but a **very useful** tool.
+
+
+## TypeScript Hero
+
+From Christoph Bühler (rbbit.typescript-hero) 671,318 downloads.
+
+Features:
+
+- manages import statements
+- automatically import missing dependencies
+- organize and sort imports
+
+**Absolute must have!**
+
+
+## Debugger for Chrome
+
+From Microsoft (msjsdiag.debugger-for-chrome) 8,374,710 downloads.
+
+**Absolute must have!**

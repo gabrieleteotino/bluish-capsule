@@ -10,7 +10,7 @@ draft: false
 
 [Node Version Manager](https://github.com/creationix/nvm) is Simple bash script to manage multiple active node.js versions.
 
-<!-- more -->
+<!--more-->
 
 Installation of nvm is a single command
 
