@@ -5,7 +5,7 @@ subtitle: "Installation of node on ubuntu using node version manager"
 author: Gabriele Teotino
 tags: ["linux", "nodejs", "node", "nvm", "ubuntu"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 [Node Version Manager](https://github.com/creationix/nvm) is Simple bash script to manage multiple active node.js versions.
