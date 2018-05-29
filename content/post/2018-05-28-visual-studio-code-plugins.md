@@ -11,6 +11,7 @@ draft: true
 Various plugins for visual studio code, useful for developing in c# and Angular.
 
 <!-- more -->
+# C#
 
 ## C# for Visual Studio Code
 
@@ -39,6 +40,18 @@ Features:
 - Add property from constructors
 
 **Speed up development**, not powerful as having visual studio but very nice.
+
+## NuGet Package Manager
+
+From jmrog (jmrog.vscode-nuget-package-manager) 106,389 downloads.
+
+Adds nuget commands to the command palette.
+
+CTRL + Shift + P -> NuGet
+
+**Nice** but not essential.
+
+# Angular
 
 ## Angular v6 Snippets
 
@@ -83,7 +96,6 @@ Add various material icons and allows theming and customization
 
 **Nice tool**, not fundamental but a cool visual enhancement.
 
-
 ## Path Intellisense
 
 From Christian Kohler (christian-kohler.path-intellisense) 964,343 downloads.
@@ -96,4 +108,16 @@ Autocompletes npm modules in import statements.
 
 From Esben Petersen (ext install esbenp.prettier-vscode) 2,178,622 downloads.
 
-CMD + Shift + P -> Format Document
+CTRL + Shift + P -> Format Document
+
+**Absolute must have!**
+
+## TSLint
+
+From egamma (eg2.tslint) 5,316,218 downloads.
+
+Linting for typescript.
+
+Remember to install the dependencies ```npm install -g tslint typescript```.
+
+Not essential but a **very useful** tool.
