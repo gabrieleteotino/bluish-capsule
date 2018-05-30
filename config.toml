@@ -54,6 +54,11 @@ googleAnalytics = "UA-24994854-1"
   name = "Meccanici"
   url = "project/meccanici"
   weight = 2
+[[menu.main]]
+  parent = "projects"
+  name = "DatingApp"
+  url = "project/datingapp"
+  weight = 3
 
 [[menu.main]]
   name = "Reviews"
