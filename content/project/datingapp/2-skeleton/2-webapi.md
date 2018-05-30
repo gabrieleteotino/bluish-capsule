@@ -8,7 +8,7 @@ categories: ["dev"]
 draft: true
 ---
 
-Create a simple skeleton with a wepapi that load data from the database.
+Create a simple skeleton with a webapi that loads data from the database.
 
 <!--more-->
 
