@@ -7,3 +7,5 @@ tags: []
 categories: []
 draft: true
 ---
+
+sudo apt install dotnet-sdk-2.1.300-rc1-008673 

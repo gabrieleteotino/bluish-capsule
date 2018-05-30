@@ -3,7 +3,21 @@ title: "Github"
 date: 2018-05-30T22:03:13+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["github"]
+categories: ["dev"]
 draft: true
 ---
+
+I will use a single repository for either the Angular SPA and the c# Web API.
+
+<!--more-->
+
+On github create a new repository with a readme a no *.gitignore* file.
+
+Clone the repository
+
+```shell
+mkdir ~\dev
+cd ~\dev
+git clone https://github.com/gabrieleteotino/DatingApp.git
+```

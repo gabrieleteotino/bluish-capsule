@@ -1,5 +1,5 @@
 ---
-title: "Datingapp Skeleton"
+title: "Webapi skeleton"
 date: 2018-05-29T16:49:07+02:00
 subtitle: "A skeleton api for the dating app"
 author: Gabriele Teotino
@@ -8,36 +8,37 @@ categories: ["dev"]
 draft: true
 ---
 
-Create a simple skeleton with a webapi that loads data from the database.
+A skeleton webapi that loads data from asqlite database.
 
 <!--more-->
-
-## Github setup
-Create a folder
-```
-mkdir DatingApp
-cd DatingApp
-```
 
 ## Webapi setup
 
 Create a new api project
-```
+```shell
+cd ~/dev/DatingApp
 dotnet new webapi -o DatingApp.API
 cd DatingApp.API
 ```
 
 Start the application
-```
+```shell
 dotnet run
 ```
 
-Check with the browser that the api is running navigating to (https://localhost:5001/api/values)[https://localhost:5001/api/values].
+Check with the browser that the api is running navigating to [https://localhost:5001/api/values](https://localhost:5001/api/values).
 
-The course suggest to add *dotnet watch* to the project. This step is no more needed with the new relase of netcore.
+## Visual Studio Code and dotnet watch
 
-Run with watch and test a small change on the value controller to see that everithing is working
+The course suggest to add *dotnet watch* to the project dependencies. This step is not needed, with the new relase of netcore it is always available.
+
+Start Visual Studio Code
+```shell
+code .
 ```
+
+From the terminal pane of vsc run dotnet watch and test a small change on the value controller to see that everything is working
+```shells
 dotnet watch run
 ```
 
@@ -80,6 +81,7 @@ namespace DatingApp.API.Data
 ```
 
 In the terminal
+
 - Stop dotnet watch
 - `dotnet add package Microsoft.EntityFrameworkCore.Sqlite -v 2.1.0-rc1-final`
 
@@ -100,7 +102,7 @@ Register the dbcontext in `Startup.cs` **ConfigureServices** method.
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-    services.AddDbContext<DatingContext>(options => options.UseSqlite("connectionname"));
+    services.AddDbContext<DatingContext>(options => options.UseSqlite(Configuration.GetConnectionString("DatingDbConnection")));
 }
 ...
 ```
@@ -113,3 +115,4 @@ dotnet ef database update
 ```
 
 This command created a **Migrations** folder with 3 files.
+The update applies the migration creating a new database.
