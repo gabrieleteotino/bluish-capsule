@@ -19,5 +19,5 @@ Clone the repository
 ```shell
 mkdir ~\dev
 cd ~\dev
-git clone https://github.com/gabrieleteotino/DatingApp.git
+git clone git@github.com:gabrieleteotino/DatingApp.git
 ```

@@ -28,6 +28,43 @@ dotnet run
 
 Check with the browser that the api is running navigating to [https://localhost:5001/api/values](https://localhost:5001/api/values).
 
+Add a `.gitignore` file
+
+```
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
+```
+
 ## Visual Studio Code and dotnet watch
 
 The course suggest to add *dotnet watch* to the project dependencies. This step is not needed, with the new relase of netcore it is always available.
