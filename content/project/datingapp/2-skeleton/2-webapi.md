@@ -79,7 +79,7 @@ From the terminal pane of vsc run dotnet watch and test a small change on the va
 dotnet watch run
 ```
 
-## Webapi database
+## Database configuration and initalization
 
 Create a `Models` folder inside the project.
 
@@ -153,3 +153,36 @@ dotnet ef database update
 
 This command created a **Migrations** folder with 3 files.
 The update applies the migration creating a new database.
+
+## Database usage
+
+Add a context to a new constructor in `ValuesController.cs`
+
+```c#
+...
+private readonly DatingContext _context;
+
+public ValuesController(DatingContext context)
+{
+    this._context = context;
+}
+...
+```
+
+Change the return type for the two get methods and add data loading from the db.
+
+```c#
+[HttpGet]
+public ActionResult<IEnumerable<Value>> Get()
+{
+    var values = _context.Values.ToList();
+    return Ok(values);
+}
+
+[HttpGet("{id}")]
+public ActionResult<Value> Get(int id)
+{
+    var value = _context.Values.FirstOrDefault(x => x.Id == id);
+    return Ok(value);
+}
+```
