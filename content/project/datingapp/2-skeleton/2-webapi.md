@@ -169,20 +169,64 @@ public ValuesController(DatingContext context)
 ...
 ```
 
-Change the return type for the two get methods and add data loading from the db.
+Change the return type for the two get methods and add asynchronous data loading from the db.
 
 ```c#
 [HttpGet]
-public ActionResult<IEnumerable<Value>> Get()
+public async Task<ActionResult<IEnumerable<Value>>> Get()
 {
-    var values = _context.Values.ToList();
+    var values = await _context.Values.ToListAsync();
     return Ok(values);
 }
 
 [HttpGet("{id}")]
-public ActionResult<Value> Get(int id)
+public async Task<ActionResult<Value>> Get(int id)
 {
-    var value = _context.Values.FirstOrDefault(x => x.Id == id);
+    var value = await _context.Values.FirstOrDefaultAsync(x => x.Id == id);
     return Ok(value);
 }
 ```
+
+## Some test data
+
+Using *Db Browser for Sqlite* open the database *DatingApp.db** and add few rows to the *Values* table.
+Remember to *Write Chenges* to the db.
+
+## Test the API with Postman
+
+Start Postman, login, the create a new collection named *DatingApp*.
+
+Inside the *DatingApp* collection create a folder named *Skeleton*.
+
+Add a new GET request, name it *GetValues* and use the following url https://localhost:5001/api/values then click save.
+Send the request and check that the body of the response contains the test records previously saved into the database.
+
+```json
+[
+    {
+        "id": 1,
+        "name": "value db1"
+    },
+    {
+        "id": 2,
+        "name": "value db2"
+    },
+    {
+        "id": 3,
+        "name": "Value db3"
+    }
+]
+```
+
+Add a new GET request, name it *GetValue* and use the following url https://localhost:5001/api/values/1 then click save.
+Send the request and check that the body of the response contains the test records previously saved into the database.
+
+```json
+{
+    "id": 1,
+    "name": "value db1"
+}
+```
+
+Change the url to other ids to check that all the values are correctly loaded.
+Change the url to a not existing id and check that a 204 is returned.
