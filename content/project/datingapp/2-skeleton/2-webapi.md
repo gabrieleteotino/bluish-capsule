@@ -230,3 +230,33 @@ Send the request and check that the body of the response contains the test recor
 
 Change the url to other ids to check that all the values are correctly loaded.
 Change the url to a not existing id and check that a 204 is returned.
+
+## CORS
+
+Register the cors service in `Startup.cs` **ConfigureServices** method.
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+    services.AddDbContext<DatingContext>(options => options.UseSqlite(Configuration.GetConnectionString("DatingDbConnection")));
+    services.AddCors();
+}
+```
+
+And configure CORS **before** MVC. This configuration is very relaxed and unconstrained, not the ideal configuration for a production app.
+
+```c#
+...
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+  ...
+  // CORS must be configured before mvc
+  app.UseCors(policy => policy
+      .AllowAnyOrigin()
+      .AllowAnyHeader()
+      .AllowAnyMethod()
+      .AllowCredentials());
+  app.UseMvc();
+}
+```
