@@ -81,6 +81,16 @@ Features: completions, errors, hints, and navigation inside your Angular templat
 
 **Absolute must have!**
 
+## Path Intellisense
+
+From Christian Kohler (christian-kohler.path-intellisense) 964,343 downloads.
+
+Autocompletes npm modules in import statements.
+
+**Very good**.
+
+# Generic
+
 ## Bracket Pair Colorizer
 
 From CoenraadS (CoenraadS.bracket-pair-colorizer) 1,763,347 downloads.
@@ -97,21 +107,15 @@ Add various material icons and allows theming and customization
 
 **Nice tool**, not fundamental but a cool visual enhancement.
 
-## Path Intellisense
-
-From Christian Kohler (christian-kohler.path-intellisense) 964,343 downloads.
-
-Autocompletes npm modules in import statements.
-
-**Very good**.
-
 ## Prettier - Code formatter
 
-From Esben Petersen (ext install esbenp.prettier-vscode) 2,178,622 downloads.
+From Esben Petersen (esbenp.prettier-vscode) 2,178,622 downloads.
 
 CTRL + Shift + P -> Format Document
 
 **Absolute must have!**
+
+# Typescript
 
 ## TSLint
 
@@ -122,7 +126,6 @@ Linting for typescript.
 Remember to install the dependencies ```npm install -g tslint typescript```.
 
 Not essential but a **very useful** tool.
-
 
 ## TypeScript Hero
 
@@ -136,6 +139,7 @@ Features:
 
 **Absolute must have!**
 
+#Debug
 
 ## Debugger for Chrome
 
