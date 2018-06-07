@@ -65,12 +65,14 @@ This default configuration just specify localhost. It is possible to add customi
 
 
 more nice roles
+
+https://github.com/gantsign/ansible-role-postman
+https://github.com/gantsign/ansible-role-atom
+
 https://github.com/gantsign/ansible-role-zram-config
 https://github.com/gantsign/ansible-role-xdesktop
 https://github.com/gantsign/ansible-role-dockbarx-launcher
-https://github.com/gantsign/ansible-role-postman
 https://github.com/gantsign/ansible-role-default-web-browser
-https://github.com/gantsign/ansible-role-atom
 
 
 ## Galaxy
