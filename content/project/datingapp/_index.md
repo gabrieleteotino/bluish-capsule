@@ -14,5 +14,6 @@ The application is my opinionated version of this [Udemy course](https://www.ude
 
 The course used a previous version of .net core I fixed everything to use 2.1.0-rc1-final.
 
-1. [Preparation](1-preparation)
-1. [Skeleton](2-skeleton)
+- [Preparation](1-preparation)
+- [Skeleton](2-skeleton)
+- [Securing](3-securing)
