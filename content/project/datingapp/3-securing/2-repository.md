@@ -138,3 +138,18 @@ namespace DatingApp.API.Data
     }
 }
 ```
+
+## Registration
+
+We need to register the repository as a service for dependency injection in **Startup.cs** inside the **ConfigureServices** method.
+
+Add the repository as a *Scoped* service, it's lifetime will be for a single request and register the interface with the concrete implementation.
+
+The interface will be used in the controller constructors or in other DI points and a single instance of the concrete implementation will be created for each request.
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+  services.AddScoped<IAuthRepository, AuthRepository>();
+}
+```
