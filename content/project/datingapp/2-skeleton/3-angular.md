@@ -107,16 +107,33 @@ Edit the **values** html
 </div>
 ```
 
-Add the *app-values* selector inside *app.component.html*
+Add the *app-values* selector inside *app.component.html* and clean up style.
 
 ```html
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
-    Welcome to {{ title }}!
+    Dating APP
   </h1>
   <app-values></app-values>
 </div>
 ```
 
 ## Bootstrap and font-awesome
+
+Install with npm in the folder DatingApp.SPA, we use a specific version of bootstrap.
+
+```shell
+npm install bootstrap@3.3.7 font-awesome --save
+```
+
+Add the styles into *.angular-cli.json*
+
+```json
+...
+"styles": [
+  "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "../node_modules/font-awesome/css/font-awesome.min.css",
+  "styles.css"
+],
+...
+```
