@@ -17,3 +17,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 - [Preparation](1-preparation)
 - [Skeleton](2-skeleton)
 - [Securing](3-securing)
+- [Client authentication](4-client-authentication)
