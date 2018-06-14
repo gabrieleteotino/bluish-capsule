@@ -90,3 +90,83 @@ The new div use a *ngIf* on the property **registerMode** and the *register butt
 In **home.component.ts** add a prop **registerMode: bool = false** and the **registerToggle()** function.
 
 Now the child component can't call the parent component to directly call the function.
+
+## Passing properties between components
+
+A child component can have a *@Input()* decorator to a property. That prop is then accessible from the parent as an attribute of the tag.
+
+```html
+<app-mycomponent [myproperty]="somevalue"></app-mycomponent>
+```
+
+A child component can have an *@Output()* decorator to an *EventEmmitter* property.
+
+In **register.component.ts** add a new property **cancelRegister**. Then in the **cancel** function emit the event.
+
+```typescript
+...
+@Output() cancelRegister = new EventEmitter();
+...
+cancel() {
+  this.cancelRegister.emit(false);
+  console.log('Cancelled');
+}
+...
+```
+
+In **home.component.html** add a binding to the new event in the **app-register** tag and call the function **cancelRegisterMode()**.
+
+```html
+<app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+```
+
+```typescript
+toggleRegister() {
+  this.registerMode = true;
+}
+
+cancelRegisterMode(registerMode: boolean) {
+  this.registerMode = registerMode;
+}
+```
+
+And now we can add the *ngIf* to the first div of **home.component.html**
+
+```html
+<div style="text-align: center" *ngIf="!registerMode">
+```
+
+## Add a register method to auth service
+
+Open *auth.service.ts** and refactor in a private method getHeader the firs two lines of login.
+
+```typescript
+register(model: any) {
+  return this.http.post(this.baseUrl + 'register', model, this.httpOptions());
+}
+
+private httpOptions() {
+  const header = new Headers({ 'Content-type': 'application/json' });
+  return new RequestOptions({ headers: header });
+}
+```
+
+Then in **register.component.ts** inject the AuthService in the constructor, the use it in the **register** method.
+
+```typescript
+register() {
+  this.auth.register(this.model).subscribe(() => {
+    console.log('registration complete')
+  }, error => {
+    console.log(error);
+  });
+}
+````
+
+Test a registration and check in the database if the user was created.
+
+## Clean up value
+
+Remove the **values** controller by deleting the folder, remove the reference from **app.module.ts** and the tag in **app.component.html**.
+
+Check again that the app is working.
