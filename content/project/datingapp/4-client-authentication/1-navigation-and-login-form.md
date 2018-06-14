@@ -16,7 +16,7 @@ Copy from the templates at [getbootstrap.com](http://getbootstrap.com/)
 - navigate to *Getting started*
 - click on the [Jumbotron example](https://getbootstrap.com/docs/3.3/examples/jumbotron/)
 - inspect the code
-- select all the code from the tag **nav** class **navabar**.
+- select all the code from the tag **nav** class **navabar**
 
 Inside the **app** component right click and *Generate Component* and call it **nav**.
 
@@ -120,41 +120,3 @@ The value of *loginForm.valid* is automatically populated by Angular like the *d
   <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success">Sign in</button>
 </form>
 ```
-
-## Login service
-
-Inside **src/app** create a new folder **_services**. (The underscore is just a trick to keep the folder up).
-
-Right click and **Create Service** and name it **auth**.
-
-Register the service in **app.module.ts** **providers** section.
-
-```javascript
-import { AuthService } from './_services/auth.service';
-...
-providers: [
-  AuthService
-],
-```
-
-Edit **auth.service.ts**
-Add a prop **baseUrl**.
-
-Inject http in the constructor. Check the import from '@angular/http'.
-
-Implement a login method.
-
-## Use the login service
-
-Back in **nav.component.ts** inject the **AuthService** in the constructor and use it from the **login** function.
-
-## Hide the form for logged Users
-
-Copy from the template at [getbootstrap.com](http://getbootstrap.com/), switch to bootstrap 3.3.7, navigate to *Components*  click on the [Navbar](https://getbootstrap.com/docs/3.3/components/#navbar) and then inspect the code. Select all the code of the *ul* for the *dropdown*.
-
-Paste the code below the *loginForm**
-
-Change the text to "Welcome user", remove a couple links and fix the text for the items in the dropdown. Also add icons.
-The dropdown is temporary not working, so we duplicate the logout functionality also in the *Link* just before the dropdown.
-
-Now we add the structural directive *ngIf* to the *ul* of the dropdown using the snippet *a-ngIf* and we bind it to a new function **loggedIn**.
