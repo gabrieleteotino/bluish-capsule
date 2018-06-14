@@ -72,7 +72,7 @@ export class AppModule { }
 Edit the **values** component
 
 - add a property to store the values
-- inject a Http service into the constructor
+- inject a *Http* service into the constructor
 - create a new function getValues to make the request
 
 ```javascript
