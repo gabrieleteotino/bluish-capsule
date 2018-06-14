@@ -112,7 +112,7 @@ The value of *loginForm.valid* is automatically populated by Angular like the *d
 ```html
 <form #loginForm="ngForm" class="navbar-form navbar-right" (ngSubmit)="login()">
   <div class="form-group">
-    <input type="text" placeholder="Email" class="form-control" required name="username" [(ngModel)]="model.username">
+    <input type="text" placeholder="Username" class="form-control" required name="username" [(ngModel)]="model.username">
   </div>
   <div class="form-group">
     <input type="password" placeholder="Password" class="form-control" required name="password" [(ngModel)]="model.password">
