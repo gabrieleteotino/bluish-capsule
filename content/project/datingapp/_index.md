@@ -18,3 +18,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 - [Skeleton](2-skeleton)
 - [Securing](3-securing)
 - [Client authentication](4-client-authentication)
+- [Error handling](5-error-handling)
