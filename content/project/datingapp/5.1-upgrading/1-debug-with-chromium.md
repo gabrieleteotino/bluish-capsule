@@ -1,21 +1,18 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
-}
+---
+title: "Debug with Chromium"
+date: 16-06-2018T14:27:09+02:00
+subtitle: ""
+author: Gabriele Teotino
+tags: []
+categories: []
+draft: true
+---
 
-This is working.
+In *vscode* go to the *debug* panel and click on the cog in the top right.
 
+Change the content of **launch.json** to
+
+```json
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -35,3 +32,6 @@ This is working.
         }
     ]
 }
+```
+
+Be sure to have installed the extension **Debugger for Chrome**.
