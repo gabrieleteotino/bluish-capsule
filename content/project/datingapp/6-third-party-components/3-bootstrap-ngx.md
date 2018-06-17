@@ -8,7 +8,7 @@ categories: []
 draft: true
 ---
 
-The official [repository](https://github.com/auth0/angular2-jwt) and [documentation](https://valor-software.com/ngx-bootstrap/#/getting-started).
+The official [repository](https://github.com/valor-software/ngx-bootstrap) and [documentation](https://valor-software.com/ngx-bootstrap/#/getting-started).
 
 ## Installation
 
