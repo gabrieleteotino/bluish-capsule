@@ -1,6 +1,6 @@
 ---
 title: ""
-date:
+date: 17-06-2018T18:57:19+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []
@@ -101,4 +101,4 @@ Open **nav.component.css** and add a style to make the pointer behave nicely wit
 }
 ```
 
-Test the application: the nvabar has no private links for the anonymous user, the logout is working as before with the correct cursor icon. 
+Test the application: the nvabar has no private links for the anonymous user, the logout is working as before with the correct cursor icon.
