@@ -95,7 +95,7 @@ This will update Angular cli globally (this is slightly different from the instr
 ```shell
 npm uninstall -g angular-cli
 npm cache verify
-npm install -g @angular/cli@latest
+npm install -g @angular/cli
 ```
 
 Move in the **DatingApp.SPA** folder and update the cli locally
