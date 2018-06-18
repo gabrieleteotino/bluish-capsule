@@ -69,3 +69,19 @@ Open **app.component.html** and remove the **app-home** tag and add the **router
 ```
 
 Test the navigation, all the nav items should work and invalid paths should redirect to home.
+
+## RouterLinkActive
+
+The snippet *a-routerLink* automatically adds the attribute **routerLinkActive**, we need to move it to the *li* and change the class with the bootstrap class *active*.
+
+Change **nav.component.html**
+
+```html
+...
+<a class="navbar-brand" [routerLink]="['/home']">Dating App</a>
+...
+<li routerLinkActive="active"><a [routerLink]="['/members']">Matches</a></li>
+<li routerLinkActive="active"><a [routerLink]="['/lists']">List</a></li>
+<li routerLinkActive="active"><a [routerLink]="['/messages']">Messages</a></li>
+...
+```
