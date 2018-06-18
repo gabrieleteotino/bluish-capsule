@@ -43,9 +43,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 ...
 private readonly jwt = new JwtHelperService();
 ...
-loggedIn()
-{
-  return !this.jwt.isTokenExpired();
+loggedIn() {
+  const token: string = localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
+  return token ? !this.jwt.isTokenExpired(token) : false;
 }
 
 logout() {
