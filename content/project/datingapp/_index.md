@@ -19,3 +19,7 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 - [Securing](3-securing)
 - [Client authentication](4-client-authentication)
 - [Error handling](5-error-handling)
+- [Upgrading and Debugger](5.1-upgrading)
+- [Third party components](6-third-party-components)
+- [Routing](7-routing)
+- [Extending the API](8-extending-the-api)
