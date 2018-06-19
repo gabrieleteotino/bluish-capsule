@@ -23,3 +23,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 - [Third party components](6-third-party-components)
 - [Routing](7-routing)
 - [Extending the API](8-extending-the-api)
+- [Building the UI](9-building-the-ui)
