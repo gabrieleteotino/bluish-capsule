@@ -83,7 +83,7 @@ dotnet ef database update AddedUsers
 
 Some kind of operations are not supported by *Sqlite* so the update will fail. With other database (*SqlServer*, *MariaDB*, *Postgresql*) this operation just works.
 
-If the database is just a development we can simply drop it and the recreate it. If this is not possible there are some worlkaround described in the page [SQLite EF Core Database Provider Limitations](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations).
+If the database is just a development we can simply drop it and the recreate it. If this is not possible there are some workaround described in the page [SQLite EF Core Database Provider Limitations](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations).
 
 ```shell
 dotnet ef database drop
