@@ -94,7 +94,7 @@ public class UserForDetail
     public string Interests { get; set; }
     public string City { get; set; }
     public string Country { get; set; }
-    public PhotoForUser ProfilePhoto { get; set; }
+    public string ProfilePhotoUrl { get; set; }
     public ICollection<PhotoForUser> Photos { get; set; }
 }
 ```
@@ -177,8 +177,7 @@ public class AutoMapperProfiles : Profile
 
         CreateMap<User, UserForDetail>()
             .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()))
-            .ForMember(dest => dest.ProfilePhoto, opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain)))
-            .ForMember(dest => dest.Photos, opt => opt.MapFrom(src => src.Photos.Where(x => !x.IsMain)))
+            .ForMember(dest => dest.ProfilePhotoUrl, opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url))
         ;
     }
 }
