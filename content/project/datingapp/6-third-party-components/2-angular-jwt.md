@@ -1,6 +1,6 @@
 ---
 title: "Angular JWT"
-date: 17-06-2018T14:55:17+02:00
+date: 2018-06-17T14:55:17+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []

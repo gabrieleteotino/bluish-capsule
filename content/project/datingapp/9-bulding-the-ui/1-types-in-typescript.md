@@ -1,6 +1,6 @@
 ---
 title: "Types in Typescript"
-date: 19-06-2018T19:52:17+02:00
+date: 2018-06-19T19:52:17+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []

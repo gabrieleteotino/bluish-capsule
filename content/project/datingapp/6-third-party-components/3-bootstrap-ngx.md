@@ -1,6 +1,6 @@
 ---
 title: "Bootstrap NGX"
-date: 17-06-2018T18:57:19+02:00
+date: 2018-06-17T18:57:19.000+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []

@@ -1,6 +1,6 @@
 ---
 title: "Building the UI"
-date: 19-06-2018T19:11:47+02:00
+date: 2018-06-19T19:11:47+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []

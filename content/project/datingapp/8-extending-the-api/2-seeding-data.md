@@ -1,6 +1,6 @@
 ---
 title: "Extending the user model"
-date: 18-06-2018T18:08:20+02:00
+date: 2018-06-18T18:08:20+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: []
