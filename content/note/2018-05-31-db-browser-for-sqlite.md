@@ -10,7 +10,7 @@ draft: false
 
 [DB Browser for SQLite](http://sqlitebrowser.org/) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
 
-<!-- more -->
+<!--more-->
 
 - Create and compact database files
 - Create, define, modify and delete tables
