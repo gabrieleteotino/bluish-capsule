@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: []
 categories: []
-draft: true
+draft: false
 ---
 
 For some reason my boot stopped after unlocking my luks encrypted drive.

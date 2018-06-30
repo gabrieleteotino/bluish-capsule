@@ -78,3 +78,5 @@ public async Task<IActionResult> UpdateUser(int id, [FromBody] UserForUpdate use
 }
 ...
 ```
+
+## MemberEdit
