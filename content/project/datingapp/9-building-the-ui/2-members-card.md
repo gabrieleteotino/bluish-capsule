@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Organization
 
 Reorganize some components. We are going to add a few components for members, so create a new folder **app/members**.

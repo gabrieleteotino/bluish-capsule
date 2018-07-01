@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 The official [repository](https://github.com/auth0/angular2-jwt).
 
 Note: here we are using version 2 of the library with Angular 6. The course used v1 with Angular5.

@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 The official [repository](https://github.com/valor-software/ngx-bootstrap) and [documentation](https://valor-software.com/ngx-bootstrap/#/getting-started).
 
 ## Installation

@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## User interface
 
 Create a folder for our models **/app/_models** then right click and select *Generate Interface* and call it **User**.

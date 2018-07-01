@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Create the UsersController
 
 Add a new class **UsersController** derived from *Controller*. Decorate it with *Authorize* and with a *Route*: "api/[controller]".

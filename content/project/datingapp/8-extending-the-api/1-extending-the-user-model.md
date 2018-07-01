@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## New properties and classes
 
 Open **User.cs** and add some new props. Collection properties must be initialized in the constructor.

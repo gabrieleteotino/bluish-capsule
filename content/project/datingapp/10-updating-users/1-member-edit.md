@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Component creation
 
 Create a new component **member-edit** in the **members** folder. Add the new component in the *declarations* section of **app.module.ts**.

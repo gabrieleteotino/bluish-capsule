@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Gallery component
 
 [NgxGallery](https://github.com/lukasz-galka/ngx-gallery) [demo](https://lukasz-galka.github.io/ngx-gallery-demo/)

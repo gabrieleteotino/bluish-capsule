@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Interface
 
 Let's implement the most useless repository possible, the abstract one! I am really sceptipc about this widely used approach and I sincerely cannot see the point. Just use the damn *Context*! But let's follow along.

@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 Feature: after the user log in he must be redirected to the *members* page.
 
 ## Fix dropdown

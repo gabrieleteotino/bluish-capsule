@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 The official [site](https://bootswatch.com/) and [themes for 3.3.7](https://bootswatch.com/3/).
 
 ## Installation

@@ -8,6 +8,8 @@ categories: ["dev"]
 draft: true
 ---
 
+<!--more-->
+
 ## Member Detail Resolver
 
 Create a new folder **app/_resolvers**. There is no template for a *resolver* using visual studio code and no *generate* template for the cli.
