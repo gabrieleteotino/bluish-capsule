@@ -3,8 +3,8 @@ title: "Guards"
 date: 2018-06-18T13:51:40.750+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

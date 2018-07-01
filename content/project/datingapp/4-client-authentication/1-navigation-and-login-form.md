@@ -3,8 +3,8 @@ title: "1 Navigation and Login form"
 date: 2018-06-13T15:01:33+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

@@ -12,7 +12,7 @@ DatingApp is a SPA dating application written in Angular 5 with a webapi backend
 
 The application is my opinionated version of this [Udemy course](https://www.udemy.com/build-an-app-with-aspnet-core-and-angular-from-scratch/)
 
-The course used a previous version of .net core I fixed everything to use 2.1.0-rc1-final.
+The course used a previous version of .net core I fixed everything to use 2.1.0-rc1-final. After chapter 5 I also gained enough confidence with Angular to update it to version 6.
 
 - [Preparation](1-preparation)
 - [Skeleton](2-skeleton)
@@ -24,3 +24,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 - [Routing](7-routing)
 - [Extending the API](8-extending-the-api)
 - [Building the UI](9-building-the-ui)
+- [Updating users](10-updating-users)

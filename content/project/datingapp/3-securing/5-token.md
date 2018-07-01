@@ -3,8 +3,8 @@ title: "5 Token"
 date: 2018-06-12T15:18:19+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

@@ -3,8 +3,8 @@ title: "6 Authentication Middleware"
 date: 2018-06-12T17:41:05+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

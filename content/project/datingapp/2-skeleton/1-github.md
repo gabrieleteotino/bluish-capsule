@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["github"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 I will use a single repository for either the Angular SPA and the c# Web API.

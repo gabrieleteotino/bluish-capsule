@@ -3,8 +3,8 @@ title: "Upgrade to Angular 6"
 date: 2018-06-16T13:07:13+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev`"]
 draft: true
 ---
 

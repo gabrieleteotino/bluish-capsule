@@ -3,8 +3,8 @@ title: "2 Auth service"
 date: 2018-06-14T14:48:18+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

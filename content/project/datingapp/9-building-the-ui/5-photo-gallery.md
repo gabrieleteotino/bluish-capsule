@@ -3,8 +3,8 @@ title: "Photo gallery"
 date: 2018-06-29T21:32:41+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

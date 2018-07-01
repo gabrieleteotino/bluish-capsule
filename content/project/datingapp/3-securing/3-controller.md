@@ -3,8 +3,8 @@ title: "3 Controller"
 date: 2018-06-12T11:26:48+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

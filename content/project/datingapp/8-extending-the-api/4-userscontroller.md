@@ -3,8 +3,8 @@ title: "UsersController"
 date: 2018-06-19T14:22:53.453+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

@@ -3,8 +3,8 @@ title: "Bootswatch"
 date: 2018-06-17T19:21:16+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 
