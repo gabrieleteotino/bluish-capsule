@@ -1,18 +1,20 @@
 ---
-title: "2 Auth service"
+title: "Auth service"
 date: 2018-06-14T14:48:18+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "bootstrap", "jwt"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Create the Auth service
 
 Inside **src/app** create a new folder **_services**. (The underscore is just a trick to keep the folder up).
 
-Right click and **Create Service** and name it **auth**.
+Right click and select *Create Service*, name it **auth**.
 
 Register the service in **app.module.ts** in the **providers** section.
 
@@ -76,8 +78,6 @@ login() {
 
 ## Hide the form for logged Users
 
-Copy from the template at [getbootstrap.com](http://getbootstrap.com/), switch to bootstrap 3.3.7, navigate to *Components*  click on the [Navbar](https://getbootstrap.com/docs/3.3/components/#navbar) and then inspect the code. Select all the code of the *ul* for the *dropdown*.
-
 Copy from the templates at [getbootstrap.com](http://getbootstrap.com/)
 
 - switch to bootstrap 3.3.7
@@ -86,9 +86,10 @@ Copy from the templates at [getbootstrap.com](http://getbootstrap.com/)
 - inspect the code
 - select all the code from the **ul** tag for the *dropdown*
 
-In **nav.component.html** paste the code below the *loginForm**
+In **nav.component.html** paste the code below the **loginForm**
 
 Change the text to "Welcome user", remove a couple links and fix the text for the items in the dropdown. Also add icons.
+
 The dropdown is temporarly not working, so we duplicate the logout functionality in the *Link* just before the dropdown.
 
 Now we add the structural directive *ngIf* to the *ul* of the dropdown (snippet *a-ngIf*) and we bind it to a new function **loggedIn()**.
@@ -130,4 +131,4 @@ loggedIn() {
 }
 ```
 
-Now we can test the login functionality and see that if we succesfully log in the form disappears and the user combo shows up on the page. And if we log out the login form is back.
+Now we can test the login functionality and see that if we succesfully log in the form disappears and the user combo shows up on the page. And when we log out the login form comes back.

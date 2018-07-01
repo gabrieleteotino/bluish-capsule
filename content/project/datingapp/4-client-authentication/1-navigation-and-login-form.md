@@ -1,12 +1,14 @@
 ---
-title: "1 Navigation and Login form"
+title: "Navigation and Login form"
 date: 2018-06-13T15:01:33+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Navigation bar
 
@@ -18,7 +20,7 @@ Copy from the templates at [getbootstrap.com](http://getbootstrap.com/)
 - inspect the code
 - select all the code from the tag **nav** class **navabar**
 
-Inside the **app** component right click and *Generate Component* and call it **nav**.
+Inside the **app** folder right click and *Generate Component* and call it **nav**.
 
 Open **nav.component.html** and paste the code.
 
@@ -29,11 +31,13 @@ Change the project name to *Dating App*.
 Inside the *div#navbar* add a new *ul* with a few *a* with a placeholder url.
 
 ```html
+...
 <ul class="nav navbar-nav">
   <li><a href="#">Matches</a></li>
   <li><a href="#">Lists</a></li>
   <li><a href="#">Messages</a></li>
 </ul>
+...
 ```
 
 Open **app.component.html**, remove some unused code and add the **app-nav** tag at the top of the page.
@@ -57,8 +61,8 @@ Open **app.component.html**, remove some unused code and add the **app-nav** tag
 
 In **nav.component.ts**
 
- add a **model** field  (without a custom type for now)
- add a **login** function
+- add a **model** field  (without a custom type for now)
+- add a **login** function
 
 ```typescript
 ...
@@ -71,10 +75,12 @@ export class NavComponent implements OnInit {
 ...
 ```
 
-In **nav.component.html** add a templete reference variable to the **form** named **loginForm**.
+In **nav.component.html** add a template reference variable to the *form* named **loginForm**.
 
 ```html
+...
 <form #loginForm="ngForm" class="navbar-form navbar-right">
+...
 ```
 
 ### Import FormModule
@@ -101,11 +107,11 @@ Now that the directive is imported the *form* can bind the controls to the model
 
 Inside each *input* add (using Angular Snippets *a-ngModel*) the *ngModel* two way binding directive.
 
-Add the html5 *required*, *name* attributes to both inputs.
+Add the html5 attributes *required* and *name* to both inputs.
 
 Bind the form *ngSubmit* event to the **login** function.
 
-Bind the *disabled* attribute of the **button** to *!loginForm.valid*.
+Bind the *disabled* attribute of the *button* to *!loginForm.valid*.
 
 The value of *loginForm.valid* is automatically populated by Angular like the *dirty* and *touched* properties.
 
