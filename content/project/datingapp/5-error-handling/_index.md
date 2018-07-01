@@ -9,3 +9,8 @@ draft: true
 ---
 
 Handle unexpected exceptions and validation errors.
+
+Extras
+
+- How to debug chromium with vscode.
+- Upgrade to Angular 6.

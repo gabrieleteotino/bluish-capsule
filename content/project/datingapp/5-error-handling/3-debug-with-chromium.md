@@ -3,10 +3,12 @@ title: "Debug with Chromium"
 date: 2018-06-16T14:27:09+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["vscode", "chromium"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 In *vscode* go to the *debug* panel and click on the cog in the top right.
 

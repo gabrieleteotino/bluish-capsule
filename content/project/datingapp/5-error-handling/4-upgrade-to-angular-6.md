@@ -3,10 +3,13 @@ title: "Upgrade to Angular 6"
 date: 2018-06-16T13:07:13+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev`"]
 draft: true
 ---
+
+<!--more-->
+
 
 The project started with Angular 5 using *@angular/cli@1.7.4* as recommended by the course instructor.
 
@@ -16,7 +19,7 @@ So, let's upgrade!
 
 <!--more-->
 
-The upgrade [guide](https://update.angular.io/)
+The official upgrade [guide](https://update.angular.io/)
 
 ## Preparation
 
@@ -40,7 +43,9 @@ Remove the old import.
 
 Switch from **Http** to **HttpClient**.
 
-Open **auth.service.ts** chenge the import, the constructor and fix the other methods. The overall solution is almost the same with the notable difference that the response is already the required object without the need to call *.json()*
+Open **auth.service.ts** change the import, the constructor and fix the other methods.
+
+The overall code is almost the same with the notable difference that the response is already the required object without the need to call *.json()*
 
 ```typescript
 ...
@@ -115,7 +120,7 @@ ng update @angular/core
 ng update @angular/material
 ```
 
-Check if all the packages are in updated
+Check if all the packages are updated
 
 ```shell
 ng update
