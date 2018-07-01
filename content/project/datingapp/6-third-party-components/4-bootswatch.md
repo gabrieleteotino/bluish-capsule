@@ -3,7 +3,7 @@ title: "Bootswatch"
 date: 2018-06-17T19:21:16+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "npm", "bootswatch"]
 categories: ["dev"]
 draft: true
 ---
@@ -24,7 +24,7 @@ npm install bootswatch@3.3.7 --save
 
 ## Configuration
 
-The course choose **uunited** but I like **flatly**.
+The course choose **united** but I like **flatly**.
 
 Open **angular.json** and add the css after the bootstrap one.
 
