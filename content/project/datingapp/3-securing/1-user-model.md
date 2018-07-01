@@ -3,14 +3,16 @@ title: "User Model"
 date: 2018-06-08T14:02:03+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "netcore", "ef", "entityframework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Create the model
 
-In the **Models** folder create anew **User** class.
+In the **Models** folder create a **User** class.
 
 Create properties for *Id*, *Username*, *PasswordHash* and *Passwordsalt*.
 

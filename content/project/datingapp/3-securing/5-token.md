@@ -1,12 +1,14 @@
 ---
-title: "5 Token"
+title: "Token"
 date: 2018-06-12T15:18:19+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "jwt"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## JWTs
 
@@ -16,10 +18,15 @@ Using JWT the server doesn't need to go back to the database (or other authentic
 
 A JWT is composed of three parts:
 
-1. Header, in clear text
-  { "alg": "HS512", "typ": "JWT" }
+- **Header**, in clear text
 
-2. Payload, in clear text (apply care to what is stored here)
+```
+  { "alg": "HS512", "typ": "JWT" }
+```
+
+- **Payload**, in clear text (apply care to what is stored here)
+
+```
   {
     "nameid": "8",
     "unique_name": "frank",
@@ -27,18 +34,27 @@ A JWT is composed of three parts:
     "exp": 1511196807,
     "iat": 1511110407
   }
+```
 
-3. Signature, an encoded composed of header, payload and secret (known only to the server) used to verify the autenticity of the token.
+- **Signature**, an encoded composed of header, payload and secret (known only to the server) used to verify the autenticity of the token.
 
-The header and the payload are converted in a UTF8 array and the encoded with Base64url.
+The header and the payload are converted in a UTF8 array and then encoded with Base64url.
 Those two string are then concatenated with the secret and then encoded with HMAC SHA-256.
 
+Pseudocode:
+
+```
 signature = HMACSHA256(base64UrlEncode(header) + base64UrlEncode(payload) + secret)
+```
 
-The tree parts are the concatenated with a dot separator.
+The tree parts are then concatenated with a dot separator.
 
-Example JWT:
-eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+Example JWT (with added CR to make it readable):
+```
+eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.
+eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.
+dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+```
 
 ## Login action
 

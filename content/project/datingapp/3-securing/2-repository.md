@@ -3,10 +3,12 @@ title: "Repository"
 date: 2018-06-08T14:55:37+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "netcore", "512", "hmac"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Repository classes
 
@@ -20,7 +22,7 @@ Add the following methods declarations to the interface
   Task<bool> UserExists(string username);
 ```
 
-In the **Data** folder create a new **AuthRepository** class. Sepcify that the class implements **IAuthRepository** and use right click on the interface name to *Implement Interface*. Then mark all the methods with the **async** keyword.
+In the **Data** folder create a new **AuthRepository** class. Sepcify that the class implements **IAuthRepository** and use right click on the interface name to *Implement Interface*. Then mark all the methods *async*.
 
 Create a constructor that takes a DatingContext parameter and set it to a private field.
 
@@ -28,7 +30,7 @@ Create a constructor that takes a DatingContext parameter and set it to a privat
 
 To register a user we need a private method to hash a plaintext password.
 
-We use the __Hash Based Message Authentication Code__ class *System.Security.Cryptography.HMACSHA512*.
+We use the *Hash Based Message Authentication Code* class **System.Security.Cryptography.HMACSHA512**.
 
 ```c#
 using(var hmac = new System.Security.Cryptography.HMACSHA512() )
@@ -38,7 +40,7 @@ using(var hmac = new System.Security.Cryptography.HMACSHA512() )
 }
 ```
 
-To Login a user we need another private method to check that the password, passwordHash and passwordSalt match. Again we use **HMACSHA512**, then compare byte by byte the two hashes.
+To Login a user we need another private method to check that password, passwordHash and passwordSalt match. Again we use **HMACSHA512**, then compare byte to byte the two hashes.
 
 ```c#
 using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
@@ -143,13 +145,15 @@ namespace DatingApp.API.Data
 
 We need to register the repository as a service for dependency injection in **Startup.cs** inside the **ConfigureServices** method.
 
-Add the repository as a *Scoped* service, it's lifetime will be for a single request and register the interface with the concrete implementation.
+Add the repository as a *Scoped* service, it's lifetime will be that of a single request.
 
 The interface will be used in the controller constructors or in other DI points and a single instance of the concrete implementation will be created for each request.
 
 ```c#
 public void ConfigureServices(IServiceCollection services)
 {
+  ...
   services.AddScoped<IAuthRepository, AuthRepository>();
+  ...
 }
 ```
