@@ -1,5 +1,5 @@
 ---
-title: "Persisting changes"
+title: "Persisting changes API"
 date: 2018-06-30T17:07:16+02:00
 subtitle: ""
 author: Gabriele Teotino
@@ -81,4 +81,4 @@ public async Task<IActionResult> UpdateUser(int id, [FromBody] UserForUpdate use
 ...
 ```
 
-## MemberEdit
+Now test the new functionality with postman.
