@@ -1,5 +1,5 @@
 ---
-title: "Testing the photos controller"
+title: "Photo upload component"
 date: 2018-07-08T21:04:47+02:00
 subtitle: ""
 author: Gabriele Teotino
