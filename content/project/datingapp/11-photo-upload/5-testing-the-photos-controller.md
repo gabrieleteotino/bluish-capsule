@@ -1,6 +1,6 @@
 ---
 title: "Testing the photos controller"
-date:
+date: 2018-07-08T13:03:28+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
