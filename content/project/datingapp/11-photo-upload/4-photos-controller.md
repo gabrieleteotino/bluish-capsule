@@ -102,6 +102,12 @@ public async Task<IActionResult> AddPhotoForUser(int userId, PhotoForCreation ph
             uploadResult = _cloudinary.Upload(uploadParams);
         }
 
+        // Check if the upload was fine
+        if(uploadResult.Error != null)
+        {
+            return BadRequest("Unable to upload photo.\n" + uploadResult.Error.Message);
+        }
+
         // Save the results back in the DTO
         photoDto.Url = uploadResult.Uri.ToString();
         photoDto.PublicId = uploadResult.PublicId;
