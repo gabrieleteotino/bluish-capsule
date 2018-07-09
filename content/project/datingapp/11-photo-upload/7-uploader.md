@@ -108,3 +108,36 @@ Add to the *css*
   border: dotted 3px red;
 }
 ```
+
+## Configure the upload parameters
+
+Add a method to initialize the uploader and remove the prop initializer. We also update the **photos** array once each upload is successful.
+
+```typescript
+...
+uploader: FileUploader;
+...
+ngOnInit() {
+  this.initializeUploader();
+}
+...
+initializeUploader() {
+  this.uploader = new FileUploader({
+    url: this.baseUrl + 'users/' + this.authService.getUserId() + '/photos',
+    authToken: 'Bearer ' + this.authService.getToken(),
+    isHTML5: true,
+    allowedFileType: ['image'],
+    removeAfterUpload: true,
+    autoUpload: false,
+    maxFileSize: 10 * 1024 * 1024
+  });
+
+  this.uploader.onSuccessItem = (item, response, status, headers) => {
+    if (response) {
+      const photo: Photo = JSON.parse(response);
+      this.photos.push(photo);
+    }
+  };
+}
+...
+```
