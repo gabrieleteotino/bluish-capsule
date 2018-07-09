@@ -5,14 +5,14 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Implement security and user authentication
 
 - How we store password in the database
 - Creating the User Model
-- The Reopository Pattern
+- The Repository Pattern
 - Creating the Authentication Controller
 - Data Transfer Objects
 - Token authentication
