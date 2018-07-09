@@ -1,14 +1,14 @@
 ---
 title: "Webapi skeleton"
 date: 2018-05-29T16:49:07+02:00
-subtitle: "A skeleton api for the dating app"
+subtitle: "The skeleton for the dating app"
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore"]
+tags: ["c#", "webapi", "netcore", "sqlite", "cors", "ef", "entityframework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-A skeleton webapi that loads data from asqlite database.
+A skeleton webapi that loads data from a sqlite database.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ Start the application
 dotnet run
 ```
 
-Check with the browser that the api is running navigating to [https://localhost:5001/api/values](https://localhost:5001/api/values).
+Check with the browser that the api is running at [https://localhost:5001/api/values](https://localhost:5001/api/values).
 
 Add a `.gitignore` file
 
@@ -67,23 +67,23 @@ msbuild.wrn
 
 ## Visual Studio Code and dotnet watch
 
-The course suggest to add *dotnet watch* to the project dependencies. This step is not needed, with the new relase of netcore it is always available.
+The course suggest to add *dotnet watch* to the project dependencies. This step is not needed, with the new release of netcore it is always available.
 
 Start Visual Studio Code
 ```shell
 code .
 ```
 
-From the terminal pane of vsc run dotnet watch and test a small change on the value controller to see that everything is working
+From the terminal pane of vsc run *dotnet watch* and test a small change on the value controller to see that everything is working
 ```shells
 dotnet watch run
 ```
 
 ## Database configuration and initalization
 
-Create a `Models` folder inside the project.
+Create a **Models** folder.
 
-Right click on the folder and **New C# class** and name it `Value`.
+Right click on the folder select *New C# class* and name it **Value**.
 
 ```c#
 namespace DatingApp.API.Models
@@ -96,9 +96,9 @@ namespace DatingApp.API.Models
 }
 ```
 
-Create a `Data` folder inside the project.
+Create a **Data** folder.
 
-Right click on the folder and **New C# class** and name it `DatingContext`.
+Right click on the folder select *New C# class* and name it **DatingContext**.
 
 ```c#
 using Microsoft.EntityFrameworkCore;
@@ -117,10 +117,11 @@ namespace DatingApp.API.Data
 }
 ```
 
-In the terminal
+In the terminal stop *dotnet watch* (CTRL+c)
 
-- Stop dotnet watch
-- `dotnet add package Microsoft.EntityFrameworkCore.Sqlite -v 2.1.0-rc1-final`
+```shell
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite -v 2.1.0-rc1-final
+```
 
 
 Open **appsettings.json** and add a new section
@@ -131,8 +132,7 @@ Open **appsettings.json** and add a new section
   },
 ```
 
-
-Register the dbcontext in `Startup.cs` **ConfigureServices** method.
+Register the dbcontext in **Startup.cs** **ConfigureServices** method.
 
 ```c#
 ...
@@ -151,12 +151,12 @@ dotnet ef migrations add InitialMigration
 dotnet ef database update
 ```
 
-This command created a **Migrations** folder with 3 files.
-The update applies the migration creating a new database.
+The first command created a **Migrations** folder with 3 files.
+The update command applies the migration creating a new database.
 
 ## Database usage
 
-Add a context to a new constructor in `ValuesController.cs`
+Add a context to a new constructor in *ValuesController.cs*
 
 ```c#
 ...
@@ -189,16 +189,17 @@ public async Task<ActionResult<Value>> Get(int id)
 
 ## Some test data
 
-Using *Db Browser for Sqlite* open the database *DatingApp.db** and add few rows to the *Values* table.
-Remember to *Write Chenges* to the db.
+Using *Db Browser for Sqlite* open the database **DatingApp.db** and add few rows to the *Values* table.
+Remember to *Write Changes* to the db.
 
 ## Test the API with Postman
 
-Start Postman, login, the create a new collection named *DatingApp*.
+Start Postman, login, the. create a new collection named **DatingApp**.
 
-Inside the *DatingApp* collection create a folder named *Skeleton*.
+Inside the **DatingApp** collection create a folder **Skeleton**.
 
-Add a new GET request, name it *GetValues* and use the following url https://localhost:5001/api/values then click save.
+Add a new GET request, name it **GetValues** and use the following url *https://localhost:5001/api/values* then click save.
+
 Send the request and check that the body of the response contains the test records previously saved into the database.
 
 ```json
@@ -218,7 +219,8 @@ Send the request and check that the body of the response contains the test recor
 ]
 ```
 
-Add a new GET request, name it *GetValue* and use the following url https://localhost:5001/api/values/1 then click save.
+Add a new GET request, name it **GetValue** and use the following url *https://localhost:5001/api/values/1* then click save.
+
 Send the request and check that the body of the response contains the test records previously saved into the database.
 
 ```json
@@ -233,7 +235,7 @@ Change the url to a not existing id and check that a 204 is returned.
 
 ## CORS
 
-Register the cors service in `Startup.cs` **ConfigureServices** method.
+Register the cors service in **Startup.cs** **ConfigureServices** method.
 
 ```c#
 public void ConfigureServices(IServiceCollection services)
@@ -244,7 +246,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-And configure CORS **before** MVC. This configuration is very relaxed and unconstrained, not the ideal configuration for a production app.
+And configure CORS *before* MVC.
+
+Note that this example configuration is very relaxed and unconstrained, not suitable for production.
 
 ```c#
 ...

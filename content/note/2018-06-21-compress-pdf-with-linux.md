@@ -1,14 +1,14 @@
 ---
 title: "Compress pdf file with linux"
 date: 2018-06-21T11:00:27.143+02:00
-subtitle: "A good command line ghostscript command to reduce the size of big pdf files"
+subtitle: "A ghostscript command to reduce the size of big pdf files"
 author: Gabriele Teotino
 tags: ["pdf", "ghostscript"]
 categories: ["command line"]
-draft: true
+draft: false
 ---
 
-A pdf files with a lot of scanned images is a common problem.
+A pdf file with a lot of scanned images can be a very large file.
 
 I reduced a file from 307MB to 68MB with limited quality loss.
 

@@ -3,10 +3,12 @@ title: "Alertifyjs"
 date: 2018-06-16T16:13:54.000+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["angular", "npm", "alertifyjs"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 The official [guide](http://alertifyjs.com/guide.html).
 
@@ -39,7 +41,7 @@ Restart *ng serve*
 
 ## Service wrapper
 
-Implement a new service around alertifyjs to wrap only the features we need and don't use the library globally.
+Implement a new service around *alertifyjs* to wrap only the features we need and don't use the library globally.
 
 Right click on **_service** click *Generate Service** and call it **alertify**.
 

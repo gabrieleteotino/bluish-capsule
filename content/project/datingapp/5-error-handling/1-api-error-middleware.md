@@ -3,16 +3,19 @@ title: "Api error middleware"
 date: 2018-06-15T10:59:57.722+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["c#", "webapi", "netcore"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 ## Exception handling
 
 In **Startup.cs** method **Configure** there is a useful configuration for the development environment:
 
 ```csharp
+...
 if (env.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -21,9 +24,10 @@ else
 {
     app.UseHsts();
 }
+...
 ```
 
-When an unhandled exception is raised a custom page is generate with the stack trace and all the headers and cookies for that request. This page exposes a lot of information so the default is to show it onyl in development.
+When an unhandled exception is raised a custom page is generate with the stack trace and all the headers and cookies for that request. This page exposes a lot of information so the default is to show it only in development.
 
 The **UseHsts** enables https strict control security, nothing to do with errors.
 
@@ -34,6 +38,7 @@ In the else case add a new middleware to the *OWIN* pipeline: an exception handl
 In this code we use an extension to the *Response* class **AddApplicationError**
 
 ```csharp
+...
 app.UseExceptionHandler(builder =>
 {
     builder.Run(async context => {
@@ -47,11 +52,12 @@ app.UseExceptionHandler(builder =>
         }
     });
 });
+...
 ```
 
 ## ApplicationError extension
 
-Create a new folder **Helpers**, and a new class **HttpResponseExtensions.cs**. Change the class to *static*.
+Create a new folder **Helpers** and a new class **HttpResponseExtensions.cs**. Change the class to *static*.
 
 Add the **AddApplicationError** used in **UseExceptionHandler**. We put the error information in the **Application-Error** header and we set the CORS for this header so that the browser don't block the header.
 
@@ -87,8 +93,8 @@ Switch dotnet to *Production*
 dotnet run --environment=Production
 ```
 
-Send the request again, now the body contains only the error message and in the headers:
-```
+Send the request again: now the body contains only the error message and in the headers:
+```json
 Application-Error Object reference not set to an instance of an object.
 ```
 

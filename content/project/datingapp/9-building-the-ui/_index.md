@@ -3,8 +3,8 @@ title: "Building the UI"
 date: 2018-06-19T19:11:47+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

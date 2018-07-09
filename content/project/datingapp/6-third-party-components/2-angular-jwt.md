@@ -3,14 +3,16 @@ title: "Angular JWT"
 date: 2018-06-17T14:55:17+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["angular", "npm", "angular2-jwt", "jwt"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 The official [repository](https://github.com/auth0/angular2-jwt).
 
-Note: here we are using version 2 of the library with Angular 6. The course used v1 with Angular5.
+Note: here we are using version 2 of the library updated with compability with Angular 6. The course used v1 with Angular5.
 ## Installation
 
 Stop *ng serve* if it is running.
@@ -23,7 +25,9 @@ Restart *ng serve*
 
 ## Component to Service refactoring
 
-In **nav.component.ts** we are currently using **logout** and **loggedIn** wrong, they are changing internal behavior of the **auth.service.ts** and that is not good. The course code just fix the **loggedIn** function but this class implementation really annoys me, so I will fix both of them.
+In **nav.component.ts** we are currently using **logout** and **loggedIn** wrong, they are changing internal behavior of the **auth.service.ts** and that is not good.
+
+The course code just fixed the **loggedIn** function but this class implementation really annoys me, so I will fix both of them.
 
 Open **auth.service.ts** and change the visibility of *userToken* and add constant for the token key in local storage.
 

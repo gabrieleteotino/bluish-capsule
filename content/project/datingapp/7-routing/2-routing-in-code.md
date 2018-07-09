@@ -3,10 +3,12 @@ title: "Routing in code"
 date: 2018-06-18T12:57:40.211+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
+
+<!--more-->
 
 Feature: after the user log in he must be redirected to the *members* page.
 

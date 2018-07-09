@@ -3,8 +3,8 @@ title: "Routing"
 date: 2018-06-17T19:26:23+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
+tags: ["c#", "webapi", "netcore", "angular"]
+categories: ["dev"]
 draft: true
 ---
 

@@ -1,12 +1,14 @@
 ---
-title: "3 Register"
+title: "Register"
 date: 2018-06-14T17:07:28+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["angular"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 ## Home and register components
 
@@ -19,7 +21,7 @@ Edit **home.component.html** and add the basic structure for the home page.
 ```html
 <div style="text-align: center">
   <h1>Find your match!</h1>
-  <p class="lead">Come on in to view your matches... All you nedd to do is sign up!</p>
+  <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
   <div class="text-center">
     <button class="btn btn-primary btn-lg">Register</button>
     <button class="btn btn-info btn-lg">Learn more</button>
@@ -51,17 +53,13 @@ To use the form we do almost the same things done for the **loginForm**
 ```html
 <form #registerForm="ngForm" (ngSubmit)="register()">
   <h2 class="text-center text-primary">Sign up</h2>
-
   <hr>
-
   <div class="form-group">
     <input type="text" placeholder="Username" class="form-control" required name="username" [(ngModel)]="model.username">
   </div>
-
   <div class="form-group">
     <input type="password" placeholder="Password" class="form-control" required name="password" [(ngModel)]="model.password">
   </div>
-
   <div class="form-group text-center">
     <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success">Register</button>
     <button type="button" class="btn btn-default">Cancel</button>
@@ -71,15 +69,14 @@ To use the form we do almost the same things done for the **loginForm**
 
 ## Put registration in home
 
-In **home.component.html** add a div below the existing one with the **app-register** component. We will switch the visibility of the two divs.
+In **home.component.html** add a div below the **app-register** component. We will switch the visibility of the two divs.
 
-The new div use a *ngIf* on the property **registerMode** and the *register button* will call **registerToggle()**.
+The new div use a *ngIf* on the property **registerMode** and the *register button* will call **toggleRegister()**.
 
 ```html
 ...
-    <button class="btn btn-primary btn-lg" (click)="toggleRegister()">Register</button>
+<button class="btn btn-primary btn-lg" (click)="toggleRegister()">Register</button>
 ...
-
 <div class="container" *ngIf="registerMode">
   <div class="col-md-4 col-md-offset-4">
     <app-register></app-register>
@@ -138,7 +135,7 @@ And now we can add the *ngIf* to the first div of **home.component.html**
 
 ## Add a register method to auth service
 
-Open *auth.service.ts** and refactor in a private method getHeader the firs two lines of login.
+Open **auth.service.ts** and refactor in a private method the first two lines of login.
 
 ```typescript
 register(model: any) {
@@ -151,7 +148,7 @@ private httpOptions() {
 }
 ```
 
-Then in **register.component.ts** inject the AuthService in the constructor, the use it in the **register** method.
+Then in **register.component.ts** inject the AuthService in the constructor, then use it in the **register** method.
 
 ```typescript
 register() {
@@ -161,12 +158,12 @@ register() {
     console.log(error);
   });
 }
-````
+```
 
 Test a registration and check in the database if the user was created.
 
 ## Clean up value
 
-Remove the **values** controller by deleting the folder, remove the reference from **app.module.ts** and the tag in **app.component.html**.
+Remove the **values** component by deleting the folder, remove the reference from **app.module.ts** and the tag in **app.component.html**.
 
 Check again that the app is working.

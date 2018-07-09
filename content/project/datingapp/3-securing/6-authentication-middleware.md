@@ -1,16 +1,20 @@
 ---
-title: "6 Authentication Middleware"
+title: "Authentication Middleware"
 date: 2018-06-12T17:41:05+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["c#", "webapi", "netcore", "jwt", "postman"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 ## Store the key
 
-To generate and consume tokens wew need a secret key. We will store the key in the configuration file. This is just to keep things going but we should not leave the key in the configuration file because this file will be stored on github.
+To generate and consume tokens we need a secret key.
+
+We will store the key in the configuration file. This is just to keep things going but we should not leave the key in the configuration file because this file will be stored on github.
 
 Open **appsetting.json** and add a new **AppSettings** section with a property **TokenSecret** containing the secret key.
 ```json
@@ -21,7 +25,7 @@ Open **appsetting.json** and add a new **AppSettings** section with a property *
 
 ## Modify the Auth controller
 
-In the **AuthController** constructor add a DI for IConfiguration and add a property.
+In the **AuthController** constructor add a DI for **IConfiguration** and add a property.
 Then substitute the hard coded key JwtSecurityTokenHandler
 
 ```c#
@@ -53,9 +57,8 @@ app.UseAuthentication();
 ## Configure Controllers
 
 The **AuthController** will be reachable without any authentication.
-Se we can use the **ValuesController** to experiment.
 
-Add a class decorator *Authorize* and all the actions will require a token.
+We will use the **ValuesController** to experiment. Add a class decorator *Authorize* and all the actions will require a token.
 
 ```c#
 ...
@@ -73,9 +76,12 @@ If we want we can allow access to single actions by adding the decorator *AllowA
 
 Now if we call *api/values* we get a 400 Unhauthorized.
 
-We have to post a username and password to login, copy and paste the token from the response.
+We have to post *username* and *password* to login, copy and paste the token from the response.
 Edit the headers for the GET *api/values* adding a **Authorization** key and as the value set "Bearer " followed by the token.
 
-For example: `Bearer eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk`
+For example:
+```
+Bearer eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFtcGxlLmNvbS9pc19yb290Ijp0cnVlfQ.dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+```
 
-If we send the new request we now get 200 Ok with the response.
+If we send a new request we now get a response *200 Ok*.

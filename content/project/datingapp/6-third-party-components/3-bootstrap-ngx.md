@@ -3,10 +3,12 @@ title: "Bootstrap NGX"
 date: 2018-06-17T18:57:19.000+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: []
-categories: []
-draft: true
+tags: ["angular", "npm", "bootstrap", "ngx-bootstrap"]
+categories: ["dev"]
+draft: false
 ---
+
+<!--more-->
 
 The official [repository](https://github.com/valor-software/ngx-bootstrap) and [documentation](https://valor-software.com/ngx-bootstrap/#/getting-started).
 
@@ -22,9 +24,9 @@ Restart *ng serve*
 
 ## Configuration
 
-From the [Dropdown docs](https://valor-software.com/ngx-bootstrap/#/dropdowns)
+From the [dropdown docs](https://valor-software.com/ngx-bootstrap/#/dropdowns)
 
-Open **app.module.ts** and dd the import.
+Open **app.module.ts** and add the import.
 
 ```typescript
 ...
@@ -101,4 +103,4 @@ Open **nav.component.css** and add a style to make the pointer behave nicely wit
 }
 ```
 
-Test the application: the nvabar has no private links for the anonymous user, the logout is working as before with the correct cursor icon.
+Test the application: the navbar has no private links for the anonymous user and the logout is working as before with the correct cursor icon.
