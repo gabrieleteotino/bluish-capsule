@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Handle unexpected exceptions and validation errors.

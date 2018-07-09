@@ -5,10 +5,10 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-Add the following components
+Install and configure the following components
 
 - Alertifyjs
 - Angular JWT

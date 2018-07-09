@@ -3,10 +3,12 @@ title: "Bootswatch"
 date: 2018-06-17T19:21:16+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["angular", "npm", "bootswatch"]
+tags: ["angular", "npm", "bootswatch", "bootstrap", "theme"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+Free themes for Bootstrap
 
 <!--more-->
 

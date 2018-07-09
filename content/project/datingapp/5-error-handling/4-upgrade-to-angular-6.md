@@ -3,9 +3,9 @@ title: "Upgrade to Angular 6"
 date: 2018-06-16T13:07:13+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["angular"]
-categories: ["dev`"]
-draft: true
+tags: ["angular", "rxjs", "npm"]
+categories: ["dev"]
+draft: false
 ---
 
 <!--more-->
@@ -23,7 +23,7 @@ The official upgrade [guide](https://update.angular.io/)
 
 ## Preparation
 
-Switch from **HttpModule** to **HttpClientModule**.
+### Switch from **HttpModule** to **HttpClientModule**.
 
 Open **app.modules.ts** and change the imports
 
@@ -41,7 +41,7 @@ imports: [
 
 Remove the old import.
 
-Switch from **Http** to **HttpClient**.
+### Switch from **Http** to **HttpClient**.
 
 Open **auth.service.ts** change the import, the constructor and fix the other methods.
 
