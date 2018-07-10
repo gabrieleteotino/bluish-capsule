@@ -3,18 +3,18 @@ title: "Routing in code"
 date: 2018-06-18T12:57:40.211+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
-
-<!--more-->
 
 Feature: after the user log in he must be redirected to the *members* page.
 
-## Fix dropdown
+<!--more-->
 
-The dropdown has a *href* that with the Routing enabled is no longer working. Remove the href and fix the css pointer.
+## Fix the dropdown
+
+The dropdown has an *href* attribute that with the *Routing* enabled is no longer working. Remove the *href* and fix the css.
 
 Note the explicit *click* handler set to false.
 

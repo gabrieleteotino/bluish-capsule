@@ -3,16 +3,16 @@ title: "Routing basics"
 date: 2018-06-18T11:05:38.278+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## New components
 
-Create new components in **src/app**
+Create three new components in **src/app**
 
 - **member-list**
 - **lists**
@@ -20,7 +20,9 @@ Create new components in **src/app**
 
 ## Routes
 
-Add a new file **src/app/routes.ts** we have no template for this file.
+Add a new file **src/app/routes.ts**.
+
+(The angular extension for visual studio code has no template for this file)
 
 ```typescript
 import { Routes } from '@angular/router';

@@ -3,14 +3,14 @@ title: "Guards"
 date: 2018-06-18T13:51:40.750+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
-Create a new folder **_guards** in **src/app**.
+Create a new folder **src/app/_guards**.
 
 There is no template for *Guards* so we use *Angular cli*.
 
@@ -18,9 +18,9 @@ There is no template for *Guards* so we use *Angular cli*.
 ng g guard /_guards/auth
 ```
 
-Open **auth.guard.ts** remove the parameters from **canActivate()** because we don't need them.
+Open **auth.guard.ts** and remove the parameters from **canActivate()** because we don't need them.
 
-Add a new constructor and add DI for **AuthService**, **Router** and **AlertifyService**.
+Add a new constructor and inject **AuthService**, **Router** and **AlertifyService**.
 
 Inside the **canActivate** method we check to see if the user is logged in. If not we send a message and redirect to home.
 
@@ -69,4 +69,4 @@ export const ROUTES: Routes = [
 ];
 ```
 
-Test the application. Now if the user is logged out and we enter manually the path *http://localhost:4200/messages* then we are redirected to home with an error message.
+Test the application. If the user is logged out and we manually enter the url *http://localhost:4200/messages* then we are redirected to home with an error message.
