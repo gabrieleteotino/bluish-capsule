@@ -3,9 +3,9 @@ title: "UsersController"
 date: 2018-06-19T14:22:53.453+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "automapper"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -18,7 +18,7 @@ Add a constructor to inject the **DatingRepository**.
 
 Add two methods to get all the users and a single user.
 
-```cs
+```c#
 [Authorize]
 [Route("api/[controller]")]
 public class UsersController : Controller
@@ -49,10 +49,11 @@ public class UsersController : Controller
 
 ## DTOs
 
-Returning the internal model from an API call is plain wrong. So we need to map our **User** to a custom view model.
+Returning the internal model from an API call is plain wrong. So we map our **User** to a view model.
 
 Create a new class **DTOs/PhotoForUser** with a subset of the Photo properties.
-```cs
+
+```c#
 public class PhotoForUser
 {
     public int Id { get; set; }
@@ -61,13 +62,13 @@ public class PhotoForUser
 }
 ```
 
-Create a new class **DTOs/UserForList** with a subset of the user properties. Note the *Username* value object and the *Age* instead of *DateOfBirth*. Other properties should be value objects: future refactoring.
+Create a new class **DTOs/UserForList** with a subset of the user properties.
 
-```cs
+```c#
 public class UserForList
 {
     public int Id { get; set; }
-    public Username Username { get; set; }
+    public string Username { get; set; }
     public string Gender { get; set; }
     public int Age { get; set; }
     public string KnownAs { get; set; }
@@ -79,13 +80,13 @@ public class UserForList
 }
 ```
 
-Then another *user* class **DTOs/UserForDetail** with more information.
+Create another *user* class **DTOs/UserForDetail** with more information.
 
-```cs
+```c#
 public class UserForDetail
 {
     public int Id { get; set; }
-    public Username Username { get; set; }
+    public string Username { get; set; }
     public string Gender { get; set; }
     public int Age { get; set; }
     public string KnownAs { get; set; }
@@ -103,17 +104,19 @@ public class UserForDetail
 
 ## Automapper
 
-Using the nuget extension CTRL+SHIFT+p *NuGet Package Manager: Add Package* search **AutoMapper.Extensions.Microsoft.DependencyInjection** and add the latest version (now it is 4.0.1). Vscode will ask to restore packages, click *restore*.
+Using the nuget extension CTRL+SHIFT+p *NuGet Package Manager: Add Package* search **AutoMapper.Extensions.Microsoft.DependencyInjection** and add the latest version (now it is 4.0.1).
 
-In **Startup.ConfigureServices** add the service.
+Vscode will ask to restore packages, click *restore*.
 
-```cs
+In **Startup.ConfigureServices** register the service for DI.
+
+```c#
 services.AddAutoMapper();
 ```
 
 Now inject in the constructor of **UserController**.
 
-```cs
+```c#
 public UsersController(IDatingRepository repo, IMapper mapper)
 {
     _repo = repo;
@@ -123,7 +126,7 @@ public UsersController(IDatingRepository repo, IMapper mapper)
 
 And then fix the two get methods to return view models.
 
-```cs
+```c#
 [HttpGet]
 public async Task<IActionResult> GetUsers()
 {
@@ -145,11 +148,9 @@ public async Task<IActionResult> GetUser(int id)
 
 ## Automapper mapping configuration
 
-Create a new class **Helpers/AutoMapperProfiles.cs** to store the mapping information.
+Create a new class **Helpers/DateTimeExtensions.cs** to calculate the **Age**.
 
-For the age we first need an extension method for the date.
-
-```cs
+```c#
 public static class DataTimeExtensions
 {
     public static int CalculateAge(this DateTime birthDate)
@@ -163,9 +164,11 @@ public static class DataTimeExtensions
 }
 ```
 
-The other mapping are trivial.
+Create a new class **Helpers/AutoMapperProfiles.cs** to store the mapping information.
 
-```cs
+Use the extension for the **Age** and a simple linq search for **ProfilePhotoUrl**.
+
+```c#
 public class AutoMapperProfiles : Profile
 {
     public AutoMapperProfiles()
@@ -191,27 +194,32 @@ Test the user controller with Postman calling */api/users* and */api/users/1* (o
 
 ## Note
 
-I removed the **Username** *value object*, it was not a good idea to use complex artifacts in a simple application. The lowercase conversions are moved inside the property setter of **User**
+Initially i used a *value object* for **Username** but it was not a good idea to use complex artifacts in a simple application.
 
-```cs
+The lowercase conversions are moved inside the property setter of **User**
+
+```c#
 private string userName;
 public string Username { get { return userName; } set { userName = value.ToLowerInvariant(); } }
 ```
 
 And in **AuthRepository**
 
-```cs
+```c#
 ...
 public async Task<User> Login(string username, string password)
 {
     if(string.IsNullOrWhiteSpace(username)) return null;
 
-    var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username.ToLowerInvariant());
+    var user = await _context.Users
+      .FirstOrDefaultAsync(x => x.Username == username.ToLowerInvariant());
 ...
 public async Task<bool> UserExists(string username)
 {
     if(string.IsNullOrWhiteSpace(username)) return false;
 
-    return await _context.Users.AnyAsync(x => x.Username == username.ToLowerInvariant());
+    return await _context.Users
+      .AnyAsync(x => x.Username == username.ToLowerInvariant());
 }
 ...
+```

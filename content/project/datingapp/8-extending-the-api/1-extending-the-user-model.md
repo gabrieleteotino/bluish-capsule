@@ -3,16 +3,18 @@ title: "Extending the user model"
 date: 2018-06-18T14:39:48.676+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "ef", "entityframework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## New properties and classes
 
-Open **User.cs** and add some new props. Collection properties must be initialized in the constructor.
+Open **User.cs** and add some new props.
+
+(Collection properties must be initialized in the constructor)
 
 ```cs
 public string Gender { get; set; }
@@ -49,11 +51,11 @@ public class Photo
 }
 ```
 
-Open **DatingContext.cs** and add a new *DbSet* for **Photo**.
+In **DatingContext.cs** add a new *DbSet* for **Photo**.
 
 ## Migration
 
-Stop any *dotnet run* or *dotnet watch run*
+Stop *dotnet run* or *dotnet watch run*
 
 Add a new migration.
 
@@ -79,11 +81,11 @@ Just as an example let's see how to reverse a migration that was applied to the 
 dotnet ef migrations add ExtendedUserClass
 # Apply to the DB
 dotnet ef database update
-# Revert to a previous migration, reverse the canges made to the database
+# Revert to a previous migration, reverse the changes made to the database
 dotnet ef database update AddedUsers
 ```
 
-Some kind of operations are not supported by *Sqlite* so the update will fail. With other database (*SqlServer*, *MariaDB*, *Postgresql*) this operation just works.
+Some kind of operations are not supported by *Sqlite* so the update will fail. With other database (*SqlServer*, *MariaDB*, *Postgresql*) this operation works.
 
 If the database is just a development we can simply drop it and the recreate it. If this is not possible there are some workaround described in the page [SQLite EF Core Database Provider Limitations](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/limitations).
 
@@ -95,7 +97,9 @@ dotnet ef database update
 
 ## Cascade delete relationship
 
-Open **Phosot.cs** and reference back the **User** class. The **UserId** is not required to make the relationship work but is good to have in case we don't want to eagerly load.
+Open **Phosot.cs** and reference back the **User** class.
+
+The **UserId** is not required to make the relationship but it is necessary in all the cases where we don't want to eagerly load.
 
 ```cs
 ...
