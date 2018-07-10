@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Build up the SPA to consume the new API and finally offer some nice features.

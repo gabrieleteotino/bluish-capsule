@@ -3,9 +3,9 @@ title: "Types in Typescript"
 date: 2018-06-19T19:52:17+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "jwt"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -47,7 +47,9 @@ export interface Photo {
 
 ## JWT headers
 
-To automatically send jwt headers for each request configure angular-jwt. Open **app.module.ts** and add the configuration just below the *HttpClientModule*.
+To automatically send *JWT* headers for each request configure *angular-jwt*.
+
+Open **app.module.ts** and add the configuration just below the *HttpClientModule*.
 
 ```typescript
 ...
@@ -79,7 +81,7 @@ export const environment = {
 
 ## User service
 
-Right click on **_service** and select *Generate Service* and name it **user**. The JWT token will automatically be added to the headers.
+Right click on **_service** and select *Generate Service* and name it **user**. The *JWT* token will automatically be added to the headers.
 
 ```typescript
 export class UserService {
@@ -106,7 +108,7 @@ providers: [
 
 ## Member list
 
-Open **member-list.component.ts** and add DI for userService and AlertifyService, then a property to store the users and a function **loadUseres**;
+Open **member-list.component.ts** and add DI for **UserService** and **AlertifyService**, then add a property to store the users and a function **loadUseres**;
 
 ```typescript
 export class MemberListComponent implements OnInit {
@@ -148,4 +150,4 @@ Let's add some html to our component.
 
 ## Test
 
-Open the application and click *Members* (login is necessary), we should see a list of our users.
+Open the application and click *Members* (login is necessary): we should see a list of our users.

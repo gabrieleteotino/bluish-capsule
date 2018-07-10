@@ -3,16 +3,16 @@ title: "Photo gallery"
 date: 2018-06-29T21:32:41+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "ngx-gallery", "npm"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## Gallery component
 
-[NgxGallery](https://github.com/lukasz-galka/ngx-gallery) [demo](https://lukasz-galka.github.io/ngx-gallery-demo/)
+[Ngx-Gallery](https://github.com/lukasz-galka/ngx-gallery) [demo](https://lukasz-galka.github.io/ngx-gallery-demo/)
 
 Stop *ng serve*.
 
@@ -48,7 +48,7 @@ galleryImages: NgxGalleryImage[];
 
 In **ngOnInit** configure the *galleryOptions* and put the images urls into *galleryImages*.
 
-```typescript1`
+```typescript
 ngOnInit() {
   this.route.data.subscribe(data => {
     this.user = data['user'];
@@ -82,7 +82,8 @@ getGalleryImages() {
   return images;
 }
 ```
-Open **member-detail.component.html** and substitute the placeholder with *ngx-gallery*
+
+Open **member-detail.component.html** and substitute the placeholder with **ngx-gallery*
 
 ```html
 <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
