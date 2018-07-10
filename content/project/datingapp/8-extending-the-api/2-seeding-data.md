@@ -1,11 +1,11 @@
 ---
-title: "Extending the user model"
+title: "Seeding data"
 date: 2018-06-18T18:08:20+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "json", "ef", "entityframework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->

@@ -3,18 +3,18 @@ title: "Route resolvers"
 date: 2018-06-29T18:03:31+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## Member Detail Resolver
 
-Create a new folder **app/_resolvers**. There is no template for a *resolver* using visual studio code and no *generate* template for the cli.
+Create a new folder **app/_resolvers**. There is no template for a *resolver* using visual studio code and no *generate* template in the cli.
 
-Inside create a **member-detail.resolver.ts** with a class that implements *Resolve<T>* for the **User**.
+Create a resolver class **member-detail.resolver.ts** that implements *Resolve* for the **User**.
 
 ```typescript
 @Injectable()
@@ -69,7 +69,7 @@ ngOnInit() {
 }
 ```
 
-Another refactor in **member-detail.component.html**: all the safe conditional operators *?.* are no longer needed.
+Refactor **member-detail.component.html**: all the safe conditional operators "**?.**" are no longer needed.
 
 ## Member List Resolver
 

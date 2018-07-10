@@ -5,10 +5,10 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-- Setting up Routing
+- Setup Routing
 - Using RouterLinkActive
 - Using Routing in code
 - Protecting the Routes

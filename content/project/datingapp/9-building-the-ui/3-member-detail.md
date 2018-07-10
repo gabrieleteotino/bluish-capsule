@@ -3,16 +3,16 @@ title: "Member detail"
 date: 2018-06-22T11:26:53.785+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "bootstrap", "ngx-bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## User service
 
-Open **user.service.ts** and add a method to get a single user.
+Open **user.service.ts** and add a method to get a single **User**.
 
 ```typescript
 getUser(id: number): Observable<User> {
@@ -22,11 +22,11 @@ getUser(id: number): Observable<User> {
 }
 ```
 
-## Member Detail
+## Member detail component
 
 Create a new component **members/member-detail**. When we create a component in a sub folder the angular extension doesn't add it reference, so open **app.module.ts** and add it.
 
-Add a property *user*, add DI in the contructor for *HttpClient*, *AlertifyService* and *ActivatedRoute*. Add a method *loadUser*.
+Add a property **user**, add DI in the constructor for **HttpClient**, **AlertifyService** and **ActivatedRoute**. Add a method **loadUser**.
 
 ```typescript
 constructor(
@@ -61,7 +61,7 @@ Open **member-detail.component.html** and add a simple property binding.
 
 ## Router
 
-Open **routes.ts** and a dd a route to the new component with a parameter *:id*.
+Open **routes.ts** and add a route with a parameter to **MemberDetailComponent**.
 
 ```typescript
 children: [
@@ -130,7 +130,7 @@ Open **member-detail.component.html** and replace all the content with a two col
 </div>
 ```
 
-Add some style to **member-detail.component.css**
+Add some styles to **member-detail.component.css**
 
 ```css
 .profile-image {

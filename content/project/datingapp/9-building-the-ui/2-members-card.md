@@ -3,16 +3,16 @@ title: "Members card"
 date: 2018-06-21T13:02:06.460+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
-## Organization
+## Components reorganization
 
-Reorganize some components. We are going to add a few components for members, so create a new folder **app/members**.
+We are going to add a few components for members: create a new folder **app/members**.
 
 Move the forder **members-list** inside **members**.
 
@@ -20,23 +20,21 @@ Open **app.module.ts** and **routes.ts** and update the reference for **MemberLi
 
 Open **member-list.component.ts** and adjust the imports for the services.
 
-Recompile the app by stopping and starting *ng serve* and test in the browser that everithing is ok.
+Recompile the app by stopping and starting *ng serve* and test in the browser that everything is ok.
 
 ## Member Card
 
-Create a new component **members/member-card**. When we create a component in a sub folder the angular extension doesn't add it reference, so open **app.module.ts** and add it.
+Create a new component **members/member-card**.
+
+When we create a component in a sub folder the angular extension doesn't add it reference, so open **app.module.ts** and add it.
 
 ```typescript
+...
 declarations: [
-  AppComponent,
-  NavComponent,
-  HomeComponent,
-  RegisterComponent,
-  MemberListComponent,
-  ListsComponent,
-  MessagesComponent,
+...
   MemberCardComponent
 ],
+...
 ```
 
 Open **member-card.component.ts** and add an *input* prop for the user. The parent component will populate this property.
@@ -63,7 +61,7 @@ Open **member-card.component.html** and create a card with a [bootstrap panel](h
 </div>
 ```
 
-Open **member-list.component.html** and make use of the new component passing the *user* from the *ngFor*to the input property *user*.
+Open **member-list.component.html** and make use of the new component passing the **user** object from the *ngFor* to the input property **user**.
 
 ```html
 <div class="container">

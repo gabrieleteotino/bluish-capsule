@@ -3,16 +3,16 @@ title: "CanDeactivate route guard"
 date: 2018-06-30T15:53:30+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## Guard
 
-Create **prevent-unsaved-changes.guard.ts**
+Create a new guard **prevent-unsaved-changes.guard.ts**
 
 ```shell
 ng g guard /_guards/prevent-unsaved-changes
