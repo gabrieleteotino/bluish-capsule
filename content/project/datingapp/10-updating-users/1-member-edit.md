@@ -3,9 +3,9 @@ title: "Member edit"
 date: 2018-06-29T23:19:43+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -207,7 +207,9 @@ The template for edit has the same basic structure of the **member-detail**. The
 
 ## Form
 
-Add a *form* with a template variable **editForm** and use the *dirty* property to disable the save button and hide the info. The button is outside of the form tag so we need to add an id to the form and add a reference to this id in the button.
+Add a *form* with a *template variable* **editForm** and use the *dirty* property to disable the save button and hide the info.
+
+Note that in the html the button is outside of the form tag so we need to add an id to the form and add a reference to this id in the button.
 
 ```html
 ...
@@ -216,7 +218,7 @@ Add a *form* with a template variable **editForm** and use the *dirty* property 
 <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save changes</button>
 ...
 <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
-...          
+...
 ```
 
 In **member-edit.component.ts** use *@ViewChild* to map **editForm** to a variable. Create the method **updateUser** and use the **editForm** to reset the state.

@@ -1,11 +1,11 @@
 ---
 title: "Persisting changes SPA"
-date: 2018-06-30T17:07:16+02:00
+date: 2018-06-30T17:27:16+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Update the user in the client.

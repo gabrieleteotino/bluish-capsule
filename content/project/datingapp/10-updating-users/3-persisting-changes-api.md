@@ -3,9 +3,9 @@ title: "Persisting changes API"
 date: 2018-06-30T17:07:16+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "automapper", "ef", "entityframework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -14,7 +14,7 @@ draft: true
 
 Create a new DTO
 
-```c#
+```csharp
 public class UserForUpdate
 {
     public string Introduction { get; set; }
@@ -29,7 +29,7 @@ public class UserForUpdate
 
 In **AutoMapperProfiles** add the mapping from the new DTO to *User*
 
-```c#
+```csharp
 ...
 CreateMap<UserForUpdate, User>();
 ...
