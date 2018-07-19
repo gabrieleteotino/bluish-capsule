@@ -116,9 +116,11 @@ dotnet ef database update
 
 CTRL+SHIFT+p Nuget Add Package
 
-Search *CloudinaryDotNet* and add the latest version. (At the time of writing it was 1.3.1)
+Search *CloudinaryDotNet* and add the latest version (at the time of writing it was 1.3.1).
 
-Restore to install the new package
+Add a package for *Newtonsoft.Json* and add the latest version (11.0.2).
+
+Restore to install the new packages.
 
 ```shell
 dotnet restore
