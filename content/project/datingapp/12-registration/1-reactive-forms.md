@@ -65,7 +65,7 @@ register() {
   // }, error => {
   //   this.alertify.error(error);
   // });
-  console.log(this.registerForm.value);
+  console.log(JSON.stringify(this.registerForm.value));
 }
 ...
 ```
