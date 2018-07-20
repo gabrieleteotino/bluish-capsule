@@ -73,7 +73,7 @@ var tokenDescriptor = new SecurityTokenDescriptor
     new Claim(ClaimTypes.NameIdentifier, userId),
     new Claim(ClaimTypes.Name, username)
   }),
-  Expires = DateTime.Now.AddDays(1),
+  Expires = DateTime.UtcNow.AddDays(1),
   SigningCredential = new SigningCredential(
     new SymmetricSecurityKey(key),
     SecurityAlgorithms.HmacSha256Signature
