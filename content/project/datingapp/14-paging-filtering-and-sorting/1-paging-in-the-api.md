@@ -12,9 +12,11 @@ draft: true
 
 ## Support classes
 
-To paginate the data we will pass two paramaters via query string to the action.
+To paginate the data we will pass two parameters via query string to the action.
 
+```
 https://localhost:5001/api/users?pageNumber=1&pageSize=5
+```
 
 The method **DatingRepository.GetUsers** returns an *IEnumerable* but in the code we actually return a *List* with *ToListAsync*. This method iterates on all the results in the *DbSet* and add them all to the list.
 
@@ -162,8 +164,3 @@ In the response body we see only the first 3 users. In the *Headers* tab we find
   "totalPages": 4
 }
 ```
-
-## Refactor
-
-
-REFACTOR https://stackoverflow.com/questions/43736000/pagination-in-a-net-core-api-project
