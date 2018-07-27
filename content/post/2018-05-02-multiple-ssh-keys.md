@@ -3,7 +3,7 @@ title: "Multiple SSH Keys"
 date: 2018-05-02T15:34:57+02:00
 subtitle: "Managing multiple SSH keys for Github and Visual Studio Online"
 author: Gabriele Teotino
-tags: ["ssh", "github", "visual studio online"]
+tags: ["ssh", "git", "github", "visual studio online"]
 categories: ["development"]
 draft: false
 ---
