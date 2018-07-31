@@ -12,7 +12,7 @@ draft: true
 
 ## HttpInterceptor
 
-*HttpInterceptor* intercepts http errors globally so can remove any error handling from our services: the **handleError** method is no longer necessary.
+*HttpInterceptor* intercepts http errors globally so we can remove any error handling from our services: the **handleError** method is no longer necessary.
 
 Create a new class in the **_service** folder **error.interceptor.ts** (this is not a *service* but is used only by services)
 
@@ -167,7 +167,3 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 ```
-
-## Test the application
-
-TODO
