@@ -69,6 +69,14 @@ export const ErrorInterceptorProvider = {
 };
 ```
 
+Register the interceptor in **app.module.ts**
+
+```typescript
+providers: [
+    ErrorInterceptorProvider,
+```
+
+
 ## Auth service
 
 Remove the method **handleError** from **auth.service.ts** and all the relative calls to *catchError*
