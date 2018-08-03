@@ -255,3 +255,54 @@ Create a new *GET*
 ```
 {{url}}/api/users/1/messages?messageContainer=Outbox
 ```
+
+## Message thread
+
+Add a new signature in **IDatingRepository**
+
+```csharp
+Task<IEnumerable<Message>> GetMessageThread(int userId, int otherUserId);
+```
+
+Implement in **DatingRepository**
+
+```csharp
+public async Task<IEnumerable<Message>> GetMessageThread(int userId, int otherUserId)
+{
+    var messages = _context.Messages
+        .Include(m => m.Sender).ThenInclude(u => u.Photos)
+        .Include(m => m.Recipient).ThenInclude(u => u.Photos)
+        .Where(m =>
+            (m.SenderId == userId && m.RecipientId == otherUserId)
+            || (m.SenderId == otherUserId && m.RecipientId == userId))
+        .OrderByDescending(m => m.SentDate);
+
+    return await messages.ToListAsync();
+}
+```
+
+Add a new method in **MessagesController**
+
+```csharp
+[HttpGet("thread/{otherUserId}")]
+public async Task<IActionResult> GetMessageThread(int userId, int otherUserId)
+{
+    if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+    {
+        return Unauthorized();
+    }
+
+    var messagesFromRepo = await _repo.GetMessageThread(userId, otherUserId);
+    var messages = _mapper.Map<IEnumerable<MessageForList>>(messagesFromRepo);
+
+    return Ok(messages);
+}
+```
+
+## Test with Postman
+
+Create a new *GET*
+
+```
+{{url}}/api/users/1/messages/thread/13
+```
