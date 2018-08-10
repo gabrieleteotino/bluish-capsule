@@ -87,51 +87,9 @@ And in **appsettings.json** change the connection string to *MySql*
 "DatingDbConnection": "Server=localhost; Database=datingappdb; Uid=datingappuser; Pwd=password;"
 ```
 
-## Configure environment
-
-[Use multiple environments in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-2.1)
-
-*Development* environment
-
-```shell
-export ASPNETCORE_ENVIRONMENT=Development
-
-```
-
-*Production* environment.
-
 There is some convoluted way to keep the migrations for both databases. To keep things simple I just moved the **Migrations** folder out of the solution. Now when we create a new migration *ef* will start from zero.
 
 ```shell
-export ASPNETCORE_ENVIRONMENT=Production
 dotnet ef migrations add Initial
 dotnet ef database update
-```
-
-Open **Properties/launchSettings.json** and change the **ASPNETCORE_ENVIRONMENT**
-
-```json
-// ...
-"DatingApp.API": {
-  "commandName": "Project",
-  "launchBrowser": true,
-  "launchUrl": "api/values",
-  "applicationUrl": "https://localhost:5001;http://localhost:5000",
-  "environmentVariables": {
-    "ASPNETCORE_ENVIRONMENT": "Production"
-  }
-}
-// ...
-```
-
-Run the application (insert your api keys and token secret in the variables)
-
-```shell
-export ASPNETCORE_ENVIRONMENT=Production
-
-export AppSettings__TokenSecret=""
-export CloudinarySettings__CloudName=""
-export CloudinarySettings__ApiKey=""
-export CloudinarySettings__ApiSecret=""
-dotnet run
 ```
