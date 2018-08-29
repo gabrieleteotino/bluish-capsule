@@ -52,6 +52,13 @@ docker run hello-world
 
 There is a good extension for vscode named *Docker* from *peterjausovec.vscode-docker*
 
+## Publish the application
+
+```shell
+cd DatingApp.API
+dotnet publish -c Release --output build
+```
+
 ## Dockerfile
 
 The image **microsoft/dotnet:runtime** is for running an application in production. There is also an image for building and testing using Docker, but I will not use that here.

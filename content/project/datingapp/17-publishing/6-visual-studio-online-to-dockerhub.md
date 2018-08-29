@@ -23,3 +23,32 @@ Check **Include Latest Tag**
 
 For the second *Task*
 Change the *Action* to **Push an image**
+
+## Deploy
+
+Connect via ssh to the OVH virtual machine.
+
+Clone the repo
+
+```shell
+git clone https://github.com/gabrieleteotino/datingapp-docker.git
+```
+
+Prepare configuration
+
+```shell
+cp datingapp_example.env datingapp.env
+nano datingapp.env
+# enter a random string for jwt and cloudinary credentials
+```
+
+Compose
+
+```shell
+# build the image
+docker-compose build
+# run interactively
+docker-compose up
+# Or build and run in background
+docker-compose up -d --build
+```
