@@ -1,5 +1,5 @@
 ---
-title: "VSTS personal build agent on docekr"
+title: "VSTS personal build agent on Docker"
 date: 2018-08-31T12:42:21.884+02:00
 subtitle: "Using a personal build agent running on docker to speed up compilation times"
 author: Gabriele Teotino
