@@ -3,12 +3,12 @@ title: "VSTS minimal docker build agent"
 date: 2018-09-03T11:36:11.054+02:00
 subtitle: "The default visual studio team service build agent image is too big. By removing some unused tools let's see if we can limit the size."
 author: Gabriele Teotino
-tags: ["cloud", "ovh", "vsts", "visualstudio", "docker", "ci", "continuous integration"]
+tags: ["cloud", "vsts", "visualstudio", "docker", "ci", "continuous integration"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-The official standard image with all the tools is 4Gb compressed and it is really too big for my tiny VPS server. The image includes a lot of tools that I don't use so I will remove those tools a see ho much disk space I can save.
+The official standard image with all the tools is 4Gb compressed and it is really too big for my tiny VPS server. The image includes a lot of tools that I don't use so I will remove those tools and see ho much disk space I can save.
 
 <!--more-->
 
@@ -41,6 +41,8 @@ gabrieleteotino/vsts-minimal-agent   ubuntu-18.04-core-node   cc9eeb17ee72      
 gabrieleteotino/vsts-minimal-agent   ubuntu-18.04             6264c2f8ddec        37 minutes ago      472MB
 ```
 
+2.2GB uncompressed for an image capable of running node and .net core.
+
 ## Test the basic agent
 
 Create a script **vsts_minimal_agent_core_node.sh** with the following content
@@ -57,17 +59,17 @@ docker run \
 
 Note that this test can be done using the **Default** agent pool.
 
-From VSTS site go in **Agent pools** and create a new *agent pool* in my case named **Donbosco** (it has to corrispond to the **VSTS_POOL** parameter)
+From VSTS site go in **Agent pools** and create a new *agent pool*, in my case named **Donbosco** like the **VSTS_POOL** parameter.
 
-Now run the agent
+Run the agent
 
 ```shell
 bash vsts_minimal_agent_core_node.sh
 ```
 
-On VSTS create a new build script and change the Agent pool for the pipeline to **Donbosco** insert some step the *Save and queue*.
+On VSTS create a new build script and change the Agent pool for the pipeline to **Donbosco** insert some step then *Save and queue*.
 
-This build script will download a git repo, do a *dotnet restore* then a *dotnet ef migrations script*
+The build script I used to do the test will download a git repo, do a *dotnet restore* then a *dotnet ef migrations script*
 
 In the docker TTY will appear
 

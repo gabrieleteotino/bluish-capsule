@@ -3,7 +3,7 @@ title: "VSTS personal build agent on Docker"
 date: 2018-08-31T12:42:21.884+02:00
 subtitle: "Using a personal build agent running on docker to speed up compilation times"
 author: Gabriele Teotino
-tags: ["cloud", "ovh", "vsts", "visualstudio", "docker", "ci", "continuous integration"]
+tags: ["cloud", "vsts", "visualstudio", "docker", "ci", "continuous integration"]
 categories: ["dev"]
 draft: false
 ---
@@ -79,7 +79,7 @@ docker run \
   -it microsoft/vsts-agent:ubuntu-16.04
 ```
 
-The image **ubuntu-16.04** has minimal capabilities but uses only 0.5Gb of uncompressed disk space.
+The image **microsoft/vsts-agent:ubuntu-16.04** has minimal capabilities but uses only 0.5Gb of uncompressed disk space.
 
 Run the container
 
@@ -97,4 +97,4 @@ Go in the Agent Pools section of VSTS to view the status and the capabilities of
 
 Edit a Build Job and change the *Agent Pool* to *Default* to use the agent.
 
-Note that the basic agent **ubuntu-16.04** is not able to do much work because no extended capabilities are configured.
+The basic agent **microsoft/vsts-agent:ubuntu-16.04** is not able to do much work because no extended capabilities are configured.

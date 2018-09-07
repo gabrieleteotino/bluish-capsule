@@ -5,10 +5,10 @@ subtitle: "With an ansible script setup all the software for my dev workstation"
 author: Gabriele Teotino
 tags: ["ansible", "linux", "ubuntu", "vscode", "postman"]
 categories: ["devops"]
-draft: true
+draft: false
 ---
 
-The deployment of the software will be made with [ansible-pull](https://docs.ansible.com/ansible/2.4/ansible-pull.html), without a remote machine. This is a little different from the classic client server deployment used with ansible and is in a way simpler.
+The deployment of the software will be made with [ansible-pull](https://docs.ansible.com/ansible/2.4/ansible-pull.html), without a remote machine. This is a little different from the classic client server deployment used with ansible and is, in a way, simpler.
 
 <!--more-->
 
@@ -34,35 +34,8 @@ sudo pip install ansible
 ansible-pull -U https://github.com/gabrieleteotino/ansible-workstation.git -K
 ```
 
-# Creation
-
-## Git
-
-Create a repository in github.
-
-Clone the repository
-git clone git@github.com:gabrieleteotino/ansible-workstation.git
-
-## Hosts inventory
-
-Create `ansible.cfg`
-
-```
-[defaults]
-inventory = inventory
-```
-
-Create `inventory`
-
-```
-[localhost]
-127.0.0.1 ansible_connection=local
-```
-
-This default configuration just specify localhost. It is possible to add customizations for a single machine.
-
-
-more nice roles
+## More examples
+[Gantsign](https://github.com/gantsign) has a lot of nice roles to use directly or take inspiration.
 
 https://github.com/gantsign/ansible-role-postman
 https://github.com/gantsign/ansible-role-atom
