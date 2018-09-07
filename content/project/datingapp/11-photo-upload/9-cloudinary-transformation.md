@@ -1,18 +1,18 @@
 ---
 title: "Cloudinary transformation"
-date: 2018-07-10T20:59:24+02:00
+date: 2018-07-10T20:50:00+02:00
 subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "cloudinary"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 With cloudinary is possible to apply an [image transformation](https://cloudinary.com/documentation/image_transformations) uploading an image.
 
-This feature transform images on-the-fly to any required format, style and dimension, and also optimizes images to have the minimal file size
+This feature transform images on the fly to any required format, style and dimension and optimizes images to have the minimal file size.
 
 Open **PhotosController** and change the **uploadParams** of **AddPhotoForUser**.
 

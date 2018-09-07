@@ -3,9 +3,9 @@ title: "Where to store photos"
 date: 2018-07-07T17:14:45+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "angular", "cloudinary"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -30,7 +30,7 @@ A webservice dedicate to media storage is the most effective in terms of cost, s
 
 ## And the winner is
 
-In this course the instructor choose the webservice path. Nice!
+The webservice! A very good choice, don't be lazy and plan ahead for growth and traffic.
 
 The provider is *Cloudinary*.
 

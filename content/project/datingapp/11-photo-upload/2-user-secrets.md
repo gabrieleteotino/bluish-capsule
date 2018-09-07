@@ -3,9 +3,9 @@ title: "User secrets"
 date: 2018-07-07T17:37:03+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -39,7 +39,7 @@ Open **DatingApp.API.csproj** and add a key **UserSecretsId** with the new GUID.
 
 Now we are going to generate a new **TokenSecret** for our authentication.
 
-Remove or rename the **TokenSecret** key from **appsettings.json**. To avoid confusion to other users I choose to set the key to a descriptive value.
+Remove or rename the **TokenSecret** key from **appsettings.json**. To avoid confusion to other developers I choose to set the key to a descriptive value.
 
 ```json
 ...

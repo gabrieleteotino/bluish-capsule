@@ -1,11 +1,11 @@
 ---
-title: "Where to store photos"
+title: "Cloudinary"
 date: 2018-07-07T17:37:03+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "cloudinary"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -15,6 +15,7 @@ draft: true
 Register a new free account at [Cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/sqiocmogqhvi7zmjbmjs).
 
 Go into the *Dashboard* and look for
+
 - Cloud name
 - API Key
 - API Secret
@@ -37,9 +38,9 @@ dotnet user-secrets set "CloudinarySettings:ApiKey" "******"
 dotnet user-secrets set "CloudinarySettings:ApiSecret" "******"
 ```
 
-If the **ApiSecret** starts with *-* or *--* there is a [bug](https://github.com/aspnet/DotNetTools/issues/309) in the command line that will result in a message:
+If the **ApiSecret** starts with `-` or `--` there is a [bug](https://github.com/aspnet/DotNetTools/issues/309) in the command line that will result in a message:
 
-```
+```shell
 Unrecognized option 'your ApiSecret value'
 ```
 

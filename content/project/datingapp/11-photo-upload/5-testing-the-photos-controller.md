@@ -3,9 +3,9 @@ title: "Testing the photos controller"
 date: 2018-07-08T13:03:28+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "cloudinary", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -16,7 +16,7 @@ In Postman configure a folder o a collection to send the authorization token.
 
 Create a new *Request* of type *POST*.
 
-In the *Body* tab set it to send *form-data* and add a *Key* named **File** (like the **PhotoForCreation** property) and set it of type *File*. Choose a test picture from your pc. Save the request but don't send it.
+In the *Body* tab set it to send *form-data* and add a *Key* named **File** (like the **PhotoForCreation** property) and set it of type *File*. Choose a test picture from your filesystem. Save the request but don't send it.
 
 In visual studio code attach the debugger and set a breakpoint at the start of **AddPhotoForUser**.
 

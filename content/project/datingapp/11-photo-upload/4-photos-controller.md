@@ -3,9 +3,9 @@ title: "Photos controller"
 date: 2018-07-07T23:15:02+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "cloudinary"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -22,7 +22,7 @@ public class PhotosController : Controller
 }
 ```
 
-Create a constructor for DI with the **IDatingRepository**, **IMapper** and the configuration for *Cloudinary*.
+Create a constructor for DI with **IDatingRepository**, **IMapper** and the configuration for *Cloudinary*.
 We also create a new **Account** and a new **Cloudinary** objects for *Cloudinary*.
 
 ```c#

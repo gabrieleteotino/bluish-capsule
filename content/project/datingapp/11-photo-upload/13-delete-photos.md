@@ -3,9 +3,9 @@ title: "Delete photos"
 date: 2018-07-16T11:07:05.230+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "angular", "cloudinary", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -63,9 +63,9 @@ public async Task<IActionResult> DeletePhoto(int userId, int id)
 
 ## Test with Postman
 
-With *Postman* authenticate then call *{{url}}/api/users/1* and search for the main photo id.
+With *Postman* authenticate then call **{{url}}/api/users/1** and search for the main photo id.
 
-Create a new *DELETE* request **Delete Photo for User 1** with the url *{{url}}/api/users/1/photos/12* (change 12 to the main photo id).
+Create a new *DELETE* request **Delete Photo for User 1** with the url **{{url}}/api/users/1/photos/12** (change 12 to the main photo id).
 
 Attach the debugger and check that this photo is not deletable: 400 "You cannot delete the main photo".
 
@@ -87,7 +87,7 @@ deletePhoto(userId: number, photoId:number) {
 ...
 ```
 
-Open **photo-editor.component.ts** and add a new method **deletePhoto**. In this function use alertify to ask for confirmation and *underscore* to manipualte the **photos** array (which in an *@Input*, so the changes will be reflected in the parent component).
+Open **photo-editor.component.ts** and add a new method **deletePhoto**. In this function use alertify to ask for confirmation and *underscore* to manipulate the **photos** array (which in an *@Input*, so the changes will be reflected in the parent component).
 
 ```typescript
 deletePhoto(photoId: number) {
@@ -108,7 +108,7 @@ deletePhoto(photoId: number) {
 }
 ```
 
-Open *photo-editor.component.html** and bind **deletePhoto** to the *click* event of the button
+Open **photo-editor.component.html** and bind **deletePhoto** to the *click* event of the button
 
 ```html
 <button class="btn btn-xs btn-danger" (click)="deletePhoto(photo.id)" [disabled]="photo.isMain">

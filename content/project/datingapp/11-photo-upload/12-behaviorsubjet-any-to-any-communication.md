@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Use a [BehaviorSubject](http://reactivex.io/rxjs/manual/overview.html#behaviorsubject) to enable any to any component comunication.
@@ -125,7 +125,9 @@ ngOnInit() {
 
 ## photo-editor.component
 
-Open **photo-editor.component.ts** and remove the *@Output* property **mainPhotoChanged**. Then in the function **setMainPhoto** instead of emitting the event we call the **authService** method **changeMemberPhoto**
+Open **photo-editor.component.ts** and remove the *@Output* property **mainPhotoChanged**.
+
+Then in the function **setMainPhoto** instead of emitting the event we call the **authService** method **changeMemberPhoto**
 
 ```typescript
 setMainPhoto(photo: Photo) {
@@ -146,4 +148,7 @@ setMainPhoto(photo: Photo) {
 }
 ```
 
-Test the application. Setting a main photo will immediately change the profile photo in the profile editor and in the navbar. Refreshing the page will load the last saved photo from *localStorage*.
+Test the application:
+
+- Setting a main photo will immediately change the profile photo in the profile editor and in the navbar.
+- Refreshing the page will load the last saved photo from *localStorage*.

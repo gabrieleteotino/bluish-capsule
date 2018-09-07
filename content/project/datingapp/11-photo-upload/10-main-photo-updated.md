@@ -3,9 +3,9 @@ title: "Main photo updated"
 date: 2018-07-10T20:59:24+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["angular"]
+tags: ["webapi", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -14,7 +14,7 @@ Feature: when a new main photo is set in **photo-editor.component** we want the 
 
 ## Emit an event
 
-Open **photo-editor.component.ts** and add a new *@Output* property that emit a new event. Then, in the *setMainPhoto* we will emit the event.
+Open **photo-editor.component.ts** and add a new *@Output* property that emit a new event. Then, in the *setMainPhoto* subscription, we will emit the event.
 
 ```typescript
 ...

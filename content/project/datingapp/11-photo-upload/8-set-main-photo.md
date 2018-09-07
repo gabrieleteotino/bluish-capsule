@@ -3,9 +3,9 @@ title: "Set main photo"
 date: 2018-07-09T19:07:40+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "angular", "cloudinary", "postman", "underscore"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -76,7 +76,7 @@ Make a few other calls with incorrect ids to check the error messages.
 
 ## Call the new API method
 
-Open **user.service.ts** and add a new method **setMainPhoto**. Note that we used a *POST* to keep thing simpler and we pass an empty object as *body*.
+Open **user.service.ts** and add a new method **setMainPhoto**. Note that we used a *POST* to keep thing simple and we pass an empty object as *body*.
 
 ```typescript
 setMainPhoto(userId: number, photoId: number) {

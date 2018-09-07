@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Feature: load the main photo in the dropdown of the **nav.component**.
@@ -30,7 +30,7 @@ Open **auth.service.ts** and refactor to load the user.
 
 Add a property **user** and a method **getUser**.
 
-Change **login** and **logout** to save the user.
+Change **login** and **logout** to save the user in local storage.
 
 Rename **loadTokenFromLocalStorage** to **loadFromLocalStorage** and remove the old calls (my mistake, it was unnecessary).
 
@@ -39,9 +39,7 @@ Rename **loadTokenFromLocalStorage** to **loadFromLocalStorage** and remove the 
 const LOCALSTORAGE_USER_KEY = 'user';
 ...
 private user: User;
-
 ...
-
 login(model: any) {
   return this.http
     .post(this.baseUrl + 'login', model, this.httpOptions())

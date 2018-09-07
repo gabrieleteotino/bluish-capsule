@@ -3,9 +3,9 @@ title: "Uploader"
 date: 2018-07-08T21:43:10+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["webapi", "netcore", "angular", "cloudinary", "ng2-file-upload"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -22,9 +22,11 @@ npm install ng2-file-upload --save
 
 Open **app.module.ts** and add an *import* for **FileUploadModule**.
 
-Restart *ng serve*. (Restart visual studio code to be able to view the new library).
+Restart *ng serve*.
 
-Open **photo-editor.component.ts** and add a prop for the **uploader** and one for the *drop zone*. And a method for detecting when the drop zone is active **fileOverBase**.
+(Restart visual studio code to be able to view the new library).
+
+Open **photo-editor.component.ts** and add a prop for the **uploader** and one for the *drop zone*. And a method **fileOverBase** for detecting when the drop zone is active.
 
 ```typescript
 ...

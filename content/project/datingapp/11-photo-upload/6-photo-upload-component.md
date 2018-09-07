@@ -3,9 +3,9 @@ title: "Photo upload component"
 date: 2018-07-08T21:04:47+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["webapi", "netcore", "angular", "cloudinary"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -18,7 +18,7 @@ Add an *Input* prop to store the photos.
 @Input() photos: Photo[];
 ```
 
-Open the html template and create a simple grid system. For each photo add two buttons one to set it the main photo and the other to delete the image.
+Open the html template and create a simple grid system. For each photo add two buttons one to set the main photo and the other to delete the image.
 
 ```html
 <div class="row">
