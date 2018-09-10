@@ -3,12 +3,14 @@ title: "Reactive forms"
 date: 2018-07-16T15:39:18.508+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-[Reactive Forms](https://angular.io/guide/reactive-forms) is a different philosophy from *FormsModule* template-driven technology. Instead *ReactiveFormsModule* are defined in the component code and the binding with the template is syncronous.
+[Reactive Forms](https://angular.io/guide/reactive-forms) is a different philosophy from *FormsModule* template-driven technology.
+
+*ReactiveFormsModule* are defined in the component code and the binding with the template is syncronous.
 
 <!--more-->
 

@@ -3,9 +3,9 @@ title: "Expand the api registration"
 date: 2018-07-19T09:03:14.091+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Adapt the webapi to the new registration form.

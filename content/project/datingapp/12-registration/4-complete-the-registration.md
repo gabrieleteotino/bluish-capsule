@@ -3,9 +3,9 @@ title: "Complete the registration"
 date: 2018-07-19T13:48:27.228+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 In the SPA fix the methods used to post the registration.
@@ -120,7 +120,8 @@ The last problem is for other users in the **member-card.component.html** and in
 ## Test
 
 Test the application.
-- When a new user registers in the navbar and in edit profile we see the default picture.
-- In the members gallery all the user that don't have a picture have the default.
-- When a user uploads the first photo the navbar and the edit profile photo are immediately updated.
-- Everything works after a refresh.
+
+- When a new user registers in the navbar and in edit profile we see the default picture
+- In the members gallery all the user that don't have a picture have the default
+- When a user uploads the first photo the navbar and the edit profile photo are immediately updated
+- Everything works after a refresh

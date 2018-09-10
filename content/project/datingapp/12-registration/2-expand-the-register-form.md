@@ -3,12 +3,14 @@ title: "Expand the register form"
 date: 2018-07-18T13:03:35.930+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "ngx-datepicker"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-Using Angular *FormBuilder* to configure a form.
+Using Angular [FormBuilder](https://angular.io/api/forms/FormBuilder) to configure a form.
+
+The FormBuilder provides syntactic sugar that shortens creating instances of a FormControl, FormGroup, or FormArray. It reduces the amount of boilerplate needed to build complex forms.
 
 <!--more-->
 
@@ -117,7 +119,7 @@ Test that validation is working and that the validation errors are displayed cor
 
 ## Datepicker
 
-The support for the *input* type *date* is not very good on all the browsers [caniuse.com](https://caniuse.com/#search=date). Also the interface differs from browser to browser.
+The support for the *input* type *date* is not very good on all the browsers, see this reference table: [caniuse.com](https://caniuse.com/#search=date). Also the interface differs from browser to browser.
 
 To keep things working and a similar user experience on all the browsers we add another extension from *Valor soft* the [ngx-datepicker](https://valor-software.com/ngx-bootstrap/#/datepicker).
 
