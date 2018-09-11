@@ -3,10 +3,14 @@ title: "Containerize"
 date: 2018-08-10T10:33:17.306+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "angular", "docker", "compose"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
+
+All the files needed to build the container and compose can be found in the [DatingApp](https://github.com/gabrieleteotino/DatingApp.git) repository.
 
 ## Install Docker CE
 
@@ -42,7 +46,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-Log out and log back in, then test running **hello-world** without sudo (on my machine this required a full restart)
+Log out and log back in, then test running **hello-world** without sudo (on my machine this step required a full restart)
 
 ```shell
 docker run hello-world
@@ -87,7 +91,9 @@ docker run -it --rm -p 5001:80 --name datingapp_production teo/datingapp:runtime
 
 ## Install Docker Compose
 
-To run **DatingApp** we need a database. To orchestrate two Docker containers, one for dotnet and one for MySql, we use Docker Compose.
+To run **DatingApp** we need a database.
+
+To orchestrate two Docker containers, one for dotnet and one for MySql, we use Docker Compose.
 
 On Windows and Osx Compose is already installed with Docker.
 
@@ -162,7 +168,7 @@ cp datingapp_example.env datingapp.env
 
 Open **datingapp.env** (it is in gitignore to avoid publishing) and insert the correct values
 
-```
+```shell
 # JWT toke secret
 AppSettings__TokenSecret="tokensecretforproduction"
 
@@ -179,6 +185,8 @@ docker-compose up
 # to force rebuild
 docker-compose up --build
 ```
+
+Test the application.
 
 Stop compose
 

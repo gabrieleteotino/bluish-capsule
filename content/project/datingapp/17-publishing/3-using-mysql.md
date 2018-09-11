@@ -3,12 +3,16 @@ title: "Using MySql"
 date: 2018-08-07T14:12:55.018+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-As a client admin interface I use **mysql-workbench**
+<!--more-->
+
+As a client admin interface I use [mysql-workbench](https://dev.mysql.com/downloads/workbench/).
+
+Obviously you need to have MariaDb or MySql installed.
 
 ## Create MariaDb (MySql) user and DB
 
@@ -81,7 +85,7 @@ Move the connection string for *Sqlite* from **appsettings.json** to **appsettin
 }
 ```
 
-And in **appsettings.json** change the connection string to *MySql*
+In **appsettings.json** change the connection string to *MySql*
 
 ```json
 "DatingDbConnection": "Server=localhost; Database=datingappdb; Uid=datingappuser; Pwd=password;"

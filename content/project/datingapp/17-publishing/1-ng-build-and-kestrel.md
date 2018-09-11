@@ -5,8 +5,10 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 Configure **angular.json** and select the **ouputhPath** to be in **../DatingApp.API/wwwroot**. The folder may not exist, create it.
 
@@ -19,7 +21,7 @@ ng build
 All the SPA files are now present in **../DatingApp.API/wwwroot**.
 
 
-Configure the API to serve static files open **Startup.cs** and add to **Configure** the required configurations to allow the files to be retrieved from *wwwroot*
+Configure the API to serve static files: open **Startup.cs** and add to **Configure** the required configurations to allow the files to be retrieved from *wwwroot*
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
@@ -33,6 +35,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed see
 ```
 
 *UseDefaultFiles* allows for address without a filename to find **index.html**
+
 *UseStaticFiles* serves the files from *wwwroot*
 
 Create **Controllers/Fallback.cs** a Controller dedicated to handle all the paths that are not mapped by other routes.
@@ -58,4 +61,4 @@ app.UseMvc(routes =>
 });
 ```
 
-With this configuration when a user open a url like https://siteurl/members the *fallback* intercepts it an sends to the SPA.
+With this configuration when a user open a url that doesn't match any controller (eg `https://siteurl/members`) then the *fallback* intercepts it an sends to the SPA.

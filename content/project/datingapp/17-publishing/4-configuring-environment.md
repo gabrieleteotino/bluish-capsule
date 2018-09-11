@@ -3,10 +3,12 @@ title: "Configuring environment"
 date: 2018-08-07T15:12:55.018+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Configure environment
 
@@ -34,7 +36,7 @@ Open **Properties/launchSettings.json** and change the **ASPNETCORE_ENVIRONMENT*
   "launchUrl": "api/values",
   "applicationUrl": "https://localhost:5001;http://localhost:5000",
   "environmentVariables": {
-    "ASPNETCORE_ENVIRONMENT": "Production"
+    "ASPNETCORE_ENVIRONMENT": "Production"the application (insert your api keys and token secret in the
   }
 }
 // ...

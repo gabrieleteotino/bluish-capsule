@@ -5,10 +5,8 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
-
-Publishing
 
 - Using NG Build
 - Running from Kestrel
@@ -16,3 +14,5 @@ Publishing
 - Swapping the DB to MySQL
 - Publishing to IIS
 - Publishing to Linux
+- Creating a Docker image
+- Using Docker Compose
