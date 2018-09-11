@@ -3,10 +3,12 @@ title: "Message thread"
 date: 2018-08-06T9:52:24.495+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "ngx-bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Service
 
@@ -14,7 +16,8 @@ Create a new method **UserService.getMessageThread**
 
 ```typescript
 getMessageThread(fromUserId: number, toUserId: number) {
-  return this.http.get<Message[]>(this.baseUrl + fromUserId + '/messages/thread/' + toUserId);
+  return this.http
+    .get<Message[]>(this.baseUrl + fromUserId + '/messages/thread/' + toUserId);
 }
 ```
 
@@ -151,7 +154,7 @@ Remove the test code in **member-messages.component.html** and add the new templ
 
 ## Tab selection
 
-Feature: when the user clicks the message button in the profile component the tab messagesd is activated.
+Feature: when the user clicks the message button in the profile component then the tab messages is activated.
 
 Valor-soft [example](https://valor-software.com/ngx-bootstrap/#/tabs#tabs-manual-select).
 
@@ -181,7 +184,7 @@ Back in the html change the *Message* button code to open the *Messages* tab
 
 ## Query parameters
 
-Feature: when the user clicks a message in his inbox the profile component is opened and the tab messagesd is activated.
+Feature: when the user clicks a message in his inbox then the profile component is opened and the tab messages is activated.
 
 Open **messages.component.html** and add a query string parameter to the *routerLink* of each message
 

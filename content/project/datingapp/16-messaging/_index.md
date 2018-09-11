@@ -5,10 +5,10 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-Messaging between users
+Send messages between users
 
 - Message entity
 - CRUD

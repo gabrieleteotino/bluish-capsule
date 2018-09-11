@@ -5,8 +5,10 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Service
 
@@ -53,7 +55,7 @@ And in **member-messages.component.html**
 
 ## Fix the webapi
 
-In **MessagesController.CreateMessage** we need to change the return value to match the full *message*
+In **MessagesController.CreateMessage** we need to change the return value to the full *message*
 
 ```csharp
 if (await _repo.SaveAll())

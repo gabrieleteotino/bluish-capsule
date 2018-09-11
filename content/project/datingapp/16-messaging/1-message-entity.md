@@ -3,10 +3,12 @@ title: "Message entity"
 date: 2018-08-02T11:24:33.881+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "ef", "entity-framework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Message
 
@@ -39,7 +41,7 @@ public ICollection<Message> MessagesReceived { get; set; }
 
 ## Context, defaults and many to many
 
-In **DatingContext** add a new *DbSet* and configure the relationships. Note that the foreign key can be ignored and *ef* will add it by convenction (**Sender** has a **SenderId** and **Recipient** has a **RecipientId**)
+In **DatingContext** add a new *DbSet* and configure the relationships. Note that the foreign key can be ignored and *ef* will add it by convention (**Sender** has a **SenderId** and **Recipient** has a **RecipientId**)
 
 ```csharp
 // ...
@@ -61,6 +63,7 @@ modelBuilder.Entity<Message>()
 ```
 
 Stop *dotnet run*
+
 Create a new migration
 
 ```shell

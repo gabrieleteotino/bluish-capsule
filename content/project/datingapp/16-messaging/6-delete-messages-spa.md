@@ -3,10 +3,12 @@ title: "Delete messages SPA"
 date: 2018-08-06T15:07:46.353+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Service
 

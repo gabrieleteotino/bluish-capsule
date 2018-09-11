@@ -3,10 +3,12 @@ title: "Message component"
 date: 2018-08-03T12:45:53.517+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Model
 
@@ -30,7 +32,9 @@ export interface Message {
 
 ## Service
 
-We will use the **UserService** and not create a new service for the messages. Add new method **getMessages**
+We will use the **UserService**, it can be argued that a new service for the messages is a better choice.
+
+Add new method **getMessages**
 
 ```typescript
 getMessages(
@@ -219,7 +223,7 @@ Open **message.component.html**
 </div>
 ```
 
-Add some style **message.component.css**
+Add some style in **message.component.css**
 
 ```css
 table {

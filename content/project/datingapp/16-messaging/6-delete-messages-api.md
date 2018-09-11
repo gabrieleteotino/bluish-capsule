@@ -5,12 +5,16 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Controller
 
-Open **MessagesController** and add a new *HTTP POST* method **DeleteMessage**. We are not using a *HTTP DELETE* because the messages are not really deleted but only marked as deleted for each of the two users.
+Open **MessagesController** and add a new *HTTP POST* method **DeleteMessage**.
+
+We are not using an *HTTP DELETE* because the messages are not really deleted but only marked as deleted for each of the two users.
 
 ```csharp
 [HttpPost("{id}")]

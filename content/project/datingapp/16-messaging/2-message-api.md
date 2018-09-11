@@ -3,10 +3,12 @@ title: "Message api"
 date: 2018-08-02T13:57:37.190+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## GetMessage and CreateMessage
 
@@ -135,7 +137,7 @@ public async Task<IActionResult> CreateMessage(int userId, MessageForCreation me
 
 Create a new *POST* with body of type *application/JSON*
 
-```
+```html
 {{url}}/api/users/1/messages/
 
 {
@@ -252,7 +254,7 @@ public async Task<IActionResult> GetMessagesForUser(int userId, [FromQuery]Messa
 
 Create a new *GET*
 
-```
+```html
 {{url}}/api/users/1/messages?messageContainer=Outbox
 ```
 
@@ -303,6 +305,6 @@ public async Task<IActionResult> GetMessageThread(int userId, int otherUserId)
 
 Create a new *GET*
 
-```
+```html
 {{url}}/api/users/1/messages/thread/13
 ```
