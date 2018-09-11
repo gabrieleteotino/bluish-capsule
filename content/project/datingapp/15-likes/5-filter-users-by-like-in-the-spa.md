@@ -3,10 +3,12 @@ title: "Filter users by like in the SPA"
 date: 2018-08-01T15:01:10.879+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Service
 
@@ -148,4 +150,4 @@ Add the markup in **lists.component.html**
 </div>
 ```
 
-Note that in the application API the **Gender** is automatically added if not specified in the **UserParams**. In the Members page we can filter for both genders and add a like to anyone. But in this page only likes received from the opposite gender is considered.
+Note that in the application API the **Gender** is automatically added if not specified in the **UserParams**. In the Members page we can filter for both genders and add a like to anyone. But in this page only likes received from the opposite gender are considered.

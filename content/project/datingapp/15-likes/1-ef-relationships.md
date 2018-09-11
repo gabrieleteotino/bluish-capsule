@@ -1,12 +1,14 @@
 ---
-title: "EF Functionality"
+title: "EF relationships"
 date: 2018-07-31T10:47:38.127+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "ef", "entity-framework"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Many to many relationship
 

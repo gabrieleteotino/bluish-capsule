@@ -3,10 +3,12 @@ title: "Like functionality in the API"
 date: 2018-07-31T14:42:59.013+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Repository
 
@@ -66,7 +68,7 @@ public async Task<IActionResult> LikeUser(int id, int recipientId) {
 
 Create a new *POST* to this url
 
-```
+```html
 {{url}}/api/users/1/like/12
 ```
 

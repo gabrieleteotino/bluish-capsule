@@ -3,10 +3,12 @@ title: "Filter user by Like"
 date: 2018-08-01T09:20:27.589+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Refactoring
 
@@ -41,7 +43,7 @@ public ICollection<Like> LikesFrom { get; set; }
 public ICollection<Like> LikeTo { get; set; }
 ```
 
-And fix the code in **DatingContext** because the confusing naming induced me into a stupid error on the foreign key.
+And fix the code in **DatingContext** because the old naming confused me into a stupid error on the foreign key.
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
@@ -101,7 +103,7 @@ if (userParams.Likees)
 
 Create two request to the following urls
 
-```
+```html
 {{url}}/api/users?likees=true
 {{url}}/api/users?likers=true
 ```

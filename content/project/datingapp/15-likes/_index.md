@@ -5,10 +5,8 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
-
-Likes
 
 - Defining relationships in EF
 - Using the Fluent API

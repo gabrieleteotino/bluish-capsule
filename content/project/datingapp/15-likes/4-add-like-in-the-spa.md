@@ -3,10 +3,12 @@ title: "Add like in the SPA"
 date: 2018-08-01T13:17:15.647+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
+
+<!--more-->
 
 ## Service
 
@@ -20,7 +22,7 @@ sendLike(fromUserId: number, toUserId: number) {
 
 ## Component
 
-Open **member-card.component.ts** implement a new method and add the DI in the constructor
+Open **member-card.component.ts** implement a new method and add the DI for **userService** in the constructor
 
 ```typescript
 sendLike(toUserId: number) {
