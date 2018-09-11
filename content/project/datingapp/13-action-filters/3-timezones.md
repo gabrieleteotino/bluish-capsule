@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 View the dates with the correct timezone.
@@ -16,11 +16,11 @@ View the dates with the correct timezone.
 
 In the server side code we always use *UtcNow* and store all the dates in the UTC timezones.
 
-The web server can be anywhere in the world and the operating system can use any kind of timezone or locale, when we use UTC we don't have to care about the timezone.
+The web server can be anywhere in the world and the operating system can use any kind of timezone or locale, using UTC we don't have to care about the timezone.
 
 Angular date pipe use the browser local timezone by default. That is what we normally want for our applications: users want to read time in the same way they read their watches.
 
-The problem is that *Newtonsoft* serializer default configuration sends the dates without any timezone information.
+The only problem is that *Newtonsoft* serializer default configuration sends the dates without any timezone information.
 
 Change the serializer settings in mvc configuration in **Startup.ConfigureServices**
 

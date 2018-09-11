@@ -26,3 +26,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 10. [Updating users](10-updating-users)
 11. [Photo upload](11-photo-upload)
 12. [Registration](12-registration)
+13. [Action filters](13-action-filters)

@@ -3,12 +3,12 @@ title: "Using pipes for dates"
 date: 2018-07-19T15:40:23.420+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
-Formatting nicely the dates in the SPA
+Formatting the dates in the SPA
 
 <!--more-->
 
