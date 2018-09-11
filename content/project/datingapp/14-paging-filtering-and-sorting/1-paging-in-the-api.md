@@ -3,9 +3,9 @@ title: "Paging in the API"
 date: 2018-07-20T11:18:34.284+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -14,11 +14,11 @@ draft: true
 
 To paginate the data we will pass two parameters via query string to the action.
 
-```
+```html
 https://localhost:5001/api/users?pageNumber=1&pageSize=5
 ```
 
-The method **DatingRepository.GetUsers** returns an *IEnumerable* but in the code we actually return a *List* with *ToListAsync*. This method iterates on all the results in the *DbSet* and add them all to the list.
+The method **DatingRepository.GetUsers** returns an *IEnumerable* but in the code we actually return a *List* with *ToListAsync*. This method iterates on all the results in the *DbSet* and add them to the list.
 
 To substitute this method we will create a new class of type *List* that will filter the data and also tell the count of user and the count of pages.
 
@@ -86,7 +86,7 @@ public static void AddPagination(this HttpResponse response, int currentPage, in
 }
 ```
 
-When the SPA calls **UsersController.GetUsers** it will now pass a parameter of type **UsersController.UserParams**
+When the SPA calls **UsersController.GetUsers** it will pass a parameter of type **UsersController.UserParams**
 
 ```csharp
 public class UsersController : Controller
@@ -110,7 +110,7 @@ public class UsersController : Controller
 
 ## Repository and Controller
 
-Now we can change the signature of **IDatingRepository**
+Change the signature of **IDatingRepository**
 
 ```csharp
 Task<PagedList<User>> GetUsers(Controllers.UsersController.UserParams paginationParams);
@@ -125,14 +125,8 @@ public async Task<PagedList<User>> GetUsers(Controllers.UsersController.UserPara
     return await PagedList<User>.CreateAsync(users, paginationParams.PageNumber, paginationParams.PageSize);
 }
 ```
-var paginationHeader = new PaginationHeader(currentPage, itemsPerPage, totalItems, totalPages);
-            var paginationHeaderSerialized = JsonConvert.SerializeObject(paginationHeader, new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            });
-            response.Headers.Add("Pagination", paginationHeaderSerialized);
-            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
-Update the implementation in **UsersController**
+
+Update the implementation of **UsersController.GetUsers**
 
 ```csharp
 [HttpGet]
@@ -150,11 +144,11 @@ public async Task<IActionResult> GetUsers([FromQuery] UserParams userParams)
 
 Create a new *GET* request in *Postman* with the following url
 
-```
+```html
 {{url}}/api/users?PageNumber=1&PageSize=3
 ```
 
-In the response body we see only the first 3 users. In the *Headers* tab we find the **Pagination** header (here it is formatted for reading)
+In the response body we see only the first 3 users. In the *Headers* tab we find the **Pagination** header (all in a single line, here it is formatted for reading)
 
 ```json
 {

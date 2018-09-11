@@ -27,3 +27,4 @@ The course used a previous version of .net core I fixed everything to use 2.1.0-
 11. [Photo upload](11-photo-upload)
 12. [Registration](12-registration)
 13. [Action filters](13-action-filters)
+14. [Paging filtering and sorting](14-paging-filtering-and-sorting)

@@ -3,9 +3,9 @@ title: "Paging in the SPA"
 date: 2018-07-23T19:05:24+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "ngx-bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -32,7 +32,7 @@ export class PaginatedResult<T> {
 }
 ```
 
-Modify **user.service.ts** method **getUsers** to accept optional pagination parameters and put them in the query string. Then *map* the resulting **User[]** in a **PaginatedResult**
+Modify **user.service.ts** method **getUsers** to accept optional pagination parameters and put them in the query string. Then *map* the resulting **User[ ]** in a **PaginatedResult**
 
 ```typescript
 getUsers(
@@ -66,7 +66,7 @@ getUsers(
 }
 ```
 
-Fix **member-list.resolver.ts** to make use of the *Observable<PaginatedResult<User[]>>* add two new properties (fixed for testing purposes)
+Fix **member-list.resolver.ts** to make use of the *Observable\<PaginatedResult<User[]>>* and add two new properties (fixed for testing purposes)
 
 ```typescript
 // ...
@@ -97,7 +97,7 @@ ngOnInit() {
 
 ## Test the application
 
-Navigate to **Matches** only the first 5 users are visible.
+Navigate to **Matches**, verify that only the first 5 users are visible.
 
 ## ngx-bootstrap pagination
 
@@ -141,7 +141,7 @@ ngOnInit() {
 // ...
 ```
 
-Back in the *html* and bind it to the attributes of *pagination*
+Back in the *html* bind the **pagination** property to the attributes of the **pagination** element
 
 ```html
 <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"

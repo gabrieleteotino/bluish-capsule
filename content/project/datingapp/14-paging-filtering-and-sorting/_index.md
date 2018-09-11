@@ -5,10 +5,8 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["c#", "webapi", "netcore", "angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
-
-Paging, filtering and sorting
 
 - Paging in the API
 - Paging in the SPA

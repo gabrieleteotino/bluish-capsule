@@ -3,9 +3,9 @@ title: "Sorting in the API"
 date: 2018-07-25T12:38:59.447+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -50,6 +50,6 @@ public async Task<PagedList<User>> GetUsers(UserParams userParams)
 
 Create a new request and add a **OrderBy** parameter
 
-```
+```html
 {{url}}/api/users?OrderBy=created
 ```

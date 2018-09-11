@@ -3,9 +3,9 @@ title: "Updating to HttpInterceptor"
 date: 2018-07-27T10:47:06.018+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->

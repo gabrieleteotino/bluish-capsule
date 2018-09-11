@@ -3,9 +3,9 @@ title: "Filtering in the SPA"
 date: 2018-07-25T10:30:35.989+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -107,7 +107,7 @@ Bind the form to the new properties and functions
 </form>
 ```
 
-Add a parameter for **userParams** in **user.service.ts** method **getUsers**
+Add parameters for the new **userParams** to the query string parameters in **user.service.ts** method **getUsers**
 
 ```typescript
 if (userParams != null) {

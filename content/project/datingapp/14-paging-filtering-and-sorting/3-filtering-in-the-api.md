@@ -3,16 +3,16 @@ title: "Filtering in the API"
 date: 2018-07-24T12:27:05.719+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["c#", "webapi", "netcore", "postman"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 ## Show only users of the opposite gender
 
-Edit **UserParams** and add two new properties for the filtering
+In **UserParams** add two new properties for filtering
 
 ```csharp
 public int UserId { get; set; }
@@ -62,19 +62,19 @@ public async Task<PagedList<User>> GetUsers(Controllers.UsersController.UserPara
 
 If we send again the request to
 
-```
+```html
 {{url}}/api/users?PageNumber=1&PageSize=3
 ```
 
-We now obtain only male users (if we are logged in as a female).
+If we are logged in as a female we obtain only male users (and viceversa for logged in males).
 
-Also we can force a specific gender
+Or we can force a specific gender
 
-```
+```html
 {{url}}/api/users?PageNumber=1&PageSize=3&Gender=female
 ```
 
-We obtain a list of only female users without the current logged in user
+We obtain always a list of only female users ignoring the logged in user gender.
 
 It is possible to mix and match all the params (PageNumber, PageSize and Gender) because we have implemented valid defaults.
 
@@ -89,7 +89,7 @@ public int MinAge { get; set; } = MinAgeDefault;
 public int MaxAge { get; set; } = MaxAgeDefault;
 ```
 
-In **DatingRepository.GetUsers** add the filter condition only if one of the two properties was changed, this will reduce the query workload and all our users are between 18 and 99.
+In **DatingRepository.GetUsers** add the filter condition only if one of the two properties was changed, this will reduce the query workload because all our users are already between 18 and 99.
 
 
 ```csharp
@@ -121,6 +121,6 @@ users = users.Where(x=>x.DateOfBirth.CalculateAge() >= userParams.MinAge && x.Da
 
 Create a new request and filter it by age
 
-```
+```html
 {{url}}/api/users?MinAge=20&MaxAge=30
 ```

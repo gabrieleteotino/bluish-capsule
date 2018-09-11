@@ -3,9 +3,9 @@ title: "Sorting in the SPA"
 date: 2018-07-25T13:10:46.430+02:00
 subtitle: ""
 author: Gabriele Teotino
-tags: ["c#", "webapi", "netcore", "angular"]
+tags: ["angular", "ngx-bootstrap"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
