@@ -12,7 +12,7 @@ I will use a single repository for either the Angular SPA and the c# Web API.
 
 <!--more-->
 
-On github create a new repository with a readme a no *.gitignore* file.
+On github create a new repository with a readme and no *.gitignore* file.
 
 Clone the repository
 
