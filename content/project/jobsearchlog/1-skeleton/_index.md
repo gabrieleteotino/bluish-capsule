@@ -10,6 +10,7 @@ draft: true
 
 Create a simple skeleton with minimal components to test the basic pieces
 
-- a github repository
-- a firebase project
-- an angular SPA
+- github repository
+- firebase project
+- angular SPA
+- material components
