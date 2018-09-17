@@ -24,8 +24,8 @@ export interface Job {
     companyUrl: string;
     offerUrl: string;
     status: JobStatus;
-    creation: Date;
-    lastEdit: Date;
+    createdAt: Date;
+    updatedAt: Date;
     location: string;
     contract: string;
 }
