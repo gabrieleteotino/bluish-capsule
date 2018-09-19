@@ -16,17 +16,13 @@ Generate a new service
 ng g service _services/job
 ```
 
-Open **job.service.ts** and add a method to get paginated results of **Job** given a user id.
+Open **job.service.ts** and add a method to get paginated results of **Job[]** given a user id.
 
 ```typescript
 import { Injectable } from '@angular/core';
-import {
-  AngularFirestore,
-  DocumentChangeAction
-} from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Observable, from } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Job } from '../_models/job.model';
 
 @Injectable({
@@ -36,15 +32,13 @@ export class JobService {
   private uid: string;
 
   constructor(private db: AngularFirestore, private authService: AuthService) {
-    authService.user.subscribe(u => this.uid = u.uid);
+    authService.user.subscribe(u => (this.uid = u.uid));
   }
 
   getJobs(limit: number, startAfterJob?: Job): Observable<Job[]> {
-    const userRef = this.db.collection('users').doc(this.uid);
-
     let query = this.db
       .collection('users')
-      .doc(uid)
+      .doc(this.uid)
       .collection('jobs')
       .ref.orderBy('createdAt', 'desc');
 
