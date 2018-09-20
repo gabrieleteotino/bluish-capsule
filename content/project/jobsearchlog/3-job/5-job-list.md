@@ -99,6 +99,60 @@ Change the code in **nav.component.html**
 
 ## Jobs
 
+Implemnt a dialog form to insert new job offers
+
+Register **MatDialogModule** inside **material.module.ts**
+
+Create a new component **job-dialog**
+
+
+Open **app.module.ts** and register the new component to both *declarations* and [entryComponent](https://angular.io/guide/entry-components)
+
+```typescript
+...
+declarations: [
+  ...
+  JobDialogComponent
+],
+...
+bootstrap: [
+  AppComponent
+],
+entryComponents: [JobDialogComponent]
+...
+```
+
+This is the first table that we implement so we need to import/export **MatTableModule** inside **material.module.ts**
+
+```typescript
+import { NgModule } from '@angular/core';
+import {
+  MatSidenavModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatListModule,
+  MatTableModule
+} from '@angular/material';
+
+@NgModule({
+  imports: [
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatTableModule
+  ],
+  exports: [
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatTableModule
+  ]
+})
+export class MaterialModule {}
+```
+
 Open **job-list.component.ts** add DI for **AuthService** and implement paginated loading.
 
 ```typescript
