@@ -12,13 +12,20 @@ draft: true
 
 Create a folder for the models **src/app/_models**
 
-Create a new file **src/app/_models/job.model.ts**
+Create a new file **_models/entity.model.ts** a generic class with an **id** for the firestore document id and **value** for the entity.
+
+```typescript
+export class Entity<T> {
+  constructor(public id: string, public value: T) {}
+}
+```
+
+Create a new file **_models/job.model.ts**
 
 ```typescript
 import { JobStatus } from './job-status.model';
 
 export interface Job {
-    id: string;
     description: string;
     company: string;
     agency: string;
@@ -45,3 +52,5 @@ export enum JobStatus {
   closed = 'Closed'
 }
 ```
+
+When we need a job document we will use a **Entity<Job>** so the component can store both the document id and the document.
