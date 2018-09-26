@@ -15,3 +15,4 @@ The application can track job applications, interviews, multiple copy of the res
 1. [Skeleton](1-skeleton)
 2. [Securing](2-securing)
 3. [Job](3-job)
+3. [Resume](4-resume)
