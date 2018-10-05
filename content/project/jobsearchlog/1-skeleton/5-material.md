@@ -16,7 +16,7 @@ Use npm to install material, cdk and animations.
 
 **@angular/material** contains the material components.
 
-**@angular/cdk** has predefined behaviour for components, like overlay for menus and popups, table behavoiur and others.
+**@angular/cdk** has predefined behaviour for components, like overlay for menus and popups, table behaviour and others.
 
 **@angular/animations** contains animation (what else?) and it will use Web Animations API if supported by the browser or fallback to css.
 
