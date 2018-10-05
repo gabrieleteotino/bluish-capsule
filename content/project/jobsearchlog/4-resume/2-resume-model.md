@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -26,7 +26,7 @@ export interface ResumeVersion {
 }
 ```
 
-The user will be able to link a resume to a job and later update the resume. The version permits to recover the correct document for each job application.
+The user will be able to link a resume to a job and later update the resume. The versioning permits to recover the correct document for each job application.
 
 We will also use some view models
 

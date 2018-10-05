@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase", "material"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 **Resume** is a firestore entity linked to a storage file

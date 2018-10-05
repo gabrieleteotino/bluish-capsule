@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -22,7 +22,7 @@ eg: /users/E77oXZRvPyZtEjQoS7FeA4g6w6i1/pLbAjzAb7RHxyeZqYH05/2/mymastercv_someth
 ```
 This permits to have multiple version of the same document and mantain the original filename
 
-The security rules will protect the user folder and limit upload size.
+These security rules will protect the user folder and limit upload size.
 
 ```javascript
 service firebase.storage {
