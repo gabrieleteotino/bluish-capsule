@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase", "material"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 The **Job** is the central entity of the application

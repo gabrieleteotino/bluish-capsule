@@ -5,14 +5,14 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
 
 Create a folder for the models **src/app/_models**
 
-Create a new file **_models/entity.model.ts** a generic class with an **id** for the firestore document id and **value** for the entity.
+Create in a new file **_models/entity.model.ts** a generic class with an **id** for the firestore document id and **value** for the entity.
 
 ```typescript
 export class Entity<T> {
