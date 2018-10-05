@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["firebase"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -16,6 +16,6 @@ Click *Add Project*
 
 Give it a name: JobSearchLog
 
-If you want you can change the *Project ID* or the geographic location, I left USA even if I live in Europe because i think taht most of my users will be americans.
+If you want you can change the *Project ID* or the geographic location, I left USA even if I live in Europe because i think that most of my users will be americans.
 
 Check all the *I accept* bla bla and click *Create Project*

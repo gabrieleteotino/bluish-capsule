@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -28,7 +28,7 @@ cd ~/dev/JobSearchLog
 ng new JobSearchLog --directory ./
 ```
 
-In the *package.json* file we can see that the default scripts for npm are already configured to launch ng with the appropriate parameters.
+In the *package.json* file we can see that the default scripts for npm are already configured to launch **ng** with the appropriate parameters.
 
 Run the Angular application and check that everything is working
 

@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -122,7 +122,7 @@ import { environment } from '../environments/environment';
 export class AppModule { }
 ```
 
-## Test the Firestore
+## Test Firestore
 
 Open **app.component.ts** and add a DI for AngularFirestore, bind a Firestore collection to a list
 

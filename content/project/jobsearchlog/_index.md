@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase", "material"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 JobSearchLog is a SPA application written in Angular 6 with a material interface using Google Firebase as a backend.

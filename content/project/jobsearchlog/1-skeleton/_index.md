@@ -5,7 +5,7 @@ subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "firebase", "material"]
 categories: ["dev"]
-draft: true
+draft: false
 ---
 
 Create a simple skeleton with minimal components to test the basic pieces
