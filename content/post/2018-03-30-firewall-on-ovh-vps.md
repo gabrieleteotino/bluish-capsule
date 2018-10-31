@@ -20,7 +20,7 @@ apt install ufw
 ```
 
 ## Configuration
-Before starting the firewall we *have* to allow ssh traffic or we will closed ourself out.
+Before starting the firewall we *have* to allow ssh traffic or we will close ourself out.
 
 ```shell
 # if ssh is still on port 22
