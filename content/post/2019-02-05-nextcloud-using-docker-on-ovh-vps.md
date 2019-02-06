@@ -54,6 +54,40 @@ docker-compose up -d
 
 Open the browser to the address specified in *VIRTUAL_HOST=* and create an admin user.
 
+## Post install
+
+### Bigint fix
+
+I used portainer to execute a update command ([bigint identifiers](https://docs.nextcloud.com/server/15/admin_manual/configuration_database/bigint_identifiers.html)) in portainer select the container *nextcloud_app_1* (or whatever the name/number is for your installation) click on **>_** to execute a console command
+
+```shell
+command: php occ db:convert-filecache-bigint
+user: www-data
+```
+
+Execution may take some time and I really don't understand why it is not a default value for a new installation, but hey life is tough.
+
+### Email SMTP
+
+I registered a free Mailgun account without any domain. Before you can use the SMTP go into the default domain that mailgun generated and scroll down to **Authorized Recipients** and add the email address for your administrator and for your users. This can be done for up to 5 email. Eventually you can subscribe to the pay as you go plan that is also free.
+
+Mailgun will send a mail to each authorized recipient, open the message and follow the instruction to enable the address.
+
+From Nextcloud administration in the section *basic settings*
+
+- Send mode: SMTP
+- Encryption: STARTTLS
+- From address: postmaster
+- @: sandboxceXXXXXXXXXXXXXXXXX
+- Authentication method: Login
+- Authentication required: yes
+- Server address: smtp.mailgun.org
+- Port: 2525
+- Credential: postmaster@sandboxceXXXXXXXXXXXXXXXXX.mailgun.org
+- Password
+
+Click the button to send a test mail and if all is good a mail will arrive in a few seconds.
+
 ## OTHER stuff
 
 From the official [examples](https://github.com/nextcloud/docker/tree/master/.examples)
