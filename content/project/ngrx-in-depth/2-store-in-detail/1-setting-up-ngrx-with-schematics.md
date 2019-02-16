@@ -1,6 +1,6 @@
 ---
 title: "Store in detail"
-date:2019-02-15T17:16:35.275+01:00
+date: 2019-02-15T17:16:35.275+01:00
 subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "ngrx"]
@@ -8,9 +8,13 @@ categories: ["dev"]
 draft: true
 ---
 
-The requireq NgRx libraries are already configured in the the brach **1-auth**.
+NgRx libraries installation
 
-They are from [NgRx repository](https://github.com/ngrx/platform) and the [offical documentation](https://ngrx.io/guide/store/install)
+<!-- more -->
+
+The required NgRx libraries are already configured in the the branch **1-auth**.
+
+They are from [NgRx repository](https://github.com/ngrx/platform) and the [official documentation](https://ngrx.io/guide/store/install)
 
 To install manually
 

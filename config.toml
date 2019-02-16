@@ -64,6 +64,11 @@ googleAnalytics = "UA-24994854-1"
   name = "JobSearchLog"
   url = "project/jobsearchlog"
   weight = 4
+[[menu.main]]
+  parent = "projects"
+  name = "NgRx in depth"
+  url = "project/ngrx-in-depth"
+  weight = 5
 
 [[menu.main]]
   name = "Reviews"
