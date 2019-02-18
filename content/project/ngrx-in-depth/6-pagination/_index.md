@@ -1,6 +1,6 @@
 ---
 title: "Pagination"
-date: 
+#date: 
 subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "ngrx"]

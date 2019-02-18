@@ -1,6 +1,6 @@
 ---
 title: "Entity and Effects"
-date:
+#date:
 subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "ngrx"]

@@ -1,6 +1,6 @@
 ---
 title: "Side effects management"
-date:
+#date:
 subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "ngrx"]

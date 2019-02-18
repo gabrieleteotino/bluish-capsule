@@ -1,6 +1,6 @@
 ---
 title: "Store freeze"
-date:
+#date:
 subtitle: ""
 author: Gabriele Teotino
 tags: ["angular", "typescript", "ngrx"]
