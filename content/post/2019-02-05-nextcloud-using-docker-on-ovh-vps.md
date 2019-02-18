@@ -5,16 +5,16 @@ subtitle: "Installing Nexctcloud personal cloud server using docker on a virtual
 author: Gabriele Teotino
 tags: ["nextcloud", "cloud", "docker", "debian", "linux", "ovh"]
 categories: ["cloud"]
-draft: true
+draft: false
 ---
 
 [Nextcloud](https://nextcloud.com/) is a private cloud service platform. I plan to use it for personal and family usage, just to move some of my personal data away from third parties.
 
-<!-- more -->
+<!--more-->
 
-There is an official build for docker [source](https://github.com/nextcloud/docker) [dockerhub](https://hub.docker.com/_/nextcloud/).
+Official build for docker [source](https://github.com/nextcloud/docker) and [dockerhub](https://hub.docker.com/_/nextcloud/).
 
-There is a good starting example in github (i tried the postgres version but it has an open bug and the workaround is not worth my time).
+There is a good starting example in github (the postgres version has an open bug and the workaround is not worth my time).
 
 ```shell
 mkdir nextcloud
@@ -58,14 +58,16 @@ Open the browser to the address specified in *VIRTUAL_HOST=* and create an admin
 
 ### Bigint fix
 
-I used portainer to execute a update command ([bigint identifiers](https://docs.nextcloud.com/server/15/admin_manual/configuration_database/bigint_identifiers.html)) in portainer select the container *nextcloud_app_1* (or whatever the name/number is for your installation) click on **>_** to execute a console command
+I used portainer to execute a update command ([bigint identifiers](https://docs.nextcloud.com/server/15/admin_manual/configuration_database/bigint_identifiers.html)).
+
+In portainer select the container **nextcloud_app_1** (or whatever the name/number is for your installation) click on **>_** to execute a console command
 
 ```shell
 command: php occ db:convert-filecache-bigint
 user: www-data
 ```
 
-Execution may take some time and I really don't understand why it is not a default value for a new installation, but hey life is tough.
+Execution may take some time and I really don't understand why this was not alredy the default.
 
 ### Email SMTP
 
@@ -87,12 +89,3 @@ From Nextcloud administration in the section *basic settings*
 - Password
 
 Click the button to send a test mail and if all is good a mail will arrive in a few seconds.
-
-## OTHER stuff
-
-From the official [examples](https://github.com/nextcloud/docker/tree/master/.examples)
-
-Enhance security by disabling preview generation
-https://docs.nextcloud.com/server/12/admin_manual/configuration_server/harden_server.html?highlight=enabledpreviewproviders#disable-preview-image-generation
-
-Eventually install libreoffice (about +500Mb)
