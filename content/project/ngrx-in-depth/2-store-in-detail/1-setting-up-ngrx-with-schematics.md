@@ -10,7 +10,7 @@ draft: true
 
 NgRx libraries installation, configuring store, actions and reducers.
 
-<!-- more -->
+<!--more-->
 
 ## Basic NgRx libraries
 
