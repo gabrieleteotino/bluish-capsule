@@ -8,7 +8,7 @@ categories: ["dev"]
 draft: true
 ---
 
-Store freeze is a tool that helps avoid manipulation of the store state.
+Store freeze is a dev tool that helps avoid manipulation of the store state.
 
 <!--more-->
 
@@ -18,7 +18,7 @@ Install the library
 npm i --save-dev ngrx-store-freeze
 ```
 
-Configure the library to be used only in development mode by registering in the metareducers in **reducers/index.ts**.
+Configure the library to be used only in development mode by registering it in the metareducers in **reducers/index.ts**.
 
 ```js
 export const metaReducers: MetaReducer<AppState>[] = !environment.production
@@ -26,7 +26,7 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production
   : [];
 ```
 
-Now to test the library we can try to change a state in the store, for example let's change the logout reducer to
+Now to test the library we change a state in the store, for example let's change the logout reducer to
 
 ```js
 case AuthActionTypes.LogoutAuths:
@@ -39,7 +39,7 @@ case AuthActionTypes.LogoutAuths:
   };*/
 ```
 
-The compilation is succesful but a soon as we dispatch a logout action in the browser we have an error
+The compilation is successful but a soon as we dispatch a logout action in the browser we have an error
 
 ```
 core.js:14597 ERROR TypeError: Cannot assign to read only property 'logged' of object '[object Object]'
