@@ -12,7 +12,5 @@ Notes and code snippets for the course [NgRx In Depth](https://www.udemy.com/ngr
 
 1. [Introduction](1-introduction)
 2. [Store in detail](2-store-in-detail)
-3. [Side Effects Management](3-side-effects-management)
-4. [Store freeze](4-store-freeze)
-5. [Entity and Effects](5-entity-and-effects)
-6. [Pagination](6-pagination)
+3. [Entity and Effects](3-entity-and-effects)
+4. [Pagination](4-pagination)
