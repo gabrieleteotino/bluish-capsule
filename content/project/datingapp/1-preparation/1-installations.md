@@ -35,7 +35,7 @@ sudo apt-get install -f # Install dependencies
 
 ## Node
 
-I installed node with nvm. [nvm article]({{< relref "post/2018-05-28-install-nodejs-using-nvm.md" >}})
+I installed node with nvm. [nvm article]({{< relref "/post/2018-05-28-install-nodejs-using-nvm.md" >}})
 
 ```shell
 nvm install --lts
@@ -55,8 +55,8 @@ npm install -g @angular/cli@1.7.4
 
 ## Postman
 
-[Postman article]({{< relref "note/2018-05-30-postman-api-ide.md" >}})
+[Postman article]({{< relref "/note/2018-05-30-postman-api-ide.md" >}})
 
 ## DB Browser for SQLite
 
-[DB Browser for SQLite article]({{< relref "note/2018-05-31-db-browser-for-sqlite.md" >}})
+[DB Browser for SQLite article]({{< relref "/note/2018-05-31-db-browser-for-sqlite.md" >}})

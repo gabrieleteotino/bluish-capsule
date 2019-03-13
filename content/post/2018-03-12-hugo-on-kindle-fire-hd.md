@@ -56,7 +56,7 @@ We see that the command have setup for us a few symlinks to the most used folder
 
 ### Generate keys
 
-Similar to the process specified in this [article]({{< relref "post/2018-02-23-ssh-keys-for-github.md" >}})
+Similar to the process specified in this [article]({{< relref "/post/2018-02-23-ssh-keys-for-github.md" >}})
 
 ```shell
 ssh-keygen -t rsa -b 4096 -C "gabriele@teosoft.it"
