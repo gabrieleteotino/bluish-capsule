@@ -8,7 +8,7 @@ categories: ["dev"]
 draft: false
 ---
 
-Clone the cource code
+Clone the source code
 
 ```shell
 cd dev
