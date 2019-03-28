@@ -18,6 +18,9 @@ Add the following content
 # Levels are: QUIET, FATAL, ERROR, INFO, VERBOSE, DEBUG, DEBUG1, DEBUG2, and DEBUG3.
 # LogLevel DEBUG
 
+Host ssh.dev.azure.com
+    IdentityFile ~/.ssh/id_rsa_visualstudio
+
 Host vs-ssh.visualstudio.com
     IdentityFile ~/.ssh/id_rsa_visualstudio
 
