@@ -1,7 +1,7 @@
 ---
-title: "Git clone a specicific commit"
+title: "Git clone a specific commit"
 date: 2018-07-27T10:59:45.884+02:00
-subtitle: "Downloading a specicific commit from github"
+subtitle: "Downloading a specific commit from github"
 author: Gabriele Teotino
 tags: ["git", "github"]
 categories: ["dev"]
