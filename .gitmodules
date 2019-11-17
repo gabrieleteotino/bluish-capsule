@@ -3,4 +3,4 @@
 	url = https://github.com/halogenica/beautifulhugo.git
 [submodule "public"]
 	path = public
-	url = git@github.com:gabrieleteotino/gabrieleteotino.github.io.git
+	url = git@github.com:gabrieleteotino/bluish-capsule-dev-pages.git
