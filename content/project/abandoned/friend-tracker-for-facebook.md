@@ -20,12 +20,11 @@ With Friend Tracker for Facebook you can see your new friends and track who unfr
 - View friends/defriends total, today, last 7 days, month.
 
 Note: some of your friends may have high privacy settings on Facebook and are invisible to Facebook Friend Tracker.
-{{< gallery >}}
-{{< figure src="screenshot-fft-01-login.png" title="Login" caption="Multiple login can be used. Only one at time can be active." >}}
 
-{{< figure src="screenshot-fft-02-dashboard.png" title="Dashboard" caption="View all your new friends and defriends." >}}
+figure src="screenshot-fft-01-login.png" title="Login" caption="Multiple login can be used. Only one at time can be active."
 
-{{< figure src="screenshot-fft-03-friends-by-name.png" title="Friends by name" caption="List your friends and defriends sorted by name." >}}
+figure src="screenshot-fft-02-dashboard.png" title="Dashboard" caption="View all your new friends and defriends."
 
-{{< figure src="screenshot-fft-04-friends-by-date.png" title="Friends by date" caption="List your friends and defriends sorted by date." >}}
-{{< /gallery >}}
+figure src="screenshot-fft-03-friends-by-name.png" title="Friends by name" caption="List your friends and defriends sorted by name."
+
+figure src="screenshot-fft-04-friends-by-date.png" title="Friends by date" caption="List your friends and defriends sorted by date."
