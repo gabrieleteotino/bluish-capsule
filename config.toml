@@ -1,4 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://www.teosoft.it/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Bluish Capsule'
 theme = 'hyde'
+
+
+[params]
+  description = "Notes on coding"
