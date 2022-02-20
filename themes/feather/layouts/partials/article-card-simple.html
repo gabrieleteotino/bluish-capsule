@@ -1,0 +1,16 @@
+<div>
+    {{ .Title }}
+</div>
+
+<a href="{{ .Permalink }}">
+    <i class="fas fa-angle-down" aria-hidden="true"></i>open
+</a>
+
+<div>
+    {{ .Content}}
+</div>
+<div>
+    <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z0700" }}" class="post-date">
+        {{ .Date | time.Format ":date_medium" }}
+    </time>
+</div>

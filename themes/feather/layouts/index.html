@@ -1,0 +1,13 @@
+{{ define "main" -}}
+<div class="tile is-ancestor">
+    {{ range .Site.RegularPages }}
+    <div class="tile is-4 box">
+        {{ partial "article-card.html" . }}
+    </div>
+    {{ end }} {{ if .Truncated }}
+    <div class="read-more-link">
+        <a href="{{ .RelPermalink }}">Read More…</a>
+    </div>
+    {{ end }}
+</div>
+{{- end }}

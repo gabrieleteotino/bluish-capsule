@@ -1,0 +1,5 @@
+baseURL: "http://www.teosoft.it/"
+languageCode: "en-us"
+title: "Bluish Capsule"
+theme: "feather"
+paginate: 8

@@ -1,8 +1,0 @@
-baseURL = 'http://www.teosoft.it/'
-languageCode = 'en-us'
-title = 'Bluish Capsule'
-theme = 'hyde'
-
-
-[params]
-  description = "Notes on coding"
