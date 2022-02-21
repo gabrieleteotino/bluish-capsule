@@ -1,13 +1,40 @@
 {{ define "main" -}}
-<div class="tile is-ancestor">
-    {{ range .Site.RegularPages }}
-    <div class="tile is-4 box">
-        {{ partial "article-card.html" . }}
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-12">
+                <div class="container content">
+                    <span class="icon is-large">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <ion-icon name="code-outline"></ion-icon>
+                    <h1 class="title">Code <em>All</em> The Things</h1>
+                    <a href="https://github.com/gabrieleteotino" target="_blank" class="button is-primary is-large">
+                        <span class="icon">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </span>
+                        <span>Github</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    {{ end }} {{ if .Truncated }}
-    <div class="read-more-link">
-        <a href="{{ .RelPermalink }}">Read More…</a>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            {{ range first 2 .Site.RegularPages }}
+            <div class="tile is-4 box">
+                {{ partial "article-card.html" . }}
+            </div>
+            {{ end }} {{ if .Truncated }}
+            <div class="read-more-link">
+                <a href="{{ .RelPermalink }}">Read More…</a>
+            </div>
+            {{ end }}
+        </div>
     </div>
-    {{ end }}
-</div>
+</section>
 {{- end }}
