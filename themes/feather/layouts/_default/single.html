@@ -1,16 +1,27 @@
 {{ define "main" }}
-<article>
-  <div class="container">
-    <h1>{{ .Title }}</h1>
-    <section class="box">
-      <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-      {{ .Summary }}
-    </section>
-    <section>
+<div class="container">
+  <article>
+    <section class="section has-text-dark">
+      <h1 class="title ">{{ .Title }}</h1>
+      <!-- Article bar -->
+      <div class="level">
+        <!-- Left side -->
+        <div class="level-left">
+          <div class="level-item">
+            <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }}>{{ .Date | time.Format ":date_long" }}</time>
+          </div>
+        </div>
+        <!-- Right side -->
+        <div class="level-right">
+          {{with .Prev}}<div class="level-item"><a href="{{.Permalink}}">Prev</a></div>{{end}}
+          {{with .Next}}<div class="level-item"><a href="{{.Permalink}}">Next</a></div>{{end}}
+        </div>
+      </div>
+      <!-- Article content -->
       <div class="content">
         {{ .Content }}
       </div>
     </section>
-  </div>
-</article>
+  </article>
+</div>
 {{ end }}
