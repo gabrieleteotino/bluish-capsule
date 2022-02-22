@@ -3,3 +3,4 @@ languageCode: "en-us"
 title: "Bluish Capsule"
 theme: "feather"
 paginate: 8
+summaryLength: 50

@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header has-background-grey-light">
         <p class="card-header-title">
             {{ .Title }}
         </p>
@@ -13,13 +13,15 @@
         </button>
     </div>
     <div class="card-content has-background-light">
-        <div class="content">
-            {{ .Content}}
+        <div class="content is-size-7">
+            {{ .Summary }}
         </div>
     </div>
-    <div class="card-footer">
-        <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z0700" }}" class="post-date">
-            {{ .Date | time.Format ":date_medium" }}
-        </time>
+    <div class="card-footer has-background-grey-lighter">
+        <div class="card-footer-item">
+            <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z0700" }}" class="post-date">
+                {{ .Date | time.Format ":date_medium" }}
+            </time>
+        </div>
     </div>
 </div>

@@ -4,12 +4,11 @@
         <!-- {{ template "_internal/pagination.html" . }} -->
         <div class="columns is-multiline">
             {{ range .Paginator.Pages }}
-            <div class="column is-3">
+            <div class="column is-4">
                 {{ partial "article-card.html" . }}
             </div>
             {{ end }}
         </div>
     </div>
 </section>
-
 {{- end }}
