@@ -17,23 +17,23 @@
                 About
             </a>
 
+            {{ range $section := .Site.Sections }}
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Posts
-                </a>
+                <a href="{{ .Permalink }}" class="navbar-link">{{ .Title }}</a>
 
                 <div class="navbar-dropdown">
-                    {{ range first 3 .Site.RegularPages}}
-                    <a class="navbar-item">
+                    {{ range first 5 $section.RegularPages}}
+                    <a href="{{ .Permalink }}" class="navbar-item">
                         {{ .Title }}
                     </a>
                     {{ end }}
                     <hr class="navbar-divider">
-                    <a class="navbar-item">
+                    <a href="{{ .Permalink }}" class="navbar-item">
                         more
                     </a>
                 </div>
             </div>
+            {{ end }}
         </div>
     </div>
 </nav>
