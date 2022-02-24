@@ -1,0 +1,35 @@
+<nav class="pagination is-centered" role="navigation">
+    {{ if .Paginator.HasPrev }}
+    <a class="pagination-previous" href="{{ .Paginator.Prev.URL }}">Previous</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+    <a class="pagination-next" href="{{ .Paginator.Next.URL }}">Next page</a>
+    {{ end }}
+    <ul class="pagination-list">
+
+        <li>
+            <a class="pagination-link" href="{{ .Paginator.First.URL }}">1</a>
+        </li>
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        <li>
+            <a class="pagination-link">45</a>
+        </li>
+        <li>
+            <a class="pagination-link is-current">{{ .Paginator.PageNumber }}</a>
+        </li>
+        {{ if ne .Paginator.PageNumber .Paginator.Last.PageNumber}}
+
+        <li>
+            <a class="pagination-link">47</a>
+        </li>
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        <li>
+            <a class="pagination-link" href="{{ .Paginator.Last.URL }}">{{ .Paginator.Last.PageNumber }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
