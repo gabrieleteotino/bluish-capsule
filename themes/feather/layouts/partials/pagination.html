@@ -1,35 +1,44 @@
-<nav class="pagination is-centered" role="navigation">
+<nav class="pagination is-left" role="navigation">
     {{ if .Paginator.HasPrev }}
     <a class="pagination-previous" href="{{ .Paginator.Prev.URL }}">Previous</a>
     {{ end }}
-    {{ if .Paginator.HasNext }}
-    <a class="pagination-next" href="{{ .Paginator.Next.URL }}">Next page</a>
-    {{ end }}
-    <ul class="pagination-list">
 
+    {{ if .Paginator.HasNext }}
+    <a class="pagination-next" href="{{ .Paginator.Next.URL }}">Next</a>
+    {{ end }}
+
+    <ul class="pagination-list">
+        {{ if .Paginator.HasPrev }}
+        {{ if lt .Paginator.First.PageNumber .Paginator.Prev.PageNumber }}
         <li>
             <a class="pagination-link" href="{{ .Paginator.First.URL }}">1</a>
         </li>
         <li>
             <span class="pagination-ellipsis">&hellip;</span>
         </li>
+        {{ end }}
         <li>
-            <a class="pagination-link">45</a>
+            <a class="pagination-previous" href="{{ .Paginator.Prev.URL }}">{{ .Paginator.Prev.PageNumber }}</a>
         </li>
+        {{ end }}
+
+        <!-- Current page -->
         <li>
             <a class="pagination-link is-current">{{ .Paginator.PageNumber }}</a>
         </li>
-        {{ if ne .Paginator.PageNumber .Paginator.Last.PageNumber}}
 
+        {{ if .Paginator.HasNext }}
         <li>
-            <a class="pagination-link">47</a>
+            <a class="pagination-previous" href="{{ .Paginator.Next.URL }}">{{ .Paginator.Next.PageNumber }}</a>
         </li>
+        {{ if lt .Paginator.Next.PageNumber .Paginator.Last.PageNumber}}
         <li>
             <span class="pagination-ellipsis">&hellip;</span>
         </li>
         <li>
             <a class="pagination-link" href="{{ .Paginator.Last.URL }}">{{ .Paginator.Last.PageNumber }}</a>
         </li>
+        {{ end }}
         {{ end }}
     </ul>
 </nav>
