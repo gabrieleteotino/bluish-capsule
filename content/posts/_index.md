@@ -8,4 +8,4 @@ categories: []
 draft: false
 ---
 
-A collection of concise how-i-did documents over my technological adventures.
+Historical records with how i did a certain thing. These are not tutorials. Use at your own risk.

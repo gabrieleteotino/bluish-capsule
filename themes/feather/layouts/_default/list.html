@@ -1,7 +1,11 @@
 {{ define "main" -}}
 <section class="section">
     <div class="container">
-        <!-- {{ template "_internal/pagination.html" . }} -->
+        {{ with .Content }}
+        <div class="content">
+            {{.}}
+        </div>
+        {{ end }}
         <div class="columns is-multiline">
             {{ range .Paginator.Pages }}
             <div class="column is-4">
